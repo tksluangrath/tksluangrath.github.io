@@ -66,7 +66,8 @@
 
 ## Projects
 
-1. Fraud Detection App
+### 💳 Fraud Detection App
+
 
 [🔗 View on GitHub](https://github.com/tksluangrath/fraud-detection-app/tree/main)
 
