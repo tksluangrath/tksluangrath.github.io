@@ -1,10 +1,12 @@
 ## Hi there, I'm Terrance 👋
 
-## 💫 About Me:
-🌟 Aspiring Data Scientist passionate about sharing my journey and exploring diverse areas of the Data Science field.<br>
-💡 Completed a Bachelor of Science in Mathematics at James Madison University and will begin a Master of Data Science program at the University of Virginia in Spring 2025.<br>
-💭 Currently learning to build a strong foundation in Data Science.<br>
-⚡ Fun fact: I enjoy breakdancing
+## 💫 About Me
+
+🌟 I’m an aspiring **Data Scientist** with a strong foundation in mathematics and a passion for turning complex data into clear, actionable insights.  
+🎓 I hold a **B.S. in Mathematics** from *James Madison University* and am pursuing an **M.S. in Data Science** at the *University of Virginia* (Class of 2026).  
+💡 My interests span machine learning, data visualization, and applied analytics — exploring how data can drive meaningful decisions and innovation.  
+⚡ Outside of data, I enjoy **breakdancing**, where creativity and precision meet — much like in data science!
+
 
 
 ## 🎓 Education
