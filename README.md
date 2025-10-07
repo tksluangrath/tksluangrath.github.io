@@ -14,6 +14,19 @@
 
 ## Work Experience
 
+**Data Analyst @ Actfore (June 2024 - May 2025)**
+- Analyzed and processed sensitive data, ensuring compliance with privacy regulations (PII, PHI, FERPA, GDPR)
+while maintaining data accuracy and confidentiality.
+- Collaborated with cross-functional teams to ensure consistent and accurate record-keeping of sensitive data,
+while optimizing incident response strategies through advanced data analytics.
+- Utilized Excel for data analysis, data entry, and reporting, ensuring consistent and accurate records for large
+
+**Mathematics & Statistic Learning Assistant @ James Madison University (January 2024 - May 2024)**
+
+- Tutor students in statistics, guiding them in data analysis, statistical modeling, and visualization using tools like
+IBM Statistical Package for the Social Sciences (SPSS).
+- Worked with multiple professors and other tutors to assist students in enhancing their study techniques and
+improving their understanding of statistical and mathematical concepts.
 
 
 ## Skills & Tools
