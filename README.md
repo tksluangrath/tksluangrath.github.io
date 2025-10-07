@@ -66,9 +66,17 @@
 
 ## Projects
 
+1. Fraud Detection App
+
+[🔗 View on GitHub](https://github.com/tksluangrath/fraud-detection-app/tree/main)
+
+Built a machine learning model and Streamlit app to detect fraudulent transactions from a dataset of **6.3M records**. Applied logistic regression, random forest, and XGBoost to identify fraud patterns, achieving **95% recall** on highly imbalanced data. The deployed app ingests transaction data and predicts fraud in real time.
 
 
+**Skills:** Classification, Imbalanced Learning, EDA, Feature Engineering, Model Evaluation, App Packaging  
+**Tools:** Python, pandas, scikit-learn, Matplotlib, Seaborn, Streamlit, joblib
 
+![Fraud Detection App Screenshot](./assets/img/fraud_detection_app.png)
 
 ## 📬 Contact
 
