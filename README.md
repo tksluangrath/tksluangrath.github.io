@@ -37,8 +37,31 @@ IBM Statistical Package for the Social Sciences (SPSS).
 improving their understanding of statistical and mathematical concepts.
 
 
-## Skills & Tools
+# 🧰 Skills & Tools
 
+### 🖥️ Programming & Tools
+- **Python:** Pandas, NumPy, SciPy, scikit-learn, Matplotlib, Seaborn  
+- **R:** tidyverse, ggplot2, tidymodels  
+- **SQL:** Data manipulation, joins, aggregations, query optimization  
+- **Java:** Object-oriented programming and algorithmic problem-solving  
+- **SAS** & **IBM SPSS Statistics:** Statistical analysis and modeling  
+
+---
+
+### 📊 Data Science & Analytics Techniques
+- Data Cleaning & Preprocessing  
+- Exploratory Data Analysis (EDA)  
+- Statistical Inference & Hypothesis Testing  
+- Predictive Modeling (Regression, Classification, Clustering)  
+- Time Series Forecasting  
+- Bayesian Machine Learning  
+- Data Visualization & Storytelling  
+- Feature Engineering & Model Evaluation  
+
+---
+
+### ☁️ Certifications & Cloud
+- **Microsoft Azure Fundamentals (2022)**  
 
 ## Projects
 
