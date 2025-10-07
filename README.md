@@ -6,12 +6,27 @@
 💭 Currently learning to build a strong foundation in Data Science.<br>
 ⚡ Fun fact: I enjoy breakdancing
 
+
+## Education
+
+- M.S., Data Science @ University of Virginia (August 2026)
+- B.S., Applied Mathematics @ James Madison University (May 2020)
+
+## Work Experience
+
+
+
+## Skills & Tools
+
+
 ## Projects
 
 
 
-## 🌐 Socials:
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/https://www.linkedin.com/in/terranceluangrath/) 
 
 
-
+## Contact:
+**Email:** [tksluangrath@gmail.com](mailto:tksluangrath@gmail.com)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/terranceluangrath/) 
+[![GitHub](https://img.shields.io/badge/GitHub-181717.svg?logo=github&logoColor=white)](https://github.com/tksluangrath)
+[![Resume](https://img.shields.io/badge/Resume-Download-green.svg)](./assets/Resume.pdf)
