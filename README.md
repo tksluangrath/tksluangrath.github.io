@@ -76,7 +76,9 @@ Built a machine learning model and Streamlit app to detect fraudulent transactio
 **Skills:** Classification, Imbalanced Learning, EDA, Feature Engineering, Model Evaluation, App Packaging  
 **Tools:** Python, pandas, scikit-learn, Matplotlib, Seaborn, Streamlit, joblib
 
-![Fraud Detection App Screenshot](./assets/img/fraud_detection_app.png)
+<div align="center">
+  <img src="./assets/img/fraud_detection_app.png" alt="Fraud Detection App Screenshot" width="65%">
+</div>
 
 ## 📬 Contact
 
