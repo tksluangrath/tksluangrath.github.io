@@ -14,6 +14,14 @@
 
 ## Work Experience
 
+**Graduate Student Researcher @ UVA DART Lab (April 2025 - Present)**
+- Conducted research in Security Operations Centers (SOCs) and large language models (LLMs) to analyze, and
+identify patterns in alert data, improving threat detection strategies.
+- Collaborate with external teams to gather information, conduct interviews, and improve research processes
+across projects.
+- Identify workflow steps in SOC operations and implement LLM-based solutions to optimize processes and
+improve efficiency. 
+
 **Data Analyst @ Actfore (June 2024 - May 2025)**
 - Analyzed and processed sensitive data, ensuring compliance with privacy regulations (PII, PHI, FERPA, GDPR)
 while maintaining data accuracy and confidentiality.
