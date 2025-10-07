@@ -7,34 +7,35 @@
 ⚡ Fun fact: I enjoy breakdancing
 
 
-## Education
+## 🎓 Education
 
-- M.S., Data Science @ University of Virginia (August 2026)
-- B.S., Applied Mathematics @ James Madison University (May 2020)
+- **M.S. Data Science**, *University of Virginia* — *Expected August 2026*  
+- **B.S. Applied Mathematics**, *James Madison University* — *May 2020*
 
-## Work Experience
+---
 
-**Graduate Student Researcher @ UVA DART Lab (April 2025 - Present)**
-- Conducted research in Security Operations Centers (SOCs) and large language models (LLMs) to analyze, and
-identify patterns in alert data, improving threat detection strategies.
-- Collaborate with external teams to gather information, conduct interviews, and improve research processes
-across projects.
-- Identify workflow steps in SOC operations and implement LLM-based solutions to optimize processes and
-improve efficiency. 
+## 💼 Work Experience
 
-**Data Analyst @ Actfore (June 2024 - May 2025)**
-- Analyzed and processed sensitive data, ensuring compliance with privacy regulations (PII, PHI, FERPA, GDPR)
-while maintaining data accuracy and confidentiality.
-- Collaborated with cross-functional teams to ensure consistent and accurate record-keeping of sensitive data,
-while optimizing incident response strategies through advanced data analytics.
-- Utilized Excel for data analysis, data entry, and reporting, ensuring consistent and accurate records for large
+### **Graduate Student Researcher · UVA DART Lab**  
+📅 *April 2025 – Present*  
+- Conduct research in Security Operations Centers (SOCs) and Large Language Models (LLMs) to analyze alert data and improve threat detection strategies.  
+- Collaborate with external teams to gather information, conduct interviews, and refine research processes across projects.  
+- Identify workflow inefficiencies within SOC operations and implement LLM-based solutions to enhance automation and process efficiency.  
 
-**Mathematics & Statistic Learning Assistant @ James Madison University (January 2024 - May 2024)**
+---
 
-- Tutor students in statistics, guiding them in data analysis, statistical modeling, and visualization using tools like
-IBM Statistical Package for the Social Sciences (SPSS).
-- Worked with multiple professors and other tutors to assist students in enhancing their study techniques and
-improving their understanding of statistical and mathematical concepts.
+### **Data Analyst · Actfore**  
+📅 *June 2024 – May 2025*  
+- Analyzed and processed sensitive datasets while maintaining compliance with PII, PHI, FERPA, and GDPR regulations.  
+- Collaborated cross-functionally to ensure data accuracy and optimize incident response strategies through advanced analytics.  
+- Utilized Excel for data reporting and visualization, ensuring reliable record-keeping and streamlined reporting processes.  
+
+---
+
+### **Mathematics & Statistics Learning Assistant · James Madison University**  
+📅 *January 2024 – May 2024*  
+- Tutored students in statistics, guiding them in data analysis, modeling, and visualization using **IBM SPSS Statistics**.  
+- Partnered with professors and peers to improve students’ quantitative reasoning and study techniques.  
 
 
 # 🧰 Skills & Tools
