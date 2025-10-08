@@ -19,7 +19,7 @@
 ## 💼 Work Experience
 
 ### **Graduate Student Researcher · UVA DART Lab**  
-📅 *April 2025 – Present*  
+📅 *March 2025 – Present*  
 - Conduct research in Security Operations Centers (SOCs) and Large Language Models (LLMs) to analyze alert data and improve threat detection strategies.  
 - Collaborate with external teams to gather information, conduct interviews, and refine research processes across projects.  
 - Identify workflow inefficiencies within SOC operations and implement LLM-based solutions to enhance automation and process efficiency.  
