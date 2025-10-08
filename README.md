@@ -107,14 +107,14 @@ The package includes full **object-oriented design**, error handling, and unit t
 
 ```mermaid
 flowchart LR
-    A[Die Class<br><br>• faces<br>• weights<br><br><b>Methods:</b><br>roll()<br>change_weight()<br>get_data()] 
-        -->|creates| 
-    B[Game Class<br><br>• dice[]<br>• results<br><br><b>Methods:</b><br>play()<br>show_results()] 
-        -->|analyzes| 
-    C[Analyzer Class<br><br>• game_results<br><br><b>Methods:</b><br>jackpot()<br>combo_count()<br>face_counts_per_roll()<br>permutation_count()]
+    classDef classbox fill:#f7f7f7,stroke:#444,stroke-width:2px,color:#111;
 
-    classDef classbox fill:#f7f7f7,stroke:#444,stroke-width:2px,color:#111,font-size:14px,font-family:Inter;
-    class A,B,C classbox;
+    A["Die Class\n\nProperties:\n• faces\n• weights\n\nMethods:\n• roll()\n• change_weight()\n• get_data()"]:::classbox
+      -->|creates| 
+    B["Game Class\n\nProperties:\n• dice[]\n• results\n\nMethods:\n• play(rolls)\n• show_results(form)"]:::classbox
+      -->|analyzes| 
+    C["Analyzer Class\n\nProperties:\n• game_results\n\nMethods:\n• jackpot()\n• combo_count()\n• face_counts_per_roll()\n• permutation_count()"]:::classbox
+
 ```
 
 
