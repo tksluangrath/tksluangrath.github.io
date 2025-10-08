@@ -107,11 +107,9 @@ The package includes full **object-oriented design**, error handling, and unit t
 
 ```mermaid
 flowchart LR
-    A["Die Class (faces, weights, roll)"] -->|creates| B["Game Class (dice[], play, show_results)"]
-    B -->|analyzes| C["Analyzer Class (jackpot, combo_count, face_counts)"]
+    classDef nodeStyle fill:#ffffff,stroke:#4b5563,stroke-width:1.5px,color:#111,border-radius:8px,font-size:14px,font-family:Inter,padding:6px;
 
-    classDef classbox fill:#f7f7f7,stroke:#444,stroke-width:2px,color:#111,font-size:13px;
-    class A,B,C classbox;
+    Die[🎲 **Die**<br/>Faces · Weights · Roll]:::nodeStyle -->|🎮 used in| Game[🎯 **Game**<br/>Play · Show Results]:::nodeStyle -->|📊 analyzed by| Analyzer[📈 **Analyzer**<br/>Jackpot · Combo · Counts]:::nodeStyle
 
 
 ```
