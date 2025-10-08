@@ -83,6 +83,41 @@ Built a machine learning model and Streamlit app to detect fraudulent transactio
   <img src="./assets/img/fraud_detection_app.png" alt="Fraud Detection App Screenshot" width="65%">
 </div>
 
+## ⚡ Energy Forecasting with XGBoost
+
+[🔗 View on GitHub](https://github.com/tksluangrath/energy-forecast-xgboost)
+
+Forecasted hourly **electricity demand (MW)** for **American Electric Power (AEP)** using the XGBoost algorithm.  
+Trained on 14 years of hourly data (2004–2018) with time-based feature engineering (hour, day, month).  
+Achieved an **RMSE of 1644.39 MW** on the test set, demonstrating strong predictive accuracy for time-dependent data.
+
+**Skills:** Time Series Forecasting, Feature Engineering, Model Evaluation  
+**Tools:** Python, pandas, scikit-learn, XGBoost, Matplotlib  
+
+## 🎲 Monte Carlo Simulator Package
+
+[🔗 View on GitHub](https://github.com/tksluangrath/montecarlo)
+
+Developed a custom **Python package** implementing a Monte Carlo simulation framework with three modular classes:  
+**Die**, **Game**, and **Analyzer** — enabling users to roll weighted dice, simulate games, and analyze outcomes statistically.  
+The package includes full **object-oriented design**, error handling, and unit tests, and can be installed directly via pip.
+
+**Skills:** Object-Oriented Programming, Package Development, Simulation, Unit Testing  
+**Tools:** Python, NumPy, pandas, Pytest, setuptools  
+
+```mermaid
+flowchart LR
+    A[Die Class<br><br>• faces<br>• weights<br><br><b>Methods:</b><br>roll()<br>change_weight()<br>get_data()] 
+        -->|creates| 
+    B[Game Class<br><br>• dice[]<br>• results<br><br><b>Methods:</b><br>play()<br>show_results()] 
+        -->|analyzes| 
+    C[Analyzer Class<br><br>• game_results<br><br><b>Methods:</b><br>jackpot()<br>combo_count()<br>face_counts_per_roll()<br>permutation_count()]
+
+    classDef classbox fill:#f7f7f7,stroke:#444,stroke-width:2px,color:#111,font-size:14px,font-family:Inter;
+    class A,B,C classbox;
+```
+
+
 ## 📬 Contact
 
 - **Email:** [tksluangrath@gmail.com](mailto:tksluangrath@gmail.com)  
