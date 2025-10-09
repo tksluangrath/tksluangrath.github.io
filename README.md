@@ -106,7 +106,7 @@ The package includes full **object-oriented design**, error handling, and unit t
 **Tools:** Python, NumPy, pandas, Pytest, setuptools  
 
 <div align="center">
-  <img src="./assets/img/mermaid.png" alt="Monte Carlo Flowchart" width="65%">
+  <img src="./assets/img/mermaid.png" alt="Monte Carlo Flowchart" width="80%">
 </div>
 
 
