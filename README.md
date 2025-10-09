@@ -107,7 +107,7 @@ The **penalized logistic regression** model achieved the best performance, corre
 
 
 <div align="center">
-  <img src="./assets/img/blue_tarp_confusion.png" alt="Confusion Matrices for Six Classification Models" width="65%">
+  <img src="./assets/img/blue_tarps_confusion.png" alt="Confusion Matrices for Six Classification Models" width="65%">
   <br>
   <em>Confusion matrices comparing model performance — Penalized Logistic Regression achieved the highest recall for blue tarp detection.</em>
 </div>
