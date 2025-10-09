@@ -108,11 +108,8 @@ The package includes full **object-oriented design**, error handling, and unit t
 ```mermaid
 flowchart LR
     classDef nodeStyle fill:#ffffff,stroke:#4b5563,stroke-width:1.5px,color:#111,border-radius:8px,font-size:14px,font-family:Inter,padding:6px;
-
     Die["**Die**<br/>Faces | Weights | Roll"]:::nodeStyle -->|used in| Game["**Game**<br/>Play | Show Results"]:::nodeStyle -->|analyzed by| Analyzer["**Analyzer**<br/>Jackpot | Combo | Counts"]:::nodeStyle
-
 ```
-
 
 ## 📬 Contact
 
@@ -124,4 +121,11 @@ flowchart LR
 ---
 
 💡 *Feel free to reach out for collaboration, research discussions, or data science opportunities.*
+
+
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ startOnLoad: true });
+</script>
+
 
