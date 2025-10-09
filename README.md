@@ -105,6 +105,14 @@ The **penalized logistic regression** model achieved the best performance, corre
 **Skills:** Data Preprocessing, Imbalanced Classification, Model Tuning, Threshold Optimization, ROC/AUC Analysis, Disaster Relief Analytics  
 **Tools:** R, tidyverse, tidymodel, caret, themis (SMOTE), ggplot2
 
+
+<div align="center">
+  <img src="./assets/img/blue_tarp_confusion.png" alt="Confusion Matrices for Six Classification Models" width="65%">
+  <br>
+  <em>Confusion matrices comparing model performance — Penalized Logistic Regression achieved the highest recall for blue tarp detection.</em>
+</div>
+
+
 ## 🎲 Monte Carlo Simulator Package
 
 [🔗 View on GitHub](https://github.com/tksluangrath/montecarlo)
