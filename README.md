@@ -94,6 +94,17 @@ Achieved an **RMSE of 1644.39 MW** on the test set, demonstrating strong predict
 **Skills:** Time Series Forecasting, Feature Engineering, Model Evaluation  
 **Tools:** Python, pandas, scikit-learn, XGBoost, Matplotlib  
 
+## 🧩 Haiti Disaster Relief: Identifying Blue Tarps from Aerial Imagery
+
+[⬇️ Download Project Report (PDF)](./assets/docs/Haiti_Earthquake_Relief.pdf)
+
+Developed machine learning models in **R** to identify **blue tarps** used by displaced residents after the Haiti earthquake from aerial imagery.  
+Classified pixel level RGB data into *Blue Tarp* vs *Other* terrain to support disaster relief resource allocation. Addressed severe **class imbalance (≈3%)** and compared multiple classification algorithms, including LDA, QDA, KNN, Penalized Logistic Regression, Random Forest, and Support Vector Machine.  
+The **penalized logistic regression** model achieved the best performance, correctly identifying 99% of blue tarp instances with minimal false positives, demonstrating high recall and robust generalization.
+
+**Skills:** Data Preprocessing, Imbalanced Classification, Model Tuning, Threshold Optimization, ROC/AUC Analysis, Disaster Relief Analytics  
+**Tools:** R, tidyverse, tidymodel, caret, themis (SMOTE), ggplot2
+
 ## 🎲 Monte Carlo Simulator Package
 
 [🔗 View on GitHub](https://github.com/tksluangrath/montecarlo)
@@ -115,7 +126,7 @@ The package includes full **object-oriented design**, error handling, and unit t
 - **Email:** [tksluangrath@gmail.com](mailto:tksluangrath@gmail.com)  
 - **LinkedIn:** [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/terranceluangrath/)  
 - **GitHub:** [![GitHub](https://img.shields.io/badge/GitHub-181717.svg?logo=github&logoColor=white)](https://github.com/tksluangrath)  
-- **Resume:** [![Resume](https://img.shields.io/badge/Resume-Download-success.svg)](./assets/Resume.pdf)
+- **Resume:** [![Resume](https://img.shields.io/badge/Resume-Download-success.svg)](./assets/docs/Resume.pdf)
 
 ---
 
