@@ -123,9 +123,5 @@ flowchart LR
 💡 *Feel free to reach out for collaboration, research discussions, or data science opportunities.*
 
 
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
 
 
