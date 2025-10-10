@@ -81,6 +81,8 @@ Built a machine learning model and Streamlit app to detect fraudulent transactio
 
 <div align="center">
   <img src="./assets/img/fraud_detection_app.png" alt="Fraud Detection App Screenshot" width="65%">
+  <br>
+  <em>Interface of the Fraud Detection App built with Streamlit, which ingests transaction data and predicts fraudulent activity using a trained machine learning model.</em>
 </div>
 
 ## ⚡ Energy Forecasting with XGBoost
@@ -126,6 +128,9 @@ The package includes full **object-oriented design**, error handling, and unit t
 
 <div align="center">
   <img src="./assets/img/mermaid.png" alt="Monte Carlo Flowchart" width="80%">
+  <br>
+  <em>Framework of the Monte Carlo Simulator package showing the data flow between the Die, Game, and Analyzer classes.</em>
+
 </div>
 
 
