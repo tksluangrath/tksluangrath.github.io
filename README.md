@@ -1,14 +1,12 @@
-# Hi there, I'm Terrance 👋
-
 ## 💫 About Me
 
-🌟 Data Scientist specializing in machine learning, AI-driven automation, and statistical modeling with a proven track record of delivering high-impact solutions across cybersecurity, fraud detection, and humanitarian analytics.
+- Data Scientist specializing in machine learning, AI-driven automation, and statistical modeling with a proven track record of delivering high-impact solutions across cybersecurity, fraud detection, and humanitarian analytics.
 
-🎓 Currently pursuing an **M.S. in Data Science at the University of Virginia** (4.0 GPA, Class of 2026). Holds a **B.S. in Mathematics** with a minor in Data Analytics from James Madison University (2024).
+- Currently pursuing an **M.S. in Data Science at the University of Virginia** (4.0 GPA, Class of 2026). Holds a **B.S. in Mathematics** with a minor in Data Analytics from James Madison University (2024).
 
-💡 Passionate about leveraging data science to solve complex real-world problems, from detecting fraudulent transactions in millions of records to mapping disaster relief needs from aerial imagery.
+- Passionate about leveraging data science to solve complex real-world problems, from detecting fraudulent transactions in millions of records to mapping disaster relief needs from aerial imagery.
 
-⚡ Outside of data science, I'm a breakdancer who thrives on the intersection of creativity and precision, the same mindset I bring to finding patterns in complex datasets.
+- Outside of data science, I'm a breakdancer who thrives on the intersection of creativity and precision, the same mindset I bring to finding patterns in complex datasets.
 
 ---
 
@@ -43,7 +41,7 @@
 
 ## 🚀 Featured Projects
 
-### 🐼 **Pandas vs Polars: Performance Benchmarking on NYC Taxi Data**
+### **Pandas vs Polars: Performance Benchmarking on NYC Taxi Data**
 [🔗 View on GitHub](https://github.com/tksluangrath/pandas-vs-polars) | *Python | December 2025*
 
 Conducted comprehensive performance analysis comparing Pandas and Polars DataFrame libraries using **50,000 NYC Yellow Taxi trip records** to evaluate real-world data processing capabilities.
@@ -59,7 +57,7 @@ Conducted comprehensive performance analysis comparing Pandas and Polars DataFra
 
 ---
 
-### 💳 **Fraud Detection Machine Learning System**
+### **Fraud Detection Machine Learning System**
 [🔗 View on GitHub](https://github.com/tksluangrath/fraud-detection-app/tree/main) | *Python | August – September 2025*
 
 Engineered an end-to-end machine learning pipeline analyzing **6.3M+ financial transactions** to detect fraudulent activity in real-time.
@@ -80,7 +78,7 @@ Engineered an end-to-end machine learning pipeline analyzing **6.3M+ financial t
 
 ---
 
-### ⚡ **Energy Demand Forecasting with XGBoost**
+### **Energy Demand Forecasting with XGBoost**
 [🔗 View on GitHub](https://github.com/tksluangrath/energy-forecast-xgboost) | *Python*
 
 Developed time series forecasting model predicting hourly electricity demand for **American Electric Power (AEP)** using gradient boosting.
@@ -94,7 +92,7 @@ Developed time series forecasting model predicting hourly electricity demand for
 
 ---
 
-### 🧩 **Haiti Disaster Relief: Humanitarian Analytics from Aerial Imagery**
+### **Haiti Disaster Relief: Humanitarian Analytics from Aerial Imagery**
 [⬇️ Download Report (PDF)](./assets/docs/Haiti_Earthquake_Relief.pdf) | *R | May – August 2025*
 
 Developed machine learning models to identify temporary shelters (blue tarps) from aerial imagery supporting post-earthquake disaster relief efforts.
@@ -115,7 +113,7 @@ Developed machine learning models to identify temporary shelters (blue tarps) fr
 
 ---
 
-### 🎲 **Monte Carlo Simulation Framework (Python Package)**
+### **Monte Carlo Simulation Framework (Python Package)**
 [🔗 View on GitHub](https://github.com/tksluangrath/montecarlo) | *Python*
 
 Built production-ready Python package implementing Monte Carlo simulation framework with modular, object-oriented design.
