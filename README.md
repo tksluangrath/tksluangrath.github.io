@@ -1,109 +1,114 @@
-## 💫 About Me
+## About Me
 
-- Data Scientist specializing in machine learning, AI-driven automation, and statistical modeling with a proven track record of delivering high-impact solutions across cybersecurity, fraud detection, and humanitarian analytics.
+I'm a data scientist focused on machine learning, AI automation, and statistical modeling. My work spans cybersecurity, fraud detection, and humanitarian analytics - basically anywhere data can help solve real problems.
 
-- Currently pursuing an **M.S. in Data Science at the University of Virginia** (4.0 GPA, Class of 2026). Holds a **B.S. in Mathematics** with a minor in Data Analytics from James Madison University (2024).
+Currently getting my M.S. in Data Science at the University of Virginia (4.0 GPA, graduating 2026). I did my undergrad in Applied Mathematics at James Madison University with a minor in Data Analytics.
 
-- Passionate about leveraging data science to solve complex real-world problems, from detecting fraudulent transactions in millions of records to mapping disaster relief needs from aerial imagery.
-
-- Outside of data science, I'm a breakdancer who thrives on the intersection of creativity and precision, the same mindset I bring to finding patterns in complex datasets.
+When I'm not working with data, you'll find me breakdancing. There's something about the mix of creativity and precision that carries over into how I approach finding patterns in datasets.
 
 ---
 
-## 🎓 Education
+## Education
 
 **University of Virginia** | M.S. Data Science | *Expected August 2026*  
-- **GPA:** 4.0/4.0
-- **Relevant Coursework:** Bayesian Machine Learning, Statistical Learning, Linear Models for Data Science, Programming for Data Science, Computation for Data Science, Practice and Application for Data Science
+- GPA: 4.0/4.0
+- Relevant courses: Bayesian Machine Learning, Statistical Learning, Linear Models, Programming & Computation for Data Science, Practice and Application
 
 **James Madison University** | B.S. Applied Mathematics | Minor: Data Analytics | *May 2024*  
-- **Relevant Coursework:** Mathematical Modeling & Optimization, Data Analysis & Visualization, SAS Programming & Data Management
+- Relevant courses: Mathematical Modeling & Optimization, Data Analysis & Visualization, SAS Programming & Data Management
 
 ---
 
-## 💼 Professional Experience
+## Experience
 
-### **Graduate Student Researcher** | UVA DART Lab  
+### Graduate Student Researcher | UVA DART Lab  
 *March 2025 to Present | Charlottesville, VA*
 
-- Pioneered research applying **large language models (LLMs)** to Security Operations Centers, developing automated alert analysis systems that uncover complex threat patterns and enhance detection capabilities
-- Collaborated with cross-functional research teams to design and execute human-centric surveys, refining methodologies that improved study consistency and reliability across multiple research initiatives
-- Identified critical workflow bottlenecks in SOC operations and implemented **LLM-based automation solutions** that reduced manual effort and increased operational efficiency for security analysts
+Working on applying large language models to Security Operations Centers. I'm developing automated alert analysis systems that help uncover threat patterns and improve detection capabilities.
 
-### **Junior Data Analyst** | ACTFORE  
+Also collaborating with research teams on human-centric surveys, refining methodologies to improve consistency across different studies. A big part of the work involves identifying bottlenecks in SOC workflows and implementing LLM-based solutions that reduce manual effort for security analysts.
+
+### Junior Data Analyst | ACTFORE  
 *June 2024 to May 2025 | Reston, VA*
 
-- Analyzed and processed **1+ TB of sensitive data daily** while maintaining 99%+ accuracy rates and ensuring full compliance with PII, PHI, FERPA, and GDPR regulations
-- Collaborated cross-functionally with product, engineering, and compliance teams to validate data accuracy and deliver actionable insights that accelerated business decision-making
-- Demonstrated exceptional time management by successfully orchestrating multiple concurrent data processing workflows without compromising quality or compliance standards
+Analyzed and processed over 1TB of sensitive data daily while maintaining 99%+ accuracy and full compliance with PII, PHI, FERPA, and GDPR regulations.
+
+Worked across product, engineering, and compliance teams to validate data accuracy and deliver insights that accelerated business decisions. Managed multiple concurrent data processing workflows without compromising quality or compliance standards.
 
 ---
 
-## 🚀 Featured Projects
+## Projects
 
-### **Pandas vs Polars: Performance Benchmarking on NYC Taxi Data**
-[🔗 View on GitHub](https://github.com/tksluangrath/pandas-vs-polars) | *Python | December 2025*
+### Pandas vs Polars: Performance Benchmarking on NYC Taxi Data
+[View on GitHub](https://github.com/tksluangrath/pandas-vs-polars) | *Python | December 2025*
 
-Conducted comprehensive performance analysis comparing Pandas and Polars DataFrame libraries using **50,000 NYC Yellow Taxi trip records** to evaluate real-world data processing capabilities.
+Compared Pandas and Polars DataFrame libraries using 50,000 NYC Yellow Taxi trip records to see how they actually perform on real-world data processing tasks.
 
-**Key Achievements:**
-- Benchmarked CSV loading, data cleaning, quality checks, feature engineering, and aggregations across both libraries over **100 runs** for statistical reliability
-- Discovered **15× faster CSV loading** with Polars due to Rust-based multithreaded parsing (0.0032s vs 0.0463s)
-- Validated **identical analytical outputs** across both libraries, ensuring correctness and reproducibility
-- Measured **10% memory reduction** with Polars (8.34 MB vs 9.25 MB) leveraging Arrow-native columnar storage
-- Created data-driven recommendations for library selection based on dataset size, performance needs, and use case requirements
+**What I found:**
+- Polars loads CSVs 15× faster due to Rust-based multithreaded parsing (0.0032s vs 0.0463s)
+- Both libraries produced identical analytical outputs, confirming correctness
+- Polars uses 10% less memory (8.34 MB vs 9.25 MB) thanks to Arrow-native columnar storage
+- Performance differences narrow for smaller operations, but would compound significantly with larger datasets
 
-**Technical Stack:** Python, pandas, Polars, Matplotlib, NYC Open Data API, sodapy
+Ran each operation 100 times to ensure statistical reliability. The results helped me understand when to use each library based on dataset size and performance needs.
+
+**Tools:** Python, pandas, Polars, Matplotlib, NYC Open Data API, sodapy
 
 ---
 
-### **Fraud Detection Machine Learning System**
-[🔗 View on GitHub](https://github.com/tksluangrath/fraud-detection-app/tree/main) | *Python | August – September 2025*
+### Fraud Detection Machine Learning System
+[View on GitHub](https://github.com/tksluangrath/fraud-detection-app/tree/main) | *Python | August – September 2025*
 
-Engineered an end-to-end machine learning pipeline analyzing **6.3M+ financial transactions** to detect fraudulent activity in real-time.
+Built an end-to-end ML pipeline analyzing 6.3M+ financial transactions to detect fraudulent activity in real-time.
 
-**Key Achievements:**
-- Achieved **95% recall on fraud detection** while maintaining 95% overall accuracy despite severe class imbalance (0.13% fraud rate)
-- Implemented advanced class weighting techniques with logistic regression to address imbalanced dataset challenges
-- Deployed interactive **Streamlit web application** enabling real-time fraud predictions on new transaction data
-- Conducted comprehensive exploratory data analysis (EDA) to identify fraud patterns and feature relationships
+**Key results:**
+- Achieved 95% recall on fraud detection while maintaining 95% overall accuracy despite severe class imbalance (only 0.13% fraud rate)
+- Implemented advanced class weighting techniques with logistic regression to handle the imbalanced dataset
+- Deployed an interactive Streamlit web app for real-time fraud predictions on new transactions
+- Did comprehensive EDA to identify fraud patterns and feature relationships
 
-**Technical Stack:** Python, pandas, NumPy, scikit-learn, XGBoost, Matplotlib, Seaborn, Streamlit, joblib
+The biggest challenge was the class imbalance - fraud is rare, which makes it tricky to detect without flagging too many legitimate transactions.
+
+**Tools:** Python, pandas, NumPy, scikit-learn, XGBoost, Matplotlib, Seaborn, Streamlit, joblib
 
 <div align="center">
   <img src="./assets/img/fraud_detection_app.png" alt="Fraud Detection App Screenshot" width="65%">
   <br>
-  <em>Real-time fraud detection interface built with Streamlit for instant transaction analysis</em>
+  <em>Real-time fraud detection interface for instant transaction analysis</em>
 </div>
 
 ---
 
-### **Energy Demand Forecasting with XGBoost**
-[🔗 View on GitHub](https://github.com/tksluangrath/energy-forecast-xgboost) | *Python*
+### Energy Demand Forecasting with XGBoost
+[View on GitHub](https://github.com/tksluangrath/energy-forecast-xgboost) | *Python*
 
-Developed time series forecasting model predicting hourly electricity demand for **American Electric Power (AEP)** using gradient boosting.
+Developed a time series forecasting model predicting hourly electricity demand for American Electric Power using gradient boosting.
 
-**Key Achievements:**
-- Trained on **14 years of hourly data** (2004–2018) comprising 121,000+ observations
-- Achieved **RMSE of 1644.39 MW** through sophisticated time-based feature engineering
-- Engineered temporal features (hour, day, month, lag variables) capturing seasonal patterns and demand cycles
+**What I did:**
+- Trained on 14 years of hourly data (2004–2018) - about 121,000 observations
+- Achieved RMSE of 1644.39 MW through time-based feature engineering
+- Created temporal features (hour, day, month, lag variables) to capture seasonal patterns and demand cycles
 
-**Technical Stack:** Python, pandas, scikit-learn, XGBoost, Matplotlib
+The model struggled with extreme weather events, which taught me a lot about XGBoost's limitations for time series without external features like weather data.
+
+**Tools:** Python, pandas, scikit-learn, XGBoost, Matplotlib
 
 ---
 
-### **Haiti Disaster Relief: Humanitarian Analytics from Aerial Imagery**
-[⬇️ Download Report (PDF)](./assets/docs/Haiti_Earthquake_Relief.pdf) | *R | May – August 2025*
+### Haiti Disaster Relief: Humanitarian Analytics from Aerial Imagery
+[Download Report (PDF)](./assets/docs/Haiti_Earthquake_Relief.pdf) | *R | May – August 2025*
 
-Developed machine learning models to identify temporary shelters (blue tarps) from aerial imagery supporting post-earthquake disaster relief efforts.
+Developed machine learning models to identify temporary shelters (blue tarps) from aerial imagery to support post-earthquake disaster relief efforts.
 
-**Key Achievements:**
-- Processed and classified **pixel-level RGB data** to map displaced populations for resource allocation
-- Addressed severe **class imbalance (≈3% minority class)** using SMOTE and threshold optimization techniques
+**Key results:**
+- Processed pixel-level RGB data to map displaced populations for resource allocation
+- Addressed severe class imbalance (≈3% minority class) using SMOTE and threshold optimization
 - Compared six classification algorithms (LDA, QDA, KNN, Penalized Logistic Regression, Random Forest, SVM)
-- Achieved **99% recall** on blue tarp detection with penalized logistic regression, enabling accurate identification with minimal false positives
+- Achieved 99% recall on blue tarp detection with penalized logistic regression
 
-**Technical Stack:** R, tidyverse, tidymodels, caret, themis (SMOTE), ggplot2
+The high recall was critical - missing shelters means missing people who need help. Better to have a few false positives than miss anyone.
+
+**Tools:** R, tidyverse, tidymodels, caret, themis (SMOTE), ggplot2
 
 <div align="center">
   <img src="./assets/img/blue_tarps_confusion.png" alt="Model Performance Comparison" width="65%">
@@ -113,17 +118,19 @@ Developed machine learning models to identify temporary shelters (blue tarps) fr
 
 ---
 
-### **Monte Carlo Simulation Framework (Python Package)**
-[🔗 View on GitHub](https://github.com/tksluangrath/montecarlo) | *Python*
+### Monte Carlo Simulation Framework (Python Package)
+[View on GitHub](https://github.com/tksluangrath/montecarlo) | *Python*
 
-Built production-ready Python package implementing Monte Carlo simulation framework with modular, object-oriented design.
+Built a production-ready Python package implementing a Monte Carlo simulation framework with modular, object-oriented design.
 
-**Key Features:**
-- Developed three core classes (**Die**, **Game**, **Analyzer**) enabling weighted dice simulation and statistical outcome analysis
+**Features:**
+- Developed three core classes (Die, Game, Analyzer) for weighted dice simulation and statistical outcome analysis
 - Implemented comprehensive error handling, input validation, and unit testing with pytest
-- Published as **pip-installable package** with full documentation and setuptools integration
+- Published as a pip-installable package with full documentation and setuptools integration
 
-**Technical Stack:** Python, NumPy, pandas, pytest, setuptools
+This was mostly a software engineering exercise in building clean, testable, distributable code.
+
+**Tools:** Python, NumPy, pandas, pytest, setuptools
 
 <div align="center">
   <img src="./assets/img/mermaid.png" alt="Package Architecture" width="80%">
@@ -133,26 +140,21 @@ Built production-ready Python package implementing Monte Carlo simulation framew
 
 ---
 
-## 🧰 Technical Skills
+## Technical Skills
 
-### **Programming Languages**
-Python (Pandas, NumPy, SciPy, scikit-learn, Matplotlib, Seaborn) | R (tidyverse, caret, ggplot2, tidymodels) | SQL (joins, aggregations, subqueries, window functions, query optimization) | SAS | Java
+**Programming:** Python (Pandas, NumPy, SciPy, scikit-learn, Matplotlib, Seaborn), R (tidyverse, caret, ggplot2, tidymodels), SQL (joins, aggregations, subqueries, window functions), SAS, Java
 
-### **Machine Learning & AI**
-Supervised Learning (Logistic Regression, Decision Trees, Random Forests, SVM, KNN) | Deep Learning | Bayesian Machine Learning | Large Language Models (LLMs) | Statistical Modeling | Feature Engineering | Model Evaluation & Optimization | Hyperparameter Tuning
+**Machine Learning:** Supervised learning (logistic regression, decision trees, random forests, SVM, KNN), deep learning, Bayesian ML, LLMs, statistical modeling, feature engineering, hyperparameter tuning
 
-### **Data Science Techniques**
-Big Data Analysis (1TB+ datasets) | Data Wrangling & Preprocessing | Exploratory Data Analysis (EDA) | Statistical Inference & Hypothesis Testing | A/B Testing | Time Series Forecasting | Imbalanced Classification | Data Visualization & Storytelling
+**Data Science:** Big data analysis (1TB+ datasets), data wrangling, EDA, statistical inference, hypothesis testing, A/B testing, time series forecasting, imbalanced classification, data visualization
 
-### **Tools & Platforms**
-Git/GitHub | Jupyter Notebooks | Streamlit | Excel (Advanced) | IBM SPSS Statistics | Azure (Fundamentals Certified 2022)
+**Tools:** Git/GitHub, Jupyter, Streamlit, Excel (advanced), SPSS, Azure (certified 2022)
 
-### **Domain Expertise**
-Cybersecurity Analytics | Fraud Detection | Regulatory Compliance (PII, PHI, FERPA, GDPR) | Humanitarian Analytics | Energy Forecasting
+**Domains:** Cybersecurity analytics, fraud detection, regulatory compliance (PII, PHI, FERPA, GDPR), humanitarian analytics, energy forecasting
 
 ---
 
-## 📬 Let's Connect
+## Let's Connect
 
 **📧 Email:** [tksluangrath@gmail.com](mailto:tksluangrath@gmail.com)  
 **💼 LinkedIn:** [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/terranceluangrath/)  
@@ -161,4 +163,4 @@ Cybersecurity Analytics | Fraud Detection | Regulatory Compliance (PII, PHI, FER
 
 ---
 
-💡 *Open to data science opportunities, research collaborations, and innovative projects. Let's connect!*
+*Open to data science opportunities, research collaborations, and interesting projects. Feel free to reach out.*
