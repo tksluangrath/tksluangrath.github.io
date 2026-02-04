@@ -82,7 +82,7 @@ The biggest challenge was the class imbalance - fraud is rare, which makes it tr
 ---
 
 ### Energy Demand Forecasting with XGBoost
-[View on GitHub](https://github.com/tksluangrath/energy-forecast-xgboost) | *Python*
+[View on GitHub](https://github.com/tksluangrath/energy-forecast-xgboost) | *Python | May 2025*
 
 Developed a time series forecasting model predicting hourly electricity demand for American Electric Power using gradient boosting.
 
