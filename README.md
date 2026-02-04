@@ -31,9 +31,11 @@ Also collaborating with research teams on human-centric surveys, refining method
 ### Junior Data Analyst | ACTFORE  
 *June 2024 to May 2025 | Reston, VA*
 
-Analyzed and processed over 1TB of sensitive data daily while maintaining 99%+ accuracy and full compliance with PII, PHI, FERPA, and GDPR regulations.
+Worked on AI-led data mining for cyber incident response, helping organizations quickly identify and extract sensitive information from massive datasets during security breaches.
 
-Worked across product, engineering, and compliance teams to validate data accuracy and deliver insights that accelerated business decisions. Managed multiple concurrent data processing workflows without compromising quality or compliance standards.
+Processed over 1TB of data daily using automated extraction and targeted review systems, maintaining 99%+ accuracy rates confirmed by external audits. The work involved mining for PII, PHI, FERPA, and GDPR data across 120+ data elements to support post-breach compliance and notification requirements.
+
+Collaborated with incident response teams to customize data mining workflows for each engagement, ensuring accurate and timely delivery of notification lists. Managed multiple concurrent data extraction projects while maintaining strict quality control and regulatory compliance standards.
 
 ---
 
