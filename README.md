@@ -41,18 +41,49 @@ Collaborated with incident response teams to customize data mining workflows for
 
 ## Projects
 
+### Course Recommendation System with AI Learning Path Planner
+[View on GitHub](https://github.com/tksluangrath/course-recommendation-agent) | *Python | January – February 2026*
+
+Built a course recommendation system that combines traditional ML with conversational AI to create personalized learning paths. It acts like a learning advisor - you tell it your goals and it builds a structured roadmap.
+
+**What it does:**
+- Hybrid recommendation engine (60% content-based, 40% collaborative filtering) with sentence transformers and ChromaDB
+- LangChain agent with Llama 3.1 that chats naturally and picks the right tools
+- Prerequisite chains across 3,682 relationships with topological sorting for proper course ordering
+- Timeline estimation with week-by-week schedules based on available study time
+- User profiles that persist across sessions
+- Web interface (Streamlit) and CLI chat, deployed via Docker Compose
+
+**Results:**
+- Processed 2,759 Coursera courses with 1,754 unique skills
+- Built 9 agent tools (search, recommend, skill gap analysis, prerequisites, timeline estimation)
+- 10-message conversation memory
+- One-command Docker deployment
+
+The challenge was integrating vector search, graph algorithms for prerequisites, and LLM tool-calling into something that feels helpful rather than just algorithmic.
+
+**Tools:** Python, LangChain, Ollama (Llama 3.1), ChromaDB, sentence-transformers, SQLite, NetworkX, Streamlit, Docker
+
+<div align="center">
+  <img src="./assets/img/course_recommendation_screen.png" alt="Course Recommendation System Interface" width="65%">
+  <br>
+  <em>Conversational interface for personalized learning path planning</em>
+</div>
+
+---
+
 ### Pandas vs Polars: Performance Benchmarking on NYC Taxi Data
 [View on GitHub](https://github.com/tksluangrath/pandas-vs-polars) | *Python | December 2025*
 
-Compared Pandas and Polars DataFrame libraries using 50,000 NYC Yellow Taxi trip records to see how they actually perform on real-world data processing tasks.
+Compared Pandas and Polars DataFrame libraries using 50,000 NYC Yellow Taxi trip records to see how they perform on typical data processing tasks.
 
 **What I found:**
-- Polars loads CSVs 15× faster due to Rust-based multithreaded parsing (0.0032s vs 0.0463s)
-- Both libraries produced identical analytical outputs, confirming correctness
-- Polars uses 10% less memory (8.34 MB vs 9.25 MB) thanks to Arrow-native columnar storage
-- Performance differences narrow for smaller operations, but would compound significantly with larger datasets
+- Polars loads CSVs 15× faster with Rust-based multithreaded parsing (0.0032s vs 0.0463s)
+- Both libraries produced identical analytical outputs
+- Polars uses 10% less memory (8.34 MB vs 9.25 MB) with Arrow-native columnar storage
+- Performance differences narrow for smaller operations but compound with larger datasets
 
-Ran each operation 100 times to ensure statistical reliability. The results helped me understand when to use each library based on dataset size and performance needs.
+Ran each operation 100 times for statistical reliability.
 
 **Tools:** Python, pandas, Polars, Matplotlib, NYC Open Data API, sodapy
 
@@ -61,22 +92,45 @@ Ran each operation 100 times to ensure statistical reliability. The results help
 ### Fraud Detection Machine Learning System
 [View on GitHub](https://github.com/tksluangrath/fraud-detection-app/tree/main) | *Python | August – September 2025*
 
-Built an end-to-end ML pipeline analyzing 6.3M+ financial transactions to detect fraudulent activity in real-time.
+Built an ML pipeline analyzing 6.3M+ financial transactions to detect fraud.
 
-**Key results:**
-- Achieved 95% recall on fraud detection while maintaining 95% overall accuracy despite severe class imbalance (only 0.13% fraud rate)
-- Implemented advanced class weighting techniques with logistic regression to handle the imbalanced dataset
-- Deployed an interactive Streamlit web app for real-time fraud predictions on new transactions
-- Did comprehensive EDA to identify fraud patterns and feature relationships
+**Results:**
+- 95% recall on fraud detection, 95% overall accuracy despite 0.13% fraud rate
+- Class weighting with logistic regression to handle imbalanced data
+- Streamlit web app for real-time predictions
+- Comprehensive EDA to identify fraud patterns
 
-The biggest challenge was the class imbalance - fraud is rare, which makes it tricky to detect without flagging too many legitimate transactions.
+The challenge was the class imbalance - fraud is rare, making it hard to detect without too many false positives.
 
 **Tools:** Python, pandas, NumPy, scikit-learn, XGBoost, Matplotlib, Seaborn, Streamlit, joblib
 
 <div align="center">
   <img src="./assets/img/fraud_detection_app.png" alt="Fraud Detection App Screenshot" width="65%">
   <br>
-  <em>Real-time fraud detection interface for instant transaction analysis</em>
+  <em>Real-time fraud detection interface</em>
+</div>
+
+---
+
+### Haiti Disaster Relief: Humanitarian Analytics from Aerial Imagery
+[Download Report (PDF)](./assets/docs/Haiti_Earthquake_Relief.pdf) | *R | May – August 2025*
+
+Built ML models to identify temporary shelters (blue tarps) from aerial imagery for post-earthquake disaster relief.
+
+**Results:**
+- Processed pixel-level RGB data to map displaced populations
+- Handled severe class imbalance (≈3% minority class) with SMOTE and threshold optimization
+- Compared six classification algorithms (LDA, QDA, KNN, Penalized Logistic Regression, Random Forest, SVM)
+- 99% recall on blue tarp detection with penalized logistic regression
+
+High recall was critical - missing shelters means missing people who need help.
+
+**Tools:** R, tidyverse, tidymodels, caret, themis (SMOTE), ggplot2
+
+<div align="center">
+  <img src="./assets/img/blue_tarps_confusion.png" alt="Model Performance Comparison" width="65%">
+  <br>
+  <em>Comparison of six classification models for shelter detection</em>
 </div>
 
 ---
@@ -84,75 +138,69 @@ The biggest challenge was the class imbalance - fraud is rare, which makes it tr
 ### Energy Demand Forecasting with XGBoost
 [View on GitHub](https://github.com/tksluangrath/energy-forecast-xgboost) | *Python | May 2025*
 
-Developed a time series forecasting model predicting hourly electricity demand for American Electric Power using gradient boosting.
+Built a time series forecasting model predicting hourly electricity demand for American Electric Power.
 
 **What I did:**
 - Trained on 14 years of hourly data (2004–2018) - about 121,000 observations
-- Achieved RMSE of 1644.39 MW through time-based feature engineering
-- Created temporal features (hour, day, month, lag variables) to capture seasonal patterns and demand cycles
+- RMSE of 1644.39 MW through time-based feature engineering
+- Created temporal features (hour, day, month, lag variables) for seasonal patterns and demand cycles
 
-The model struggled with extreme weather events, which taught me a lot about XGBoost's limitations for time series without external features like weather data.
+The model struggled with extreme weather events, showing XGBoost's limitations for time series without external features like weather data.
 
 **Tools:** Python, pandas, scikit-learn, XGBoost, Matplotlib
 
 ---
 
-### Haiti Disaster Relief: Humanitarian Analytics from Aerial Imagery
-[Download Report (PDF)](./assets/docs/Haiti_Earthquake_Relief.pdf) | *R | May – August 2025*
-
-Developed machine learning models to identify temporary shelters (blue tarps) from aerial imagery to support post-earthquake disaster relief efforts.
-
-**Key results:**
-- Processed pixel-level RGB data to map displaced populations for resource allocation
-- Addressed severe class imbalance (≈3% minority class) using SMOTE and threshold optimization
-- Compared six classification algorithms (LDA, QDA, KNN, Penalized Logistic Regression, Random Forest, SVM)
-- Achieved 99% recall on blue tarp detection with penalized logistic regression
-
-The high recall was critical - missing shelters means missing people who need help. Better to have a few false positives than miss anyone.
-
-**Tools:** R, tidyverse, tidymodels, caret, themis (SMOTE), ggplot2
-
-<div align="center">
-  <img src="./assets/img/blue_tarps_confusion.png" alt="Model Performance Comparison" width="65%">
-  <br>
-  <em>Comparative analysis of six classification models for disaster relief shelter detection</em>
-</div>
-
----
-
 ### Monte Carlo Simulation Framework (Python Package)
-[View on GitHub](https://github.com/tksluangrath/montecarlo) | *Python*
+[View on GitHub](https://github.com/tksluangrath/montecarlo) | *Python | December 2024*
 
-Built a production-ready Python package implementing a Monte Carlo simulation framework with modular, object-oriented design.
+Built a Python package implementing Monte Carlo simulation with object-oriented design.
 
-**Features:**
-- Developed three core classes (Die, Game, Analyzer) for weighted dice simulation and statistical outcome analysis
-- Implemented comprehensive error handling, input validation, and unit testing with pytest
-- Published as a pip-installable package with full documentation and setuptools integration
+**What it includes:**
+- Three core classes (Die, Game, Analyzer) for weighted dice simulation and statistical analysis
+- Error handling, input validation, and unit testing with pytest
+- Pip-installable package with full documentation and setuptools integration
 
-This was mostly a software engineering exercise in building clean, testable, distributable code.
+Mostly a software engineering exercise in building clean, testable, distributable code.
 
 **Tools:** Python, NumPy, pandas, pytest, setuptools
 
 <div align="center">
   <img src="./assets/img/mermaid.png" alt="Package Architecture" width="80%">
   <br>
-  <em>Object-oriented architecture showing data flow between simulation components</em>
+  <em>Object-oriented architecture showing data flow between components</em>
 </div>
 
 ---
 
 ## Technical Skills
 
-**Programming:** Python (Pandas, NumPy, SciPy, scikit-learn, Matplotlib, Seaborn), R (tidyverse, caret, ggplot2, tidymodels), SQL (joins, aggregations, subqueries, window functions), SAS, Java
+**Programming & Data Analysis**
+- Python: pandas, NumPy, SciPy, scikit-learn, PyTorch, Matplotlib, Seaborn, Streamlit
+- R: tidyverse, ggplot2, tidymodels, caret
+- SQL: PostgreSQL, SQLite (joins, window functions, query optimization)
+- Other: SAS, Java, Git/GitHub
 
-**Machine Learning:** Supervised learning (logistic regression, decision trees, random forests, SVM, KNN), deep learning, Bayesian ML, LLMs, statistical modeling, feature engineering, hyperparameter tuning
+**Machine Learning & AI**
+- Supervised learning: logistic regression, decision trees, random forests, SVM, KNN
+- Deep learning, Bayesian ML
+- LLM integration: LangChain, Ollama, prompt engineering
+- Vector databases: ChromaDB, sentence-transformers
+- Model evaluation, hyperparameter tuning, feature engineering
 
-**Data Science:** Big data analysis (1TB+ datasets), data wrangling, EDA, statistical inference, hypothesis testing, A/B testing, time series forecasting, imbalanced classification, data visualization
+**Data Engineering & Tools**
+- Vector search and embeddings
+- Graph algorithms (NetworkX)
+- Data pipelines and ETL
+- Docker, Jupyter
+- Excel (advanced), SPSS, Azure
 
-**Tools:** Git/GitHub, Jupyter, Streamlit, Excel (advanced), SPSS, Azure (certified 2022)
-
-**Domains:** Cybersecurity analytics, fraud detection, regulatory compliance (PII, PHI, FERPA, GDPR), humanitarian analytics, energy forecasting
+**Specialized Domains**
+- Recommendation systems (content-based, collaborative filtering, hybrid)
+- Time series forecasting
+- Imbalanced classification
+- Cybersecurity analytics
+- Regulatory compliance (PII, PHI, FERPA, GDPR)
 
 ---
 
