@@ -2,9 +2,9 @@
 
 ## About Me
 
-I'm an M.S. student in Data Science at UVA, wrapping up in 2026, and most of my time these days is split between research and building things. At UVA's DART Lab, I work on applying LLMs to Security Operations Centers, helping analysts cut through alert noise and surface threat patterns automatically. On the project side, I've been building across healthcare AI, audio classification, recommendation systems, fraud detection, and humanitarian analytics.
+I'm an M.S. Data Science student at UVA, finishing in 2026. Most days are split between research and side projects. At UVA's DART Lab I work on getting LLMs to triage SOC alerts, the kind of grunt work that eats up an analyst's morning. Outside the lab, my projects span healthcare AI, audio ML, recommenders, fraud detection, and humanitarian analytics.
 
-My background is in Applied Mathematics, which means I tend to care a lot about *why* a model works, not just whether it does. I like projects where the problem is real and the metric choices actually matter, whether that's optimizing recall because missing a case has consequences, or thinking carefully about what an LLM should and shouldn't be trusted to generate in a clinical setting.
+My background is in Applied Mathematics, so I tend to care about *why* a model works, not just whether it does. I gravitate toward problems where the metric choice matters. Optimizing for recall because missing a case has consequences. Being cautious about what an LLM gets to say in a clinical setting. That kind of thing.
 
 When I'm not doing that, I breakdance. There's more overlap between the two than you'd think.
 
@@ -47,18 +47,18 @@ When I'm not doing that, I breakdance. There's more overlap between the two than
 ### Graduate Student Researcher | UVA DART Lab
 *March 2025 to Present | Charlottesville, VA*
 
-Working on applying large language models to Security Operations Centers. I'm developing automated alert analysis systems that help uncover threat patterns and improve detection capabilities.
+My research is on applying LLMs to Security Operations Center workflows. The goal is automated alert analysis: systems that surface the threat patterns analysts would otherwise have to dig out by hand.
 
-I also collaborate with research teams on human-centric surveys, refining methodologies to improve consistency across studies. A big part of the work involves identifying bottlenecks in SOC workflows and building LLM-based solutions that reduce manual effort for security analysts.
+I also support other research teams on human-subjects survey work, mostly cleaning up methodology so results stay comparable across studies. A lot of the SOC side is figuring out where analysts get stuck and writing LLM tooling for the worst parts of that.
 
 ### Junior Data Analyst | ACTFORE
 *June 2024 to May 2025 | Reston, VA*
 
-Worked on AI-led data mining for cyber incident response, helping organizations quickly identify and extract sensitive information from large datasets during security breaches.
+Did AI-assisted data mining for cyber incident response. When a company got breached, we ran the analysis to figure out what sensitive data the attackers had access to.
 
-Processed over 1 TB of data daily using automated extraction and targeted review systems, maintaining 99%+ accuracy rates confirmed by external audits. The work involved mining for PII, PHI, FERPA, and GDPR data across 120+ data elements to support post-breach compliance and notification requirements.
+Processed over 1 TB daily through automated extraction and targeted review, with 99%+ accuracy verified by external audits. The mining covered PII, PHI, FERPA, and GDPR across 120+ data elements, the kinds of fields regulators expect to see in post-breach notifications.
 
-I also collaborated with incident response teams to customize data mining workflows for each engagement, so notification lists landed accurate and on time.
+Each engagement got a custom workflow built with the incident response team, so notification lists came out accurate and on schedule.
 
 ---
 
@@ -72,18 +72,18 @@ I also collaborated with incident response teams to customize data mining workfl
 ![LLM](https://img.shields.io/badge/LLM-412991?style=for-the-badge&logo=openai&logoColor=white)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 
-Team project for UVA's Healthcare for Data Science course. We built an LLM-powered tool that turns raw ED patient data into structured, executive-level risk narratives. The kind of synthesis a clinician would otherwise have to do manually while juggling a full patient load.
+Team project for UVA's Healthcare for Data Science course. We built an LLM tool that takes raw ED patient data and produces a structured risk summary. It's the kind of synthesis a clinician usually does in their head while running between rooms.
 
-**The problem:** ED physicians spend roughly 22% of their workweek on indirect tasks like documentation and test interpretation. Existing AI tools mostly record data; they don't synthesize it into something actionable. AURA-ED is an attempt to bridge that gap.
+**The problem:** ED physicians spend roughly 22% of their workweek on indirect tasks like documentation and chart review. Most existing AI tools just transcribe; they don't summarize. We wanted to see how far an LLM could go in that direction.
 
 **What we built:**
-- Ingestion pipeline connecting triage vitals, lab results, comorbidity scores, and demographic data from 118,385 Stanford ED encounters (MC-MED dataset)
-- LLM that generates structured risk narratives flagging high-risk conditions: sepsis, AKI, stroke, PE, ACS, heart failure
-- Clinical flagging layer mapping continuous vitals to categorical risk levels and translating ICD codes into readable comorbidity categories
+- Ingestion pipeline that pulls triage vitals, lab results, comorbidity scores, and demographic data from 118,385 Stanford ED encounters (MC-MED dataset)
+- LLM that generates structured risk narratives for high-risk conditions: sepsis, AKI, stroke, PE, ACS, heart failure
+- Clinical flagging layer that maps continuous vitals to categorical risk levels and turns ICD codes into readable comorbidity categories
 - Tableau dashboard for exploratory risk analysis
 - Evaluated on predictive accuracy, hallucination rate, and equity across demographic groups
 
-The preprocessing work was more involved than I expected. Getting the data into a state where an LLM could produce clinically accurate narratives without hallucinating took careful outlier filtering, physiological threshold validation, and semantic mapping of technical column headers into medical terminology.
+Preprocessing was the bigger part of the job. Before the LLM could produce anything clinically accurate, we needed outlier filtering, threshold checks against physiological norms, and a translation layer that turned cryptic column headers into actual medical terminology.
 
 **Tools:** Python, pandas, LLM API, Tableau, Stanford MC-MED dataset
 
@@ -96,12 +96,12 @@ The preprocessing work was more involved than I expected. Getting the data into 
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![torchaudio](https://img.shields.io/badge/torchaudio-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 
-Research paper and accompanying experiments for UVA's Deep Learning course. The question we investigated: does explicit frequency-domain noise suppression, applied before a model ever sees the audio, actually improve keyword spotting accuracy under real noise conditions?
+Research paper for UVA's Deep Learning course. The question: if you scrub noise out of audio before a model ever sees it, does keyword-spotting accuracy actually improve under noisy conditions?
 
 **Setup:** Trained a CNN and an Audio Spectrogram Transformer (AST) on Google Speech Commands (v0.02), then tested under four noise types from the MUSAN corpus at SNR levels from 20 dB down to -5 dB. Three preprocessing conditions: no filter, bandpass (300–3400 Hz), and spectral gating.
 
 **What we found:**
-- The CNN outperformed the AST in every condition, including clean audio (94.76% vs 90.52% on clean, 81.94% vs 77.40% at -5 dB with the best filter)
+- The CNN beat the AST in every condition, including clean audio (94.76% vs 90.52% on clean, 81.94% vs 77.40% at -5 dB with the best filter)
 - Noise-augmented training was the biggest single factor in robustness, more than any preprocessing choice
 - Bandpass filtering gave consistent small gains for both models (+0.38 to +1.62 pp across noise levels)
 - Spectral gating helped the CNN slightly but hurt the AST significantly (up to -5.67 pp at -5 dB), because the subtraction artifacts get amplified at the AST's finer spectral resolution
@@ -124,16 +124,16 @@ The takeaway: you can't pick a preprocessing strategy without knowing what's dow
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Pytest](https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
 
-After enough cycles of tweaking my resume for different job descriptions, I built a tool to do the comparison work for me. Drop in a resume and a job posting, and it returns a match score, the skills it thinks you're missing, and LLM-generated suggestions for sharpening the resume against that specific role.
+After enough cycles of tweaking my resume for different job postings, I built a tool to do the comparison for me. Paste in a resume and a job description; it returns a match score, flags the skills you're missing, and offers LLM rewrites for the bullet points you'd want to sharpen.
 
 **How it works:**
-- spaCy parses both documents and extracts skill phrases, education, and experience entries
+- spaCy parses both documents and pulls out skill phrases, education, and experience entries
 - Sentence-transformer embeddings score semantic overlap between resume content and job requirements, so phrases like "built ML pipelines" still match against "machine learning engineering" without exact keyword overlap
 - A skill-gap layer flags requirements with no resume coverage
 - An LLM rewrites bullet points to better target the specific posting
 - FastAPI backend, TypeScript frontend, CLI for batch use, Dockerized for one-command setup, deployed to Railway
 
-The most useful lesson came from the embedding side. Keyword overlap is a brittle signal; semantic similarity catches the cases where two resumes describe the same work in different vocabulary.
+The interesting part was the embedding layer. Keyword matching is brittle. Semantic similarity catches the cases where two resumes describe the same work in totally different words.
 
 **Tools:** Python, FastAPI, spaCy, Sentence Transformers, Alembic, Pytest, Docker Compose, TypeScript, Railway
 
@@ -160,7 +160,7 @@ Built at HoosHack 2026 (UVA's hackathon) with three teammates over one weekend. 
 
 **Tech:** React Native + Expo frontend, FastAPI backend, PostgreSQL, JWT auth, HealthKit integration via Nitro modules. Required a physical iPhone, since HealthKit doesn't run in simulators.
 
-Hackathons are a different kind of challenge. The scope is intentionally smaller, the timeline is brutal, and the goal is something that actually runs by the end of the weekend. This one did.
+Hackathons are a different kind of challenge. The scope is intentionally small, the timeline is brutal, and the goal is just something that runs by the end of the weekend. This one did.
 
 **Tools:** React Native, Expo, TypeScript, FastAPI, PostgreSQL, Apple HealthKit
 
@@ -182,7 +182,7 @@ Hackathons are a different kind of challenge. The scope is intentionally smaller
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
-A course recommendation system that pairs recommendation algorithms with conversational AI. You describe what you want to learn and what you already know, and it builds a structured roadmap with prerequisite chains, skill gap analysis, and week-by-week timelines.
+A course recommendation system that pairs classic recommender algorithms with a conversational front-end. Tell it what you want to learn and what you already know; it returns a roadmap with prerequisite chains, skill gaps, and a week-by-week schedule.
 
 Think of it as a knowledgeable friend who's memorized every course on Coursera.
 
@@ -195,7 +195,7 @@ Think of it as a knowledgeable friend who's memorized every course on Coursera.
 
 **Dataset:** 2,759 Coursera courses, 1,754 unique skills, 3,682 prerequisite relationships.
 
-The challenge was making vector search, prerequisite graphs, and LLM tool-calling feel like one coherent system rather than three separate things bolted together.
+The hard part was making vector search, prerequisite graphs, and tool-calling feel like one coherent system rather than three separate things bolted together.
 
 **Tools:** Python, LangChain, Ollama (Llama 3.1), ChromaDB, sentence-transformers, SQLite, NetworkX, Streamlit, Docker
 
@@ -215,15 +215,15 @@ The challenge was making vector search, prerequisite graphs, and LLM tool-callin
 ![Polars](https://img.shields.io/badge/Polars-CD792C?style=for-the-badge&logo=polars&logoColor=white)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge&logo=python&logoColor=white)
 
-Compared Pandas and Polars DataFrame libraries using 50,000 NYC Yellow Taxi trip records to see how they hold up on typical data processing tasks.
+Compared Pandas and Polars on 50,000 NYC Yellow Taxi trip records to see how they hold up on typical data processing tasks.
 
 **What I found:**
 - Polars loads CSVs 15× faster with Rust-based multithreaded parsing (0.0032s vs 0.0463s)
 - Both libraries produced identical analytical outputs
-- Polars uses 10% less memory (8.34 MB vs 9.25 MB) with Arrow-native columnar storage
-- Performance differences narrow for smaller operations but compound with larger datasets
+- Polars uses 10% less memory (8.34 MB vs 9.25 MB) thanks to Arrow-native columnar storage
+- Performance differences narrow on small operations but compound on larger datasets
 
-Each operation ran 100 times for statistical reliability. The results gave me a clearer sense of when it's actually worth switching libraries and when it doesn't matter.
+Each operation ran 100 times for statistical reliability. The numbers gave me a clearer sense of when it's worth switching libraries and when it doesn't matter.
 
 **Tools:** Python, pandas, Polars, Matplotlib, NYC Open Data API, sodapy
 
@@ -236,7 +236,7 @@ Each operation ran 100 times for statistical reliability. The results gave me a 
 ![pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
 
-An end-to-end analytics project that evaluates portfolio performance, attribution, and risk using historical market data. The Python side handles data pulling and processing; Tableau handles the visualization.
+An analytics project that evaluates portfolio performance, attribution, and risk against historical market data. Python pulls and processes; Tableau visualizes.
 
 **What it covers:**
 - Portfolio market value and performance tracking over time
@@ -246,11 +246,11 @@ An end-to-end analytics project that evaluates portfolio performance, attributio
 
 **How it works:**
 - Pulls historical adjusted closing prices from Yahoo Finance via `yfinance`
-- Uses simulated portfolio holdings (randomized share counts and cost basis) to demonstrate real analysis workflows without exposing actual positions
+- Uses simulated portfolio holdings (randomized share counts and cost basis) so the workflow looks real without exposing actual positions
 - Outputs clean CSVs (`portfolio_holdings.csv`, `prices_long.csv`) for Tableau consumption
 - Interactive Tableau dashboard for exploring performance over time
 
-I built this in phases, starting with valuation and performance reporting, then expanding toward risk. It was a good exercise in thinking about what a finance team actually needs to see versus what looks impressive but doesn't help anyone make decisions.
+I built it in phases. Valuation and performance came first, then risk on top. The interesting part was figuring out what a finance team actually needs to see, versus what just looks impressive on a dashboard.
 
 **Tools:** Python, pandas, yfinance, Tableau
 
@@ -270,7 +270,7 @@ An ML pipeline that scans 6.3M+ financial transactions for fraud signals.
 - 95% recall on fraud detection, 95% overall accuracy despite a 0.13% fraud rate
 - Used class weighting with logistic regression to handle imbalanced data without just oversampling everything
 - Streamlit web app for real-time predictions
-- Thorough exploratory analysis to understand what fraud patterns actually looked like before modeling
+- Spent serious time on EDA before modeling, mostly to figure out what fraud actually looks like in the data
 
 The hard part wasn't the model. It was the class imbalance. When fraud makes up 0.13% of your data, a model that predicts "not fraud" every time scores 99.87% accurate. Getting to useful recall took some deliberate work.
 
@@ -292,7 +292,7 @@ The hard part wasn't the model. It was the class imbalance. When fraud makes up 
 ![tidymodels](https://img.shields.io/badge/tidymodels-1A162D?style=for-the-badge)
 ![ggplot2](https://img.shields.io/badge/ggplot2-3B6EA5?style=for-the-badge)
 
-Trained ML models to spot temporary shelters (blue tarps) in aerial imagery, so aid organizations could locate displaced populations faster after the earthquake.
+Trained ML models to spot temporary shelters (blue tarps) in aerial imagery, so aid groups could find displaced populations faster after the earthquake.
 
 **Results:**
 - Processed pixel-level RGB data to map displaced populations across affected areas
@@ -327,7 +327,7 @@ A time series model that predicts hourly electricity demand for American Electri
 - RMSE of 1,644.39 MW using time-based feature engineering
 - Created temporal features (hour, day of week, month, lag variables) to capture seasonal patterns and demand cycles
 
-The model held up well for typical demand patterns but struggled with extreme weather events, which makes sense given XGBoost doesn't know about weather unless you tell it. That limitation was a useful lesson in thinking about what features a model actually needs versus what it's just inferring from time patterns.
+It held up fine on typical demand patterns but missed extreme weather events. Which makes sense, since XGBoost doesn't know weather unless you give it weather features. Good reminder that what a model "learns" is just whatever's in the input columns.
 
 **Tools:** Python, pandas, scikit-learn, XGBoost, Matplotlib
 
@@ -339,17 +339,17 @@ The model held up well for typical demand patterns but struggled with extreme we
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 
-A SQL-based analysis exploring how length of stay impacts mental health outcomes for international university students in Japan, using survey data from 268 students collected in 2018.
+A SQL analysis of how length of stay affects mental health outcomes for international university students in Japan, using survey data from 268 students collected in 2018.
 
 **What I found:**
-- Depression doesn't peak in year 1. It peaks in year 3 (average PHQ-9 score of 9.09, moderate range), then slightly improves in year 4
-- Acculturative stress increases over time rather than decreasing, suggesting long-term decisions around career, visa status, and identity add pressure rather than resolve it
-- Social connectedness stays flat across all years, meaning students aren't building deeper networks even after years abroad
-- Nearly half the international sample (95 students) is in year 1, facing moderate depression, low social connection, and high stress right from the start
+- Depression doesn't peak in year 1. It peaks in year 3 (average PHQ-9 score of 9.09, moderate range), then improves slightly in year 4
+- Acculturative stress climbs over time instead of dropping, which suggests that long-term decisions around career, visa status, and identity add pressure rather than resolve it
+- Social connectedness stays flat across all years, so students aren't building deeper networks even after years abroad
+- Nearly half the international sample (95 students) is in year 1, dealing with moderate depression, low social connection, and high stress right from the start
 
 The thing that surprised me most was the year 3 peak. You'd expect the hardest stretch to be the adjustment period, not two years in.
 
-This is cross-sectional data, so individual trajectories are harder to draw conclusions from, since the same student can't be tracked across years. Still, the patterns are consistent enough to suggest mental health support for international students shouldn't stop after orientation.
+This is cross-sectional data, so individual trajectories are hard to draw conclusions from. Still, the pattern is consistent enough that mental health support for international students probably shouldn't stop after orientation.
 
 **Tools:** PostgreSQL, SQL
 
@@ -425,4 +425,4 @@ Cybersecurity analytics · Fraud detection · Humanitarian analytics · Healthca
 
 ---
 
-*Open to data science roles and research collaborations. Feel free to reach out.*
+*Open to data science roles and research collaborations. If anything here looks interesting, send me a note.*
