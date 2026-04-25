@@ -1,4 +1,21 @@
-# Terrance Luangrath — Portfolio
+<div align="center">
+  <img src="./assets/img/headshot_circle.png" alt="Terrance Luangrath" width="180" />
+
+  <h1>Hi, I'm Terrance 👋</h1>
+
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=3776AB&center=true&vCenter=true&width=600&lines=Data+Science+%40+UVA;Building+with+LLMs+%26+ML;Always+learning%2C+sometimes+breakdancing" alt="Typing SVG" />
+  </a>
+
+  <p>
+    <img src="https://img.shields.io/badge/MS%20Data%20Science-UVA-232D4B?style=flat-square&logo=googlescholar&logoColor=white" alt="MS Data Science at UVA" />
+    <img src="https://img.shields.io/badge/Status-Open%20to%20Opportunities-2ea44f?style=flat-square" alt="Open to Opportunities" />
+    <img src="https://img.shields.io/badge/Based%20in-Charlottesville%2C%20VA-E97627?style=flat-square" alt="Based in Charlottesville, VA" />
+    <img src="https://komarev.com/ghpvc/?username=tksluangrath&color=blueviolet&style=flat-square&label=Profile+Views" alt="Profile Views" />
+  </p>
+</div>
+
+---
 
 ## About Me
 
@@ -7,6 +24,13 @@ I'm an M.S. Data Science student at UVA, finishing in 2026. Most days are split 
 My background is in Applied Mathematics, so I tend to care about *why* a model works, not just whether it does. I gravitate toward problems where the metric choice matters. Optimizing for recall because missing a case has consequences. Being cautious about what an LLM gets to say in a clinical setting. That kind of thing.
 
 When I'm not doing that, I breakdance. There's more overlap between the two than you'd think.
+
+---
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=tksluangrath&show_icons=true&theme=default&hide_border=true&count_private=true" alt="GitHub Stats" height="160" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=tksluangrath&layout=compact&theme=default&hide_border=true&langs_count=8" alt="Top Languages" height="160" />
+</div>
 
 ---
 
