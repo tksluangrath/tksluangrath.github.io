@@ -32,22 +32,25 @@
         <h1 class="hero__name anim-item" data-anim="name" style="font-size:var(--text-3xl)">Terrance Luangrath</h1>
 
         <div class="article" style="margin-top:var(--space-6)">
-          <p class="article__hook reveal">My background is in Applied Mathematics, so I tend to care about why a model works, not just whether it does.</p>
+          <p class="article__hook reveal">I'm a data scientist who came up through mathematics.</p>
 
           <section class="article__section reveal">
-            <p>I am finishing an M.S. in Data Science at the University of Virginia in 2026, after a B.S. in Applied Mathematics at James Madison University. Most of my week splits between research and side projects. At UVA's DART Lab I work on getting language models to triage Security Operations Center alerts, the grunt work that eats an analyst's morning, and I support other teams on human-subjects survey methodology so their results stay comparable across studies. Before UVA I spent a year at ACTFORE doing AI-assisted data mining for cyber incident response: when a company got breached, we figured out what sensitive data the attackers could reach, processing over a terabyte a day at better than ninety-nine percent accuracy under external audit.</p>
+            <p>I finish an M.S. in Data Science at the University of Virginia in August 2026, after a B.S. in Mathematics with a minor in Data Analytics from James Madison University in 2024. The work I like best is the kind where the metric you choose changes the answer.</p>
           </section>
 
           <section class="article__section reveal">
-            <p>Outside the lab my projects run wide on purpose. I have built an LLM that writes clinical risk summaries from 118,385 emergency-department encounters, a fraud pipeline that holds ninety-five percent recall at a 0.13 percent fraud rate, a shelter-detection model that reached ninety-nine percent recall on aerial imagery for earthquake relief, an agentic course recommender running on a local Llama, and a benchmark that pinned down exactly when Polars is worth the switch. Healthcare AI, audio ML, recommenders, humanitarian analytics. The range is the point.</p>
+            <h2 class="article__heading">What I've built</h2>
+            <ul class="article__list">
+              <li>Built a fraud-detection pipeline that flagged fraudulent activity across 6.3M+ transactions at 94% recall and a 0.99 ROC-AUC by correcting for a severe class imbalance, then deployed it on Azure ML and Azure Container Apps.</li>
+              <li>Maintained data accuracy above 99% as a Junior Data Analyst at ACTFORE by validating more than 1,500 records a day for a year, from June 2024 to May 2025.</li>
+              <li>Engineered a Python ingestion agent that validated metadata across 200+ entries, one of four agents (Ingest → Normalize → Score → Publish) that mapped a 12-market by 16-technology matrix for a graduate capstone with Smurfit WestRock.</li>
+              <li>Shipped a course-recommendation agent across 2,759 courses, 1,754 skills, and 3,682 prerequisite relationships with LangChain and a local Llama 3.1, packaged in Docker Compose.</li>
+              <li>Benchmarked a CNN against an Audio Spectrogram Transformer for keyword spotting under noise in PyTorch, on a four-person team, where the CNN led on clean audio at 94.76% against the transformer's 90.52% and stayed ahead as noise rose.</li>
+            </ul>
           </section>
 
           <section class="article__section reveal">
-            <p>What ties it together is that I gravitate toward problems where the metric choice matters. I optimize for recall when a missed case has real consequences, and I stay cautious about what a language model is allowed to say in a clinical setting. A model learns only what is in its input columns, and accuracy can be a trap when the thing you care about is rare, so I spend my attention on framing the problem correctly before I spend it on the model.</p>
-          </section>
-
-          <section class="article__section reveal">
-            <p>Right now I am looking for data science and AI engineering roles, and I am always up for a research collaboration where the questions are hard. When I am not doing any of that, I breakdance, and there is more overlap between the two than you would think. If something here caught your attention, the form below reaches me directly.</p>
+            <p>I'm looking for data science and AI engineering roles now. If something here is useful to you, the form below reaches me.</p>
           </section>
         </div>
       </div>
