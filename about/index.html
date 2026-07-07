@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About — Terrance Luangrath</title>
+  <meta name="description" content="Terrance Luangrath is an M.S. Data Science student at UVA with a background in Applied Mathematics, working on LLMs for security operations and projects across healthcare AI, fraud, and humanitarian analytics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <span class="eyebrow rail anim-item" data-anim="name">About</span>
+        <h1 class="hero__name anim-item" data-anim="name" style="font-size:var(--text-3xl)">Terrance Luangrath</h1>
+
+        <div class="article" style="margin-top:var(--space-6)">
+          <p class="article__hook reveal">My background is in Applied Mathematics, so I tend to care about why a model works, not just whether it does.</p>
+
+          <section class="article__section reveal">
+            <p>I am finishing an M.S. in Data Science at the University of Virginia in 2026, after a B.S. in Applied Mathematics at James Madison University. Most of my week splits between research and side projects. At UVA's DART Lab I work on getting language models to triage Security Operations Center alerts, the grunt work that eats an analyst's morning, and I support other teams on human-subjects survey methodology so their results stay comparable across studies. Before UVA I spent a year at ACTFORE doing AI-assisted data mining for cyber incident response: when a company got breached, we figured out what sensitive data the attackers could reach, processing over a terabyte a day at better than ninety-nine percent accuracy under external audit.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <p>Outside the lab my projects run wide on purpose. I have built an LLM that writes clinical risk summaries from 118,385 emergency-department encounters, a fraud pipeline that holds ninety-five percent recall at a 0.13 percent fraud rate, a shelter-detection model that reached ninety-nine percent recall on aerial imagery for earthquake relief, an agentic course recommender running on a local Llama, and a benchmark that pinned down exactly when Polars is worth the switch. Healthcare AI, audio ML, recommenders, humanitarian analytics. The range is the point.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <p>What ties it together is that I gravitate toward problems where the metric choice matters. I optimize for recall when a missed case has real consequences, and I stay cautious about what a language model is allowed to say in a clinical setting. A model learns only what is in its input columns, and accuracy can be a trap when the thing you care about is rare, so I spend my attention on framing the problem correctly before I spend it on the model.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <p>Right now I am looking for data science and AI engineering roles, and I am always up for a research collaboration where the questions are hard. When I am not doing any of that, I breakdance, and there is more overlap between the two than you would think. If something here caught your attention, the form below reaches me directly.</p>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact" style="padding-top:0">
+      <div class="wrap">
+        <span class="eyebrow rail reveal">Contact</span>
+        <h2 class="section-title reveal">Send me a note.</h2>
+        <form class="contact-form reveal" action="https://formspree.io/f/YOUR_ENDPOINT" method="POST">
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="name">Name</label>
+            <input class="contact-form__input" type="text" id="name" name="name" required>
+          </div>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="email">Email</label>
+            <input class="contact-form__input" type="email" id="email" name="email" required>
+          </div>
+          <div class="contact-form__field">
+            <label class="contact-form__label" for="message">Message</label>
+            <textarea class="contact-form__textarea" id="message" name="message" required></textarea>
+          </div>
+          <button class="btn btn--primary" type="submit">Send</button>
+        </form>
+
+        <p class="reveal" style="margin-top:var(--space-6);font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-secondary)">
+          Or reach me directly:
+          <a href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a> ·
+          <a href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a> ·
+          <a href="mailto:tksluangrath@gmail.com">tksluangrath@gmail.com</a> ·
+          <a href="/assets/docs/Terrance_Luangrath_Resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

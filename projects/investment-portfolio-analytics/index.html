@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Investment Portfolio Analytics — Terrance Luangrath</title>
+  <meta name="description" content="A portfolio analytics project tracking performance, attribution, and risk against historical market data. Python pulls and processes; Tableau visualizes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-candle" width="48" height="260" patternUnits="userSpaceOnUse">
+              <line x1="24" y1="40" x2="24" y2="210" stroke="currentColor" stroke-width="1"/>
+              <rect x="16" y="96" width="16" height="70" fill="currentColor"/>
+            </pattern>
+            <pattern id="p-grid" width="48" height="52" patternUnits="userSpaceOnUse">
+              <path d="M0 52H48M48 0V52" stroke="currentColor" stroke-width="0.5" fill="none" opacity="0.4"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-grid)"/>
+            <rect width="480" height="260" fill="url(#p-candle)"/>
+            <line x1="216" y1="30" x2="216" y2="220" stroke="currentColor" stroke-width="1.5" style="color:var(--color-accent)" opacity="0.9"/>
+            <rect x="206" y="70" width="20" height="86" fill="currentColor" style="color:var(--color-accent)" opacity="0.85"/>
+          </svg>
+          <span class="project-hero__label">Analytics · November 2025</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Investment Portfolio Analytics</h1>
+          <p class="article__hook reveal">A portfolio analytics project that tracks performance, attribution, and risk against real market history. Python does the pulling and processing; Tableau does the showing.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">What it tracks</h2>
+            <p>The project follows portfolio market value and performance over time, breaks unrealized gains and losses down by position and by sector, and surfaces executive-style key metrics as of the latest available market date. It also lays the groundwork for volatility and risk analytics in later phases, so the structure was built to grow rather than to answer one question and stop.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">How it's wired</h2>
+            <p>It pulls historical adjusted closing prices from Yahoo Finance through the yfinance library, then runs against simulated holdings with randomized share counts and cost basis, so the workflow looks and behaves like the real thing without exposing any actual positions. The processing writes clean CSVs that feed an interactive Tableau dashboard for exploring performance over time.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">The interesting part was not the dashboard.<small>It was deciding what a finance team needs to see versus what just looks impressive.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">What a finance team actually needs to see</h2>
+            <p>I built it in phases, valuation and performance first, then risk on top. The genuinely interesting problem was separating signal from decoration: a dashboard can hold a dozen charts that impress in a demo and help no one make a decision. Figuring out the handful of views a team would actually use shaped what got built and what got cut.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">yfinance</span><span class="tag">Tableau</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/investment-portfolio-analytics" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AURA-ED — Terrance Luangrath</title>
+  <meta name="description" content="An LLM that turns raw emergency-department data into structured clinical risk summaries, built on 118,385 Stanford MC-MED encounters.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-ecg" width="120" height="65" patternUnits="userSpaceOnUse">
+              <path d="M0 40h34l6-24 6 40 6-30 5 14h63" fill="none" stroke="currentColor" stroke-width="1.4"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-ecg)"/>
+            <path d="M0 168h150l9-40 9 66 9-50 8 24h286" fill="none" stroke="currentColor" stroke-width="2.4" opacity="0.85" style="color:var(--color-accent)"/>
+          </svg>
+          <span class="project-hero__label">Healthcare AI · Spring 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">AURA-ED</h1>
+          <p class="article__hook reveal">An LLM that reads raw emergency-department data and writes the risk summary a clinician usually assembles in their head while running between rooms.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">What eats an ED physician's day</h2>
+            <p>Emergency physicians spend roughly a fifth of their week on indirect work: documentation, chart review, the reading and re-reading that never touches a patient directly. Most of the AI aimed at this problem transcribes. It writes down what was said. It does not tell you what any of it means. For a team project in UVA's Healthcare for Data Science course, we wanted to see how far past transcription a language model could actually go.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">22% of an ED physician's week goes to documentation and chart review.<small>Most tools transcribe. We wanted one that could summarize.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">The synthesis, done by a model</h2>
+            <p>We built an ingestion pipeline that pulls triage vitals, lab results, comorbidity scores, and demographics from 118,385 Stanford ED encounters in the MC-MED dataset. On top of it sits a language model that generates structured risk narratives for the conditions where minutes matter: sepsis, acute kidney injury, stroke, pulmonary embolism, acute coronary syndrome, heart failure.</p>
+            <p>Between the raw data and the model, a clinical flagging layer maps continuous vitals to categorical risk levels and turns cryptic ICD codes into readable comorbidity categories. A Tableau dashboard sits alongside for exploratory risk analysis. We scored the output on three axes, not one: predictive accuracy, hallucination rate, and equity across demographic groups.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Why preprocessing was the real project</h2>
+            <p>The model was the visible part. The work was everything upstream of it. Before an LLM could say anything clinically accurate, the data needed outlier filtering, threshold checks against physiological norms, and a translation layer that turned column headers no human would recognize into actual medical terminology. Get that wrong and the model produces fluent, confident nonsense. Getting it right is most of what made the summaries trustworthy.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">LLM API</span><span class="tag">Tableau</span><span class="tag">MC-MED</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/XinnieMai/ed_briefgenerator" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="https://public.tableau.com/app/profile/terrance.luangrath/viz/AURA-ED/ClinicalRiskDrivers" target="_blank" rel="noopener">Tableau dashboard ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

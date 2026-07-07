@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Energy Demand Forecasting — Terrance Luangrath</title>
+  <meta name="description" content="An XGBoost time-series model predicting hourly electricity demand for American Electric Power across 14 years of data, at 1,644 MW RMSE.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <path d="M0 130 Q30 60 60 130 T120 130 T180 130 T240 130 T300 130 T360 130 T420 130 T480 130" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.7"/>
+            <path d="M0 180 Q30 110 60 180 T120 180 T180 180 T240 180 T300 180 T360 180 T420 180 T480 180" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.5"/>
+            <path d="M0 90 Q40 200 80 90 T160 90 T240 90 T320 90 T400 90 T480 90" fill="none" stroke="currentColor" stroke-width="2.4" style="color:var(--color-accent)" opacity="0.85"/>
+          </svg>
+          <span class="project-hero__label">Time series · May 2025</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Energy Demand Forecasting</h1>
+          <p class="article__hook reveal">A time-series model that predicts hourly electricity demand for American Electric Power, trained on more than a decade of history.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Fourteen years of hours</h2>
+            <p>The model trained on hourly demand from 2004 through 2018, about 121,000 observations. That much history holds every rhythm the grid runs on: the daily peak and trough, the weekly work cycle, the long seasonal swing between summer cooling and winter heating.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Teaching time to a tree</h2>
+            <p>XGBoost has no built-in sense of time, so I gave it one through features: hour of day, day of week, month, and lag variables that let it look back at recent demand. Those temporal features are what let the model pick up the seasonal patterns and demand cycles, and they carried it to an RMSE of 1,644 megawatts on typical days.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">RMSE of 1,644 MW across 14 years of hourly demand.<small>Solid on the ordinary days, blind to the storms.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Where it broke, and why that's fair</h2>
+            <p>It held up well on ordinary demand and missed the extreme weather events, which is exactly what you would expect: XGBoost does not know a heat wave is coming unless you hand it weather features, and I did not. It is a clean reminder that a model does not "learn" the world. It learns whatever is in the input columns, and nothing else.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Matplotlib</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/energy-forecast-xgboost" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

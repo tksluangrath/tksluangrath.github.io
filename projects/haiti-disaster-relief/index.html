@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Haiti Disaster Relief — Terrance Luangrath</title>
+  <meta name="description" content="Training classifiers to detect blue-tarp shelters in aerial imagery so aid groups could reach displaced people faster. 99% recall across six compared models.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-mosaic" width="40" height="40" patternUnits="userSpaceOnUse">
+              <rect x="2" y="2" width="36" height="36" fill="currentColor" opacity="0.18"/>
+              <rect x="2" y="2" width="36" height="36" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-mosaic)"/>
+            <rect x="122" y="62" width="36" height="36" fill="currentColor" style="color:var(--color-accent)" opacity="0.85"/>
+            <rect x="282" y="142" width="36" height="36" fill="currentColor" style="color:var(--color-accent)" opacity="0.85"/>
+            <rect x="202" y="102" width="36" height="36" fill="currentColor" style="color:var(--color-accent)" opacity="0.85"/>
+          </svg>
+          <span class="project-hero__label">Humanitarian analytics · May–August 2025</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Haiti Disaster Relief</h1>
+          <p class="article__hook reveal">Training models to spot temporary shelters — blue tarps — in aerial imagery, so aid groups could find displaced people faster after the earthquake.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Why recall, not precision</h2>
+            <p>The whole problem hinges on which mistake you are willing to make. A false positive sends someone to check a spot with no shelter; a false negative means a group of displaced people never gets found. When the cost of a miss is measured in people rather than wasted clicks, recall becomes the metric that matters, and that decision shaped everything downstream.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Six models, one job</h2>
+            <p>Working from pixel-level RGB data, I mapped displaced populations across the affected areas and tackled a severe class imbalance, roughly three percent minority, with SMOTE and threshold optimization. Then I put six classifiers against the same task to see which handled it best: linear and quadratic discriminant analysis, k-nearest neighbors, penalized logistic regression, random forest, and a support vector machine.</p>
+          </section>
+
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <img src="/assets/img/blue_tarps_confusion.png" alt="Performance comparison across six classification models" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)">
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">Comparing six classification models for shelter detection.</figcaption>
+          </figure>
+
+          <blockquote class="pull-quote reveal">99% recall on blue-tarp detection.<small>When a miss means missing people, recall is the metric that matters.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Where it landed</h2>
+            <p>Penalized logistic regression came out ahead, reaching ninety-nine percent recall on blue-tarp detection. It is a plain reminder that the fanciest model is not always the answer; the right one is the model that optimizes the thing that actually matters for the problem in front of you.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">R</span><span class="tag">tidyverse</span><span class="tag">tidymodels</span><span class="tag">caret</span><span class="tag">themis (SMOTE)</span><span class="tag">ggplot2</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/assets/docs/Haiti_Earthquake_Relief.pdf" target="_blank" rel="noopener">Download report (PDF) ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Course Recommendation Agent — Terrance Luangrath</title>
+  <meta name="description" content="A recommender that pairs classic algorithms with a LangChain agent on local Llama 3.1, returning prerequisite-aware learning roadmaps over 2,759 courses.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-graph" width="130" height="120" patternUnits="userSpaceOnUse">
+              <path d="M30 30 96 24M30 30 60 92M96 24 60 92M96 24 120 96" stroke="currentColor" stroke-width="1" fill="none" opacity="0.6"/>
+              <circle cx="30" cy="30" r="4" fill="currentColor"/>
+              <circle cx="96" cy="24" r="4" fill="currentColor"/>
+              <circle cx="60" cy="92" r="4" fill="currentColor"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-graph)"/>
+            <path d="M126 122 190 116 254 156" stroke="currentColor" stroke-width="2" fill="none" style="color:var(--color-accent)" opacity="0.85"/>
+            <circle cx="190" cy="116" r="6" fill="currentColor" style="color:var(--color-accent)"/>
+          </svg>
+          <span class="project-hero__label">Agents · January–February 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Course Recommendation Agent</h1>
+          <p class="article__hook reveal">Tell it what you want to learn and what you already know; it hands back a roadmap with prerequisite chains, skill gaps, and a week-by-week schedule. Think of it as a friend who has memorized every course on Coursera.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Two kinds of recommendation, blended</h2>
+            <p>The engine pairs content-based filtering, using sentence-transformer embeddings in ChromaDB, with collaborative filtering built from item-item and user-user similarity. One side understands what a course is about; the other understands what people like you tend to take next. Together they cover the cases where either alone would fall flat.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">An agent that picks its own tools</h2>
+            <p>A LangChain agent sits on top, backed by Llama 3.1 running locally through Ollama, so there are no API costs. It decides on its own when to call semantic search, skill-gap analysis, prerequisite-chain lookup, or timeline estimation. User profiles persist across sessions, so you do not reintroduce yourself every time. A Streamlit web app and a CLI both front it, and the whole system runs under Docker Compose.</p>
+          </section>
+
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <img src="/assets/img/course_recommendation_screen.png" alt="Conversational course recommendation interface" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)">
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">The conversational front end for planning a personalized learning path.</figcaption>
+          </figure>
+
+          <blockquote class="pull-quote reveal">2,759 courses, 1,754 skills, 3,682 prerequisite links.<small>Searched, graphed, and reasoned over by a single agent.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Making three systems feel like one</h2>
+            <p>The hard part was never any single component. It was making vector search, prerequisite graphs, and tool-calling read as one coherent system instead of three separate things bolted together. A recommendation is only useful if the ordering makes sense, and the ordering only makes sense if the graph and the search agree with each other.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">Ollama</span><span class="tag">ChromaDB</span><span class="tag">sentence-transformers</span><span class="tag">NetworkX</span><span class="tag">Streamlit</span><span class="tag">Docker</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/multi-tool-course-agent" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

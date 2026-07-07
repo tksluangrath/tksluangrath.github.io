@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>International Students' Mental Health — Terrance Luangrath</title>
+  <meta name="description" content="A SQL analysis of how length of stay maps to mental health for international students in Japan, from 268 survey responses. Depression peaked in year three.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-dots" width="30" height="30" patternUnits="userSpaceOnUse">
+              <circle cx="8" cy="8" r="3" fill="currentColor" opacity="0.6"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-dots)"/>
+            <circle cx="98" cy="188" r="6" fill="currentColor" style="color:var(--color-accent)"/>
+            <circle cx="188" cy="128" r="6" fill="currentColor" style="color:var(--color-accent)"/>
+            <circle cx="278" cy="74" r="7" fill="currentColor" style="color:var(--color-accent)"/>
+            <circle cx="368" cy="104" r="6" fill="currentColor" style="color:var(--color-accent)"/>
+            <path d="M98 188 188 128 278 74 368 104" fill="none" stroke="currentColor" stroke-width="1.6" style="color:var(--color-accent)" opacity="0.6"/>
+          </svg>
+          <span class="project-hero__label">SQL analysis · May 2025</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">International Students' Mental Health</h1>
+          <p class="article__hook reveal">A SQL dig into how length of stay shapes mental health for international university students in Japan, drawn from 268 survey responses collected in 2018.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">The result I didn't expect</h2>
+            <p>Depression does not peak in the first year. It peaks in the third, at an average PHQ-9 score of 9.09, squarely in the moderate range, and then improves slightly in year four. The intuitive story is that the adjustment period is the hardest stretch. The data says the hardest stretch arrives two years in, once the newness has worn off and the real decisions have not.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">Depression peaked in year three, not year one.<small>The hardest stretch wasn't the adjustment — it was two years in.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">What else the data showed</h2>
+            <p>Acculturative stress climbed over time rather than dropping, which points at the long-term pressures, career, visa status, identity, adding weight instead of resolving. Social connectedness stayed flat across every year, so students were not building deeper networks even after years abroad. And nearly half the sample, ninety-five students, sat in year one already carrying moderate depression, low social connection, and high stress from the start.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">What to make of it</h2>
+            <p>This is cross-sectional data, so it cannot trace any one student's path through the years, and I am careful not to claim it does. Still, the pattern holds together well enough to suggest something practical: mental health support for international students probably should not taper off after orientation, because on this evidence the need does not.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">PostgreSQL</span><span class="tag">SQL</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/international-students-mental-health-analysis" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

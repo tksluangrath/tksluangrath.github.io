@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Work — Terrance Luangrath</title>
+  <meta name="description" content="Eleven projects across machine learning, LLM tooling, data engineering, and analytics. Filter by ML, data engineering, NLP, agentic systems, or visualization.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <header class="section">
+      <div class="wrap">
+        <span class="eyebrow rail anim-item" data-anim="name">The work</span>
+        <h1 class="hero__name anim-item" data-anim="name" style="font-size:var(--text-3xl)">Eleven projects, one throughline.</h1>
+        <p class="hero__statement anim-item anim-item--up" data-anim="subhead">Healthcare AI, fraud, audio ML, agents, humanitarian analytics. The common thread is caring why a model works, not just whether it does.</p>
+      </div>
+    </header>
+
+    <section class="section" style="padding-top:0">
+      <div class="wrap">
+        <div class="filter-bar" role="group" aria-label="Filter projects by topic">
+          <button class="filter-bar__btn" data-tag="all" type="button">All</button>
+          <button class="filter-bar__btn" data-tag="ml" type="button">ML</button>
+          <button class="filter-bar__btn" data-tag="data-eng" type="button">Data Engineering</button>
+          <button class="filter-bar__btn" data-tag="nlp" type="button">NLP</button>
+          <button class="filter-bar__btn" data-tag="agentic" type="button">Agentic</button>
+          <button class="filter-bar__btn" data-tag="viz" type="button">Visualization</button>
+        </div>
+
+        <div class="project-grid" data-filterable>
+          <article class="project-card reveal" data-tags="ml nlp viz">
+            <p class="project-card__meta">Spring 2026 · Healthcare AI</p>
+            <h2 class="project-card__title">AURA-ED</h2>
+            <p class="project-card__desc">An LLM that turns raw emergency-department data into structured clinical risk summaries.</p>
+            <p class="project-card__metric">118,385 encounters<small>Stanford MC-MED dataset</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">Tableau</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/aura-ed/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/XinnieMai/ed_briefgenerator" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="ml">
+            <p class="project-card__meta">Spring 2026 · Audio ML</p>
+            <h2 class="project-card__title">Speech Isolation for Keyword Spotting</h2>
+            <p class="project-card__desc">Does scrubbing noise before the model sees it actually help keyword spotting? Sometimes — and it depends on the architecture.</p>
+            <p class="project-card__metric">94.76% clean accuracy<small>a CNN that beat the transformer in every condition</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">torchaudio</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/speech-isolation-keyword-spotting/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/ds6050-audio-projects" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="nlp agentic">
+            <p class="project-card__meta">April 2026 · NLP tooling</p>
+            <h2 class="project-card__title">ResumeIQ</h2>
+            <p class="project-card__desc">Paste a resume and a job posting; get a match score, the skills you're missing, and LLM rewrites for weak bullets.</p>
+            <p class="project-card__metric">Semantic, not keyword<small>sentence-transformer matching catches paraphrase</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">FastAPI</span><span class="tag">spaCy</span><span class="tag">Docker</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/resumeiq/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/ResumeIQ" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="data-eng">
+            <p class="project-card__meta">March 2026 · Hackathon</p>
+            <h2 class="project-card__title">Gold Rush Fitness</h2>
+            <p class="project-card__desc">An Oregon Trail-themed step tracker: your steps move a wagon, and missing your goal means dying of dysentery.</p>
+            <p class="project-card__metric">One weekend, four people<small>HoosHack 2026, live on a physical iPhone</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">React Native</span><span class="tag">FastAPI</span><span class="tag">HealthKit</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/gold-rush-fitness/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/RichyKim12/Gold-Rush-Fitness" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="agentic nlp">
+            <p class="project-card__meta">Jan–Feb 2026 · Agents</p>
+            <h2 class="project-card__title">Course Recommendation Agent</h2>
+            <p class="project-card__desc">Tell it what you want to learn and what you already know; it returns a prerequisite-aware roadmap and schedule.</p>
+            <p class="project-card__metric">2,759 courses<small>3,682 prerequisite links, local Llama 3.1</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">LangChain</span><span class="tag">Ollama</span><span class="tag">ChromaDB</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/course-recommendation-agent/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/multi-tool-course-agent" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="data-eng viz">
+            <p class="project-card__meta">December 2025 · Benchmarking</p>
+            <h2 class="project-card__title">Pandas vs Polars</h2>
+            <p class="project-card__desc">A head-to-head on NYC taxi data to find where the library choice actually pays off, and where it doesn't.</p>
+            <p class="project-card__metric">15× faster loads<small>0.0032s vs 0.0463s, 100 runs each</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">Python</span><span class="tag">Polars</span><span class="tag">Matplotlib</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/pandas-vs-polars-benchmark/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/pandas-vs-polars-nyc-taxi-benchmark" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="data-eng viz">
+            <p class="project-card__meta">November 2025 · Analytics</p>
+            <h2 class="project-card__title">Investment Portfolio Analytics</h2>
+            <p class="project-card__desc">Portfolio performance, attribution, and risk against historical market data. Python pulls and processes; Tableau shows.</p>
+            <p class="project-card__metric">Built in phases<small>valuation first, risk analytics on top</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">Python</span><span class="tag">yfinance</span><span class="tag">Tableau</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/investment-portfolio-analytics/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/investment-portfolio-analytics" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="ml">
+            <p class="project-card__meta">Aug–Sep 2025 · Imbalanced ML</p>
+            <h2 class="project-card__title">Fraud Detection</h2>
+            <p class="project-card__desc">A pipeline that finds fraud across 6.3M+ transactions where the honest answer is almost always "not fraud."</p>
+            <p class="project-card__metric">95% recall<small>at a 0.13% fraud rate</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Streamlit</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/fraud-detection/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/fraud-detection-app/tree/main" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="ml viz">
+            <p class="project-card__meta">May–Aug 2025 · Humanitarian</p>
+            <h2 class="project-card__title">Haiti Disaster Relief</h2>
+            <p class="project-card__desc">Detecting temporary shelters in aerial imagery so aid groups could reach displaced people faster.</p>
+            <p class="project-card__metric">99% recall<small>blue-tarp detection, six models compared</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">R</span><span class="tag">tidymodels</span><span class="tag">SMOTE</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/haiti-disaster-relief/">Read →</a><a class="project-card__link project-card__link--muted" href="/assets/docs/Haiti_Earthquake_Relief.pdf" target="_blank" rel="noopener">Report</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="ml">
+            <p class="project-card__meta">May 2025 · Time series</p>
+            <h2 class="project-card__title">Energy Demand Forecasting</h2>
+            <p class="project-card__desc">Predicting hourly electricity demand for American Electric Power from 14 years of history.</p>
+            <p class="project-card__metric">1,644 MW RMSE<small>~121k hourly observations, 2004–2018</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">Python</span><span class="tag">XGBoost</span><span class="tag">scikit-learn</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/energy-demand-forecasting/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/energy-forecast-xgboost" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="data-eng viz">
+            <p class="project-card__meta">May 2025 · SQL analysis</p>
+            <h2 class="project-card__title">International Students' Mental Health</h2>
+            <p class="project-card__desc">How length of stay maps to mental health for international students in Japan, from 268 survey responses.</p>
+            <p class="project-card__metric">Peaks in year 3<small>PHQ-9 of 9.09, not year 1 as you'd expect</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">PostgreSQL</span><span class="tag">SQL</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/international-students-mental-health/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/international-students-mental-health-analysis" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Speech Isolation for Keyword Spotting — Terrance Luangrath</title>
+  <meta name="description" content="A study of whether cleaning noise from audio before a model sees it improves keyword spotting. A CNN beat an Audio Spectrogram Transformer in every noise condition.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-eq" width="36" height="260" patternUnits="userSpaceOnUse">
+              <rect x="4" y="150" width="7" height="110" fill="currentColor"/>
+              <rect x="15" y="96" width="7" height="164" fill="currentColor"/>
+              <rect x="26" y="184" width="7" height="76" fill="currentColor"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-eq)"/>
+            <rect x="123" y="44" width="7" height="216" fill="currentColor" opacity="0.8" style="color:var(--color-accent)"/>
+            <rect x="303" y="70" width="7" height="190" fill="currentColor" opacity="0.8" style="color:var(--color-accent)"/>
+          </svg>
+          <span class="project-hero__label">Audio ML · Spring 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Speech Isolation for Keyword Spotting</h1>
+          <p class="article__hook reveal">A research paper built around one blunt question: if you scrub the noise out of audio before a model ever sees it, does keyword spotting actually get better?</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">The question, stated plainly</h2>
+            <p>Keyword spotting works fine in a quiet room. The interesting case is a loud one. The intuition a lot of people reach for is to clean the audio first, then classify. For UVA's Deep Learning course I set out to test whether that intuition holds, and under what conditions it quietly fails.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">How we set it up</h2>
+            <p>We trained a CNN and an Audio Spectrogram Transformer on Google Speech Commands v0.02, then tested both under four noise types from the MUSAN corpus at signal-to-noise ratios from 20 dB all the way down to minus 5. Three preprocessing conditions ran against each: no filter at all, a bandpass tuned to the 300 to 3400 Hz speech band, and spectral gating.</p>
+            <p>My share of the paper covered the speech-recognition history, the dataset section, the proposed method, the experiments and evaluation metrics, and the implementation of spectrogram conversion and spectral gating.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">94.76% versus 90.52% on clean audio.<small>The CNN beat the transformer in every single condition, clean or noisy.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">What the numbers said</h2>
+            <p>The CNN won everywhere, from clean audio down to minus 5 dB with the best filter, where it held 81.94% against the transformer's 77.40%. The single biggest driver of robustness turned out to be noise-augmented training, more than any preprocessing choice. Bandpass filtering gave small, consistent gains for both models. Spectral gating helped the CNN a little and hurt the transformer badly, dropping it as much as 5.67 points at the noisiest setting, because the subtraction artifacts get amplified at the transformer's finer spectral resolution.</p>
+            <p>The takeaway is one I keep coming back to: you cannot choose a preprocessing strategy without knowing what runs downstream of it. A filter that helps one architecture can actively hurt another.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">torchaudio</span><span class="tag">Speech Commands</span><span class="tag">MUSAN</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/ds6050-audio-projects" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

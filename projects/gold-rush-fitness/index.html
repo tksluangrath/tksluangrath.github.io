@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gold Rush Fitness — Terrance Luangrath</title>
+  <meta name="description" content="An Oregon Trail-themed iOS step tracker built at HoosHack 2026. Your steps move a wagon down the trail; miss your goals and you die of dysentery.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <path d="M0 220 60 150 120 200 190 120 260 190 330 140 400 200 480 150 480 260 0 260Z" fill="currentColor" opacity="0.35"/>
+            <path d="M0 240 70 182 140 230 220 158 300 222 380 176 480 224" fill="none" stroke="currentColor" stroke-width="2.4" stroke-dasharray="6 9" style="color:var(--color-accent)"/>
+            <circle cx="220" cy="158" r="5" fill="currentColor" style="color:var(--color-accent)"/>
+          </svg>
+          <span class="project-hero__label">Hackathon · March 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Gold Rush Fitness</h1>
+          <p class="article__hook reveal">An Oregon Trail-themed iOS step tracker. Hit your goals and the wagon rolls on. Miss them and you die of dysentery.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">One weekend, one wagon</h2>
+            <p>Built at HoosHack 2026, UVA's hackathon, with three teammates over a single weekend. The premise wrote itself: your real step count moves a wagon across the trail, and the game leans all the way into the Oregon Trail bit, dysentery and all. The point was to make a fitness app that a person would actually open twice.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">What it does</h2>
+            <p>It pulls real-time step data straight from Apple HealthKit and drives an animated wagon scene with trail progress and a seven-day step heatmap. Goals come in three tiers: Rest Stop at three thousand steps, Halfway at six, Full Trail at ten. There is hydration logging, party health stats, and a badge system that unlocks at trail milestones.</p>
+          </section>
+
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <img src="/assets/img/goldrushfitness.png" alt="Gold Rush Fitness app screenshots showing the wagon trail and step tracking" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)">
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">The wagon moves with your step count; miss the goal and the trail ends early.</figcaption>
+          </figure>
+
+          <blockquote class="pull-quote reveal">The whole thing shipped in one weekend.<small>Running on a physical iPhone by Sunday — HealthKit will not run in a simulator.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">The stack, and the physical-phone catch</h2>
+            <p>React Native and Expo on the front end, FastAPI behind it, PostgreSQL for storage, JWT for auth, and HealthKit wired in through Nitro modules. That last piece forced the whole team onto a physical iPhone, since HealthKit refuses to run in the simulator. Hackathons are their own kind of problem: the scope is deliberately small, the clock is brutal, and the only real success criterion is that something runs by the end of the weekend. This one did.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">TypeScript</span><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span><span class="tag">HealthKit</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/RichyKim12/Gold-Rush-Fitness" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="https://www.youtube.com/watch?v=ESyVKxsaHnw" target="_blank" rel="noopener">Demo video ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,9 @@
+# Claude Code local files
+.claude/
+
+# macOS
+.DS_Store
+
+# Editor / OS cruft
+*.swp
+Thumbs.db

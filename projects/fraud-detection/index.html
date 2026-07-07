@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fraud Detection — Terrance Luangrath</title>
+  <meta name="description" content="An ML pipeline that scans 6.3M+ transactions for fraud at a 0.13% fraud rate, reaching 95% recall through class weighting rather than blind oversampling.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-scatter" width="60" height="60" patternUnits="userSpaceOnUse">
+              <circle cx="14" cy="20" r="2.5" fill="currentColor"/>
+              <circle cx="42" cy="44" r="2.5" fill="currentColor"/>
+              <circle cx="30" cy="10" r="2.5" fill="currentColor"/>
+              <circle cx="52" cy="16" r="2.5" fill="currentColor"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-scatter)"/>
+            <circle cx="150" cy="70" r="6" fill="currentColor" style="color:var(--color-accent)"/>
+            <circle cx="330" cy="180" r="6" fill="currentColor" style="color:var(--color-accent)"/>
+            <circle cx="250" cy="120" r="6" fill="currentColor" style="color:var(--color-accent)"/>
+          </svg>
+          <span class="project-hero__label">Imbalanced ML · August–September 2025</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Fraud Detection</h1>
+          <p class="article__hook reveal">An ML pipeline that scans more than 6.3 million transactions for fraud, in a dataset where guessing "not fraud" every single time already scores 99.87 percent.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">The trap in the accuracy number</h2>
+            <p>Fraud is 0.13 percent of this data. That one fact poisons the most obvious metric: a model that predicts "not fraud" for every transaction is 99.87 percent accurate and completely worthless, because it never catches the thing you built it to catch. Any honest version of this project has to start by throwing out accuracy as the goal.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">95% recall and 95% accuracy — at a 0.13% fraud rate.<small>Where a do-nothing model already scores 99.87%.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Getting to useful recall</h2>
+            <p>I spent real time on exploratory analysis before touching a model, mostly to learn what fraud actually looks like in the data rather than assuming. The imbalance itself I handled with class weighting on a logistic regression, which tells the model to take the rare class seriously without blindly oversampling everything and distorting the distribution. A Streamlit app wraps the result for real-time predictions.</p>
+          </section>
+
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <img src="/assets/img/fraud_detection_app.png" alt="Real-time fraud detection interface" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)">
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">The Streamlit interface for real-time fraud predictions.</figcaption>
+          </figure>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">What was actually hard</h2>
+            <p>It was never the model. Fitting a classifier is the easy part. The whole difficulty lived in the class imbalance, in getting a system to reach useful recall when the signal it needs is a tenth of a percent of everything it sees. That is where the deliberate work went, and it is the part that transfers to the next imbalanced problem.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Streamlit</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/fraud-detection-app/tree/main" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

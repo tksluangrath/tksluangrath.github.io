@@ -1,0 +1,90 @@
+/* ============================================================================
+   tokens.css — Deep Sea design system, single source of truth.
+   Every hex value the site uses lives here. No implementation file below this
+   one is permitted to hardcode a color. Typography, spacing, motion, and the
+   background texture all resolve from the custom properties defined on :root.
+   ============================================================================ */
+
+:root {
+  /* --- Deep Sea palette (fixed contract) ------------------------------- */
+  --color-bg:             #0d1b2a;  /* Ink Black — page background            */
+  --color-surface:        #1b263b;  /* Prussian Blue — card / panel surface   */
+  --color-surface-raised: #415a77;  /* Steel Blue — hover states, borders     */
+  --color-accent:         #e0a500;  /* Amber Gold — CTAs, links, highlights    */
+  --color-accent-soft:    #f4c542;  /* Light Gold — accent hover               */
+  --color-text-primary:   #e0e1dd;  /* Warm White — body copy                  */
+  --color-text-secondary: #a8b2c1;  /* Slate — captions, metadata              */
+  --color-text-muted:     #778da9;  /* Muted Blue — placeholders, disabled     */
+
+  /* --- Type families ---------------------------------------------------- */
+  /* Display: Fraunces, a variable serif carrying optical "tics" that read
+     like a scientific atlas plate. Body: IBM Plex Sans, an engineered
+     technical face readable at 16px on dark. Mono: IBM Plex Mono, the
+     instrument readout that carries every number and eyebrow. */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:    "IBM Plex Sans", "Segoe UI", Helvetica, sans-serif;
+  --font-mono:    "IBM Plex Mono", "SF Mono", ui-monospace, monospace;
+
+  /* --- Type scale (min 5 steps) ---------------------------------------- */
+  --text-xs:   0.75rem;   /* caption, tags                                   */
+  --text-sm:   0.875rem;  /* secondary body, metadata                        */
+  --text-base: 1rem;      /* primary body                                    */
+  --text-lg:   1.25rem;   /* lead paragraph                                  */
+  --text-xl:   1.5rem;    /* card headers                                    */
+  --text-2xl:  2rem;      /* section headers                                 */
+  --text-3xl:  3rem;      /* hero subhead / project title                    */
+  --text-4xl:  clamp(2.75rem, 9vw, 4.5rem); /* hero display, viewport-clamped */
+
+  /* --- Line heights ----------------------------------------------------- */
+  --lh-tight: 1.2;
+  --lh-base:  1.6;
+  --lh-loose: 1.8;
+
+  /* --- Weight map (optical, never decorative) -------------------------- */
+  --weight-body:    400;
+  --weight-label:   500;
+  --weight-display: 700;
+  --weight-heavy:   900;
+
+  /* --- Spacing scale (4px base, 8 steps) ------------------------------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+  --space-section: clamp(64px, 10vw, 128px);
+
+  /* --- Component tokens ------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease-out;
+
+  /* --- Layout ----------------------------------------------------------- */
+  --max-width: 1120px;
+  --nav-height: 64px;
+
+  /* --- Breakpoints (documented; media queries use literals) ------------ */
+  --bp-sm: 640px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+  --bp-xl: 1280px;
+
+  /* --- Background texture (Option A: dot grid) ------------------------- */
+  /* A 1px dot on a 24px lattice in Steel Blue at 15% opacity. Reads as
+     coordinate space / graph paper — the atlas the data lives on. Chosen
+     over the diagonal rule and the radial bloom because a data scientist's
+     page should sit on a grid, and the dots pair cleanly with the rail. */
+  --texture-bg:
+    radial-gradient(
+      circle at 1px 1px,
+      rgba(65, 90, 119, 0.15) 1px,
+      transparent 0
+    );
+  --texture-size: 24px 24px;
+}
