@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chest X-Ray Classifier — Terrance Luangrath</title>
+  <meta name="description" content="A Vision Transformer for chest X-ray pneumonia detection with Grad-CAM explainability, served through a FastAPI backend and a React/TypeScript front end.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-cross" width="56" height="56" patternUnits="userSpaceOnUse">
+              <path d="M28 14 28 42M14 28 42 28" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-cross)"/>
+            <rect x="180" y="80" width="120" height="100" rx="8" fill="none" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2"/>
+            <circle cx="240" cy="130" r="18" fill="currentColor" style="color:var(--color-accent)" opacity="0.25"/>
+          </svg>
+          <span class="project-hero__label">Healthcare AI · Summer 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Chest X-Ray Classifier</h1>
+          <p class="article__hook reveal">A portfolio-grade web app for chest X-ray pneumonia detection: a Vision Transformer makes the call, and a Grad-CAM heatmap shows exactly which pixels drove it, instead of asking anyone to trust a bare label.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Explainability as a first-class feature</h2>
+            <p>The backend runs <code>lxyuan/vit-base-patch16-224-finetuned-chest-xray</code> through a FastAPI <code>/classify</code> endpoint, which returns a prediction label, a confidence score, and a Grad-CAM overlay in under ten seconds. The overlay isn't an afterthought bolted on for demo purposes — it's the diagnostic report, alongside the raw prediction and the underlying model metadata.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">A prediction and a heatmap, not just a label.<small>Grad-CAM overlay generated on every classification.</small></blockquote>
+
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <img src="/assets/img/vit_gradcam_demo.gif" alt="Selecting a chest X-ray from the gallery and viewing the pneumonia classification with Grad-CAM heatmap overlay" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)">
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">Gallery to diagnosis: selecting an X-ray, classifying it, and reading the Grad-CAM overlay.</figcaption>
+          </figure>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">A real front end, not a notebook demo</h2>
+            <p>A React 18 + Vite + TypeScript front end wraps the API: an image gallery of curated chest X-rays for one-click testing, a dataset info panel with the train/test/validation split and class distribution, and the diagnostic report itself. It's built to be picked up and used, not just read about.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">PyTorch</span><span class="tag">Transformers</span><span class="tag">pytorch-grad-cam</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">TypeScript</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/vit-gradcam-xray-app" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

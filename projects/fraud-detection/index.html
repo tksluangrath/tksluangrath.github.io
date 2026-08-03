@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fraud Detection — Terrance Luangrath</title>
-  <meta name="description" content="An ML pipeline that scans 6.3M+ transactions for fraud at a 0.13% fraud rate, reaching 95% recall through class weighting rather than blind oversampling.">
+  <meta name="description" content="An ML pipeline that scans 6.3M+ transactions for fraud at a 0.13% fraud rate, reaching 94% recall and a 0.99 ROC-AUC, deployed live on Azure ML and Azure Container Apps.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -53,11 +53,16 @@
             <p>Fraud is 0.13 percent of this data. That one fact poisons the most obvious metric: a model that predicts "not fraud" for every transaction is 99.87 percent accurate and completely worthless, because it never catches the thing you built it to catch. Any honest version of this project has to start by throwing out accuracy as the goal.</p>
           </section>
 
-          <blockquote class="pull-quote reveal">95% recall and 95% accuracy — at a 0.13% fraud rate.<small>Where a do-nothing model already scores 99.87%.</small></blockquote>
+          <blockquote class="pull-quote reveal">94% recall and a 0.99 ROC-AUC — at a 0.13% fraud rate.<small>Where a do-nothing model already scores 99.87%.</small></blockquote>
 
           <section class="article__section reveal">
             <h2 class="article__heading">Getting to useful recall</h2>
-            <p>I spent real time on exploratory analysis before touching a model, mostly to learn what fraud actually looks like in the data rather than assuming. The imbalance itself I handled with class weighting on a logistic regression, which tells the model to take the rare class seriously without blindly oversampling everything and distorting the distribution. A Streamlit app wraps the result for real-time predictions.</p>
+            <p>I spent real time on exploratory analysis before touching a model, mostly to learn what fraud actually looks like in the data rather than assuming. The imbalance itself I handled with class weighting on a logistic regression, which tells the model to take the rare class seriously without blindly oversampling everything and distorting the distribution. Measured on all 6,362,620 rows, the model holds 0.938 mean recall across 5-fold stratified CV and 0.943 recall on the held-out test set, at a 0.990 ROC-AUC. Precision at the default threshold is only 2.2% — the cost of weighting for a class this rare — so the API returns the raw fraud probability rather than a hard block, keeping that tradeoff visible to the caller.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">From local demo to a live endpoint</h2>
+            <p>What started as coursework with a local model and a Streamlit demo is now a cloud-deployed HTTPS scoring API: training and model registry on Azure ML, served from Azure Container Apps. The local run and the Azure ML job produce identical numbers — deterministic, logged via MLflow — so what you see below is exactly what's running.</p>
           </section>
 
           <figure class="reveal" style="margin:var(--space-6) 0">
@@ -71,7 +76,7 @@
           </section>
 
           <div class="tag-list reveal">
-            <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Streamlit</span>
+            <span class="tag">Python</span><span class="tag">pandas</span><span class="tag">scikit-learn</span><span class="tag">Azure ML</span><span class="tag">Azure Container Apps</span><span class="tag">MLflow</span><span class="tag">Streamlit</span>
           </div>
 
           <div class="links-row reveal">

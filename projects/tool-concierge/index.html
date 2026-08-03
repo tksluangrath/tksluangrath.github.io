@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tool Concierge — Terrance Luangrath</title>
+  <meta name="description" content="A LoRA fine-tune of Qwen3-8B-Base that generates a single MCP tool call, or abstains, instead of hallucinating tool names and malformed arguments.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M0 24 48 24M24 0 24 48" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-grid)"/>
+            <rect x="150" y="90" width="60" height="60" rx="6" fill="none" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2"/>
+            <rect x="270" y="110" width="60" height="60" rx="6" fill="none" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2" opacity="0.6"/>
+            <path d="M210 120 270 140" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2"/>
+          </svg>
+          <span class="project-hero__label">Agentic tooling · Summer 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Tool Concierge</h1>
+          <p class="article__hook reveal">MCP became a cross-vendor standard almost overnight, and a model that hallucinates a tool name or malforms an argument turns that integration into a silent failure. I fine-tuned Qwen3-8B-Base with LoRA to generate one correct MCP tool call — or explicitly abstain — instead.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Narrowing the scope on purpose</h2>
+            <p>Prior work like Gorilla targets ML model-hub APIs and TinyAgent targets generic JSON tool calls. I narrowed scope instead to the MCP schema specifically, and treated abstention as a trained output rather than a fallback bolted on afterward. Training data came from 9,300 sampled rows of Salesforce's xlam-function-calling-60k, reformatted into MCP-style <code>inputSchema</code> JSON, plus a self-generated set of "no applicable tool" negatives.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">Call accuracy went from 523/929 to 698/929.<small>Abstention accuracy more than doubled, from 9/31 to 22/31.</small></blockquote>
+
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <img src="/assets/img/tool_concierge_benchmarks.png" alt="Bar chart comparing pretrain and posttrain accuracy across BFCL, Nexus, and own-test-split benchmarks, showing gains on every metric" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)">
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">Pretrain vs. posttrain across BFCL, Nexus, and the held-out MCP test split.</figcaption>
+          </figure>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">LoRA on a single A100</h2>
+            <p>I applied LoRA adapters to <code>q_proj</code> and <code>v_proj</code> and swept three rank/alpha/dropout combinations for one epoch each. The high-capacity config (r=64, alpha=64) won on eval loss and became the adapter used for every reported result. Every prompt, training and eval alike, runs through a fixed five-step scaffold: restate the goal, check each tool's schema, pick one tool or none, fill in arguments, then emit exactly one JSON object.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">What the benchmarks actually showed</h2>
+            <p>Across BFCL, Nexus, and my own held-out MCP test split, fine-tuning produced a large abstention gain and a real call-accuracy gain — but MMLU accuracy dropped slightly (24.2% → 21.4%), both numbers close enough to chance that the signal is weak, though directionally consistent with LoRA's known catastrophic-forgetting risk. BFCL's false-call rate also rose even as abstention accuracy improved, which on inspection was mostly an output-format fix (pretrain often couldn't produce a parseable answer at all on irrelevance examples) rather than genuinely better judgment. I wrote those caveats into the model card rather than let a clean headline number hide them.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">PyTorch</span><span class="tag">PEFT / LoRA</span><span class="tag">Qwen3-8B</span><span class="tag">Transformers</span><span class="tag">MCP</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://huggingface.co/tksluangrath/tool-concierge" target="_blank" rel="noopener">Model card ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

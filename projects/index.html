@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Work — Terrance Luangrath</title>
-  <meta name="description" content="Eleven projects across machine learning, LLM tooling, data engineering, and analytics. Filter by ML, data engineering, NLP, agentic systems, or visualization.">
+  <meta name="description" content="Fourteen projects across machine learning, LLM tooling, data engineering, and analytics. Filter by ML, data engineering, NLP, agentic systems, or visualization.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -29,7 +29,7 @@
     <header class="section">
       <div class="wrap">
         <span class="eyebrow rail anim-item" data-anim="name">The work</span>
-        <h1 class="hero__name anim-item" data-anim="name" style="font-size:var(--text-3xl)">Eleven projects, one throughline.</h1>
+        <h1 class="hero__name anim-item" data-anim="name" style="font-size:var(--text-3xl)">Fourteen projects, one throughline.</h1>
         <p class="hero__statement anim-item anim-item--up" data-anim="subhead">Healthcare AI, fraud, audio ML, agents, humanitarian analytics. The common thread is caring why a model works, not just whether it does.</p>
       </div>
     </header>
@@ -46,6 +46,42 @@
         </div>
 
         <div class="project-grid" data-filterable>
+          <article class="project-card reveal" data-tags="ml agentic nlp">
+            <p class="project-card__meta">Summer 2026 · Agentic tooling</p>
+            <h2 class="project-card__title">Tool Concierge</h2>
+            <p class="project-card__desc">A LoRA fine-tune of Qwen3-8B that generates a single MCP tool call — or abstains — instead of hallucinating tool names and malformed arguments.</p>
+            <p class="project-card__metric">75% call accuracy<small>up from 56% pretrain; abstention accuracy more than doubled</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">PyTorch</span><span class="tag">PEFT/LoRA</span><span class="tag">Qwen3</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/tool-concierge/">Read →</a><a class="project-card__link project-card__link--muted" href="https://huggingface.co/tksluangrath/tool-concierge" target="_blank" rel="noopener">Model card</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="agentic data-eng">
+            <p class="project-card__meta">Summer 2026 · Agent tooling</p>
+            <h2 class="project-card__title">llm-cost-carbon</h2>
+            <p class="project-card__desc">An MCP server that reconciles real LLM inference cost from local usage logs across Claude Code, Codex, OpenCode, and Amp.</p>
+            <p class="project-card__metric">Multi-tool<small>normalizes ccusage output across four CLI agents into one cost model</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">Python</span><span class="tag">MCP</span><span class="tag">uv</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/llm-cost-carbon/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/llm-cost-carbon" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="nlp data-eng">
+            <p class="project-card__meta">Summer 2026 · NLP pipeline</p>
+            <h2 class="project-card__title">Podscope</h2>
+            <p class="project-card__desc">Point it at YouTube videos and it transcribes, segments by topic, summarizes two ways, extracts entities, and graphs what recurs across videos — no paid APIs.</p>
+            <p class="project-card__metric">Zero paid APIs<small>faster-whisper + local Ollama, entities graphed in Neo4j</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">PySpark</span><span class="tag">Neo4j</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/podscope/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/podscope" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
+          <article class="project-card reveal" data-tags="ml viz">
+            <p class="project-card__meta">Summer 2026 · Healthcare AI</p>
+            <h2 class="project-card__title">Chest X-Ray Classifier</h2>
+            <p class="project-card__desc">A Vision Transformer for pneumonia detection with a Grad-CAM overlay showing exactly which pixels drove the call.</p>
+            <p class="project-card__metric">Under 10s<small>FastAPI + ViT inference, React/TypeScript front end</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">PyTorch</span><span class="tag">FastAPI</span><span class="tag">React</span></div>
+            <div class="project-card__footer"><a class="project-card__link" href="/projects/vit-gradcam-xray-app/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/vit-gradcam-xray-app" target="_blank" rel="noopener">GitHub</a></div>
+          </article>
+
           <article class="project-card reveal" data-tags="ml nlp viz">
             <p class="project-card__meta">Spring 2026 · Healthcare AI</p>
             <h2 class="project-card__title">AURA-ED</h2>
@@ -62,15 +98,6 @@
             <p class="project-card__metric">94.76% clean accuracy<small>a CNN that beat the transformer in every condition</small></p>
             <div class="project-card__tags tag-list"><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">torchaudio</span></div>
             <div class="project-card__footer"><a class="project-card__link" href="/projects/speech-isolation-keyword-spotting/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/ds6050-audio-projects" target="_blank" rel="noopener">GitHub</a></div>
-          </article>
-
-          <article class="project-card reveal" data-tags="nlp agentic">
-            <p class="project-card__meta">April 2026 · NLP tooling</p>
-            <h2 class="project-card__title">ResumeIQ</h2>
-            <p class="project-card__desc">Paste a resume and a job posting; get a match score, the skills you're missing, and LLM rewrites for weak bullets.</p>
-            <p class="project-card__metric">Semantic, not keyword<small>sentence-transformer matching catches paraphrase</small></p>
-            <div class="project-card__tags tag-list"><span class="tag">FastAPI</span><span class="tag">spaCy</span><span class="tag">Docker</span></div>
-            <div class="project-card__footer"><a class="project-card__link" href="/projects/resumeiq/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/ResumeIQ" target="_blank" rel="noopener">GitHub</a></div>
           </article>
 
           <article class="project-card reveal" data-tags="data-eng">
@@ -112,9 +139,9 @@
           <article class="project-card reveal" data-tags="ml">
             <p class="project-card__meta">Aug–Sep 2025 · Imbalanced ML</p>
             <h2 class="project-card__title">Fraud Detection</h2>
-            <p class="project-card__desc">A pipeline that finds fraud across 6.3M+ transactions where the honest answer is almost always "not fraud."</p>
-            <p class="project-card__metric">95% recall<small>at a 0.13% fraud rate</small></p>
-            <div class="project-card__tags tag-list"><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Streamlit</span></div>
+            <p class="project-card__desc">A pipeline that finds fraud across 6.3M+ transactions where the honest answer is almost always "not fraud," now deployed live on Azure.</p>
+            <p class="project-card__metric">94% recall<small>0.99 ROC-AUC, at a 0.13% fraud rate</small></p>
+            <div class="project-card__tags tag-list"><span class="tag">scikit-learn</span><span class="tag">Azure ML</span><span class="tag">Streamlit</span></div>
             <div class="project-card__footer"><a class="project-card__link" href="/projects/fraud-detection/">Read →</a><a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/fraud-detection-app/tree/main" target="_blank" rel="noopener">GitHub</a></div>
           </article>
 

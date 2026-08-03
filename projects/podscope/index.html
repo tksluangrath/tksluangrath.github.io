@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Podscope — Terrance Luangrath</title>
+  <meta name="description" content="A local, zero-cost multi-video NLP pipeline: transcribe YouTube videos, segment by topic, summarize two ways, extract entities, and graph what recurs across videos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-wave" width="80" height="40" patternUnits="userSpaceOnUse">
+              <path d="M0 20 Q20 4 40 20 T80 20" stroke="currentColor" stroke-width="1.5" fill="none" opacity="0.5"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-wave)"/>
+            <circle cx="170" cy="120" r="6" fill="currentColor" style="color:var(--color-accent)"/>
+            <circle cx="260" cy="90" r="6" fill="currentColor" style="color:var(--color-accent)"/>
+            <circle cx="330" cy="150" r="6" fill="currentColor" style="color:var(--color-accent)"/>
+            <path d="M170 120 260 90 330 150" stroke="currentColor" style="color:var(--color-accent)" stroke-width="1.5" fill="none" opacity="0.7"/>
+          </svg>
+          <span class="project-hero__label">NLP pipeline · Summer 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Podscope</h1>
+          <p class="article__hook reveal">Point it at YouTube videos and it transcribes them, segments the transcript into topics, summarizes each topic two different ways, pulls out named entities, and tracks which entities keep recurring across videos — all running locally, at zero API cost.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">An adaptive threshold instead of a fixed one</h2>
+            <p>Topic segmentation runs first, grouping contiguous transcript segments by embedding similarity. Instead of one fixed similarity cutoff, each video gets its own threshold — <code>mean + std_multiplier × stdev</code> of that video's own adjacent-segment distances — because a short conversational clip and a long-form narration have genuinely different similarity distributions, and a single fixed cutoff either over-splits one or under-splits the other. Abstractive summarization then runs once per topic group rather than once per raw ASR segment, so the local Ollama model sees a full topic's worth of dialogue instead of a disconnected fragment.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">Transcription, topic segmentation, dual summarization, NER — no paid APIs.<small>faster-whisper and a local Ollama model do the work a hosted API usually would.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Scoring the summaries, not just producing them</h2>
+            <p>Each abstractive summary is scored against the exact transcript text it was generated from by word-count compression ratio — how much shorter the summary is than its source. A lower ratio means more aggressive compression. It's computed only for the abstractive summary, since the extractive one is a sentence lifted verbatim from the transcript rather than a generated compression, so the same comparison wouldn't mean anything there.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Built for cross-video patterns, not one video</h2>
+            <p>Everything — transcripts, entities, topic groups, summary metrics — lands in an Apache Iceberg lakehouse via PySpark, which is what makes cross-video entity co-occurrence analysis possible: which people, places, and things keep showing up together across an entire channel, not just within a single episode. That graph is browsable directly in Neo4j.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">Python</span><span class="tag">faster-whisper</span><span class="tag">spaCy</span><span class="tag">Ollama</span><span class="tag">PySpark</span><span class="tag">Apache Iceberg</span><span class="tag">Neo4j</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/podscope" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
