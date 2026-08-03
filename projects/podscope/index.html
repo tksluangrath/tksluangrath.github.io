@@ -53,6 +53,11 @@
 
           <blockquote class="pull-quote reveal">Transcription, topic segmentation, dual summarization, NER — no paid APIs.<small>faster-whisper and a local Ollama model do the work a hosted API usually would.</small></blockquote>
 
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <img src="/assets/img/podscope_tui.gif" alt="Terminal running the Podscope TUI, pointing it at a YouTube video and walking through the transcription and summarization pipeline" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)">
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">The pipeline running end to end from the terminal.</figcaption>
+          </figure>
+
           <section class="article__section reveal">
             <h2 class="article__heading">Scoring the summaries, not just producing them</h2>
             <p>Each abstractive summary is scored against the exact transcript text it was generated from by word-count compression ratio — how much shorter the summary is than its source. A lower ratio means more aggressive compression. It's computed only for the abstractive summary, since the extractive one is a sentence lifted verbatim from the transcript rather than a generated compression, so the same comparison wouldn't mean anything there.</p>
