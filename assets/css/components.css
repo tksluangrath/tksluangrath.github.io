@@ -230,8 +230,7 @@ p { margin: 0; }
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-2) var(--space-4);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-surface-raised);
+  background-color: var(--color-surface-raised);
   border-radius: var(--radius-md);
   font-size: var(--text-sm);
   color: var(--color-text-secondary);
@@ -240,20 +239,17 @@ p { margin: 0; }
 .skills__icon { width: 18px; height: 18px; flex: 0 0 auto; fill: var(--color-accent); }
 .skills__label { font-weight: var(--weight-label); }
 
-/* --- Tag (tech pill) ------------------------------------------------------ */
+/* --- Tag (plain typographic label, not a badge) ---------------------------- */
 .tag {
   display: inline-block;
   font-family: var(--font-mono);
   font-size: var(--text-xs);
   font-weight: var(--weight-label);
   letter-spacing: 0.02em;
-  color: var(--color-text-secondary);
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-surface-raised);
-  border-radius: var(--radius-sm);
-  padding: var(--space-1) var(--space-3);
+  color: var(--color-accent);
 }
-.tag-list { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+.tag-list { display: flex; flex-wrap: wrap; row-gap: var(--space-1); }
+.tag:not(:first-child)::before { content: "·"; color: var(--color-text-muted); margin-inline: var(--space-2); }
 
 /* --- Project card --------------------------------------------------------- */
 .project-grid {
