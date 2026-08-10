@@ -1,20 +1,25 @@
 /* ============================================================================
-   tokens.css — Deep Sea design system, single source of truth.
+   tokens.css — Golden Summer Fields design system, single source of truth.
    Every hex value the site uses lives here. No implementation file below this
    one is permitted to hardcode a color. Typography, spacing, motion, and the
    background texture all resolve from the custom properties defined on :root.
    ============================================================================ */
 
 :root {
-  /* --- Deep Sea palette (fixed contract) ------------------------------- */
-  --color-bg:             #0d1b2a;  /* Ink Black — page background            */
-  --color-surface:        #1b263b;  /* Prussian Blue — card / panel surface   */
-  --color-surface-raised: #415a77;  /* Steel Blue — hover states, borders     */
-  --color-accent:         #e0a500;  /* Amber Gold — CTAs, links, highlights    */
-  --color-accent-soft:    #f4c542;  /* Light Gold — accent hover               */
-  --color-text-primary:   #e0e1dd;  /* Warm White — body copy                  */
-  --color-text-secondary: #a8b2c1;  /* Slate — captions, metadata              */
-  --color-text-muted:     #778da9;  /* Muted Blue — placeholders, disabled     */
+  /* --- Golden Summer Fields palette (fixed contract) --------------------
+     Surfaces are the four swatches straight from the reference palette
+     (coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373). Text and accent
+     are ink shades derived from Terracotta (#d4a373) and darkened until they
+     clear WCAG AA (4.5:1) against every surface below — the raw swatch reads
+     ~2:1 on cream and isn't safe as text or button color. --------------- */
+  --color-bg:             #fefae0;  /* Cream — page background                 */
+  --color-surface:        #faedcd;  /* Pale Gold — card / panel surface        */
+  --color-surface-raised: #e9edc9;  /* Sage — hover states, borders            */
+  --color-accent:         #8a5a3a;  /* Toasted Terracotta — CTAs, links        */
+  --color-accent-soft:    #9c6a40;  /* Warm Terracotta — accent hover          */
+  --color-text-primary:   #33331f;  /* Deep Olive Ink — body copy              */
+  --color-text-secondary: #5f5f45;  /* Muted Olive — captions, metadata        */
+  --color-text-muted:     #6f7658;  /* Sage Gray — placeholders, disabled      */
 
   /* --- Type families ---------------------------------------------------- */
   /* Display: Fraunces, a variable serif carrying optical "tics" that read
@@ -61,7 +66,7 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 4px 24px rgba(51, 51, 31, 0.12);
   --transition-fast: 150ms ease;
   --transition-base: 300ms ease-out;
 
@@ -76,14 +81,13 @@
   --bp-xl: 1280px;
 
   /* --- Background texture (Option A: dot grid) ------------------------- */
-  /* A 1px dot on a 24px lattice in Steel Blue at 15% opacity. Reads as
-     coordinate space / graph paper — the atlas the data lives on. Chosen
-     over the diagonal rule and the radial bloom because a data scientist's
-     page should sit on a grid, and the dots pair cleanly with the rail. */
+  /* A 1px dot on a 24px lattice in raw Terracotta (#d4a373) at 22% opacity —
+     the swatch is too light to use as text, but at low opacity over cream it
+     reads as sun-flecked field rows instead of a coordinate grid. */
   --texture-bg:
     radial-gradient(
       circle at 1px 1px,
-      rgba(65, 90, 119, 0.15) 1px,
+      rgba(212, 163, 115, 0.22) 1px,
       transparent 0
     );
   --texture-size: 24px 24px;

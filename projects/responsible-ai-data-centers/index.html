@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsible AI's Missing Layer — Terrance Luangrath</title>
+  <meta name="description" content="Responsible AI frameworks govern the model, not the land, water, and power grids it runs on. A case study of the Digital Gateway data center fight in Prince William County, Virginia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">TL</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-grid" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M30 0H0V30" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-grid)"/>
+            <rect x="90" y="60" width="70" height="140" fill="currentColor" style="color:var(--color-accent)" opacity="0.85"/>
+            <rect x="205" y="90" width="70" height="110" fill="currentColor" style="color:var(--color-accent)" opacity="0.6"/>
+            <rect x="320" y="40" width="70" height="160" fill="currentColor" style="color:var(--color-accent)" opacity="0.85"/>
+          </svg>
+          <span class="project-hero__label">AI policy &amp; ethics · Summer 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Responsible AI's Missing Layer</h1>
+          <p class="article__hook reveal">Responsible AI frameworks govern the model — its outputs, its behaviors, the harms it produces when it runs. That scope stops at the server. Every model runs on land that gets rezoned, water drawn from shared reservoirs, and power grids stretched thin.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">The case</h2>
+            <p>Northern Virginia holds 13% of global data-center capacity. The Digital Gateway project proposed a 2,100-acre, 37-data-center campus in Prince William County, approved after a 27-hour hearing in December 2023. Two courts later voided that approval, but not for any reason a responsible AI framework would catch: the county failed to meet a public notice requirement under Virginia Code. A newspaper-advertising technicality stopped the project. No ethics framework did.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Two dilemmas the framework can't see</h2>
+            <p>The first is procedural: residents received legally deficient notice while a board chair holding stock in the developer's parent company and a supervisor who'd contracted to sell his own land into the project both had a hand in the vote. The second is distributive: water drawn from a regional drinking supply and a tax subsidy costing Virginia $750 million a year concentrate benefits in a handful of localities — Loudoun County residents gained roughly $1,506 each — while the cost, about $87 a head, falls on all 8.6 million Virginians. NIST's AI Risk Management Framework asks developers to complete a risk register for the model. It asks nothing about where the server farm goes.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">A developer can be fully compliant on paper and still miss both problems.<small>Governance regulates what AI does, not what running AI requires.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Three fixes</h2>
+            <p>The paper proposes extending risk frameworks to cover infrastructure siting with binding, not voluntary, standards; mandating water and energy disclosure at the point of application instead of after facilities are already built; and replacing public comment — which well-resourced developers can simply outlast — with binding community review modeled on NEPA's environmental impact process.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">Responsible AI</span><span class="tag">Data Justice</span><span class="tag">Infrastructure Governance</span><span class="tag">Policy Analysis</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/assets/docs/Responsible_AI_Data_Center_Fight_NoVA.pdf" target="_blank" rel="noopener">Download paper (PDF) ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
