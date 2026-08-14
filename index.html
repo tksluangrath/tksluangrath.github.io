@@ -20,6 +20,7 @@
         <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
         <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
         <li><a class="nav__link anim-item anim-item--down" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a></li>
         <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
       </ul>
     </div>
@@ -38,7 +39,7 @@
       </div>
     </header>
 
-    <section class="section" aria-label="Skills">
+    <section class="section" aria-label="Skills" style="padding-top:0">
       <div class="wrap">
         <span class="eyebrow rail reveal">What I work with</span>
         <div class="skills reveal">
@@ -58,11 +59,39 @@
       </div>
     </section>
 
-    <section class="section" aria-label="Featured work">
+    <section class="section" aria-label="Featured work" style="padding-top:0">
       <div class="wrap">
         <span class="eyebrow rail reveal">Selected work</span>
-        <h2 class="section-title reveal">Three that show the range.</h2>
+        <h2 class="section-title reveal">A few favorites.</h2>
         <div class="project-grid">
+          <article class="project-card project-card--featured reveal">
+            <p class="project-card__meta">Summer 2026 · Agentic tooling</p>
+            <h3 class="project-card__title">Tool Concierge</h3>
+            <p class="project-card__desc">A LoRA fine-tune of Qwen3-8B that generates a single MCP tool call — or abstains — instead of hallucinating tool names and malformed arguments.</p>
+            <p class="project-card__metric">75% call accuracy<small>up from 56% pretrain; abstention accuracy more than doubled</small></p>
+            <div class="project-card__tags tag-list">
+              <span class="tag">PyTorch</span><span class="tag">PEFT/LoRA</span><span class="tag">Qwen3</span>
+            </div>
+            <div class="project-card__footer">
+              <a class="project-card__link" href="/projects/tool-concierge/">Read the story →</a>
+              <a class="project-card__link project-card__link--muted" href="https://huggingface.co/tksluangrath/tool-concierge" target="_blank" rel="noopener">Model card</a>
+            </div>
+          </article>
+
+          <article class="project-card project-card--featured reveal">
+            <p class="project-card__meta">July 2026 · NLP pipeline</p>
+            <h3 class="project-card__title">Podscope</h3>
+            <p class="project-card__desc">Point it at YouTube videos and it transcribes, segments by topic, summarizes two ways, extracts entities, and graphs what recurs across videos — no paid APIs.</p>
+            <p class="project-card__metric">Zero paid APIs<small>faster-whisper + local Ollama, entities graphed in Neo4j</small></p>
+            <div class="project-card__tags tag-list">
+              <span class="tag">Python</span><span class="tag">spaCy</span><span class="tag">Neo4j</span>
+            </div>
+            <div class="project-card__footer">
+              <a class="project-card__link" href="/projects/podscope/">Read the story →</a>
+              <a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/podscope" target="_blank" rel="noopener">GitHub</a>
+            </div>
+          </article>
+
           <article class="project-card project-card--featured reveal">
             <p class="project-card__meta">Spring 2026 · Healthcare AI</p>
             <h3 class="project-card__title">AURA-ED</h3>
@@ -76,34 +105,6 @@
               <a class="project-card__link project-card__link--muted" href="https://github.com/XinnieMai/ed_briefgenerator" target="_blank" rel="noopener">GitHub</a>
             </div>
           </article>
-
-          <article class="project-card project-card--featured reveal">
-            <p class="project-card__meta">Aug 2025 · Imbalanced ML</p>
-            <h3 class="project-card__title">Fraud Detection</h3>
-            <p class="project-card__desc">A pipeline that scans 6.3M+ transactions for fraud when a model that always guesses "not fraud" is already 99.87% accurate, deployed live on Azure.</p>
-            <p class="project-card__metric">94% recall<small>0.99 ROC-AUC, at a 0.13% fraud rate</small></p>
-            <div class="project-card__tags tag-list">
-              <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">Azure ML</span>
-            </div>
-            <div class="project-card__footer">
-              <a class="project-card__link" href="/projects/fraud-detection/">Read the story →</a>
-              <a class="project-card__link project-card__link--muted" href="https://github.com/tksluangrath/fraud-detection-app/tree/main" target="_blank" rel="noopener">GitHub</a>
-            </div>
-          </article>
-
-          <article class="project-card project-card--featured reveal">
-            <p class="project-card__meta">2025 · Humanitarian analytics</p>
-            <h3 class="project-card__title">Haiti Disaster Relief</h3>
-            <p class="project-card__desc">Finding temporary shelters in aerial imagery so aid groups could reach displaced people faster after the earthquake.</p>
-            <p class="project-card__metric">99% recall<small>blue-tarp detection, six classification models compared</small></p>
-            <div class="project-card__tags tag-list">
-              <span class="tag">R</span><span class="tag">tidymodels</span><span class="tag">SMOTE</span>
-            </div>
-            <div class="project-card__footer">
-              <a class="project-card__link" href="/projects/haiti-disaster-relief/">Read the story →</a>
-              <a class="project-card__link project-card__link--muted" href="./assets/docs/Haiti_Earthquake_Relief.pdf" target="_blank" rel="noopener">Report</a>
-            </div>
-          </article>
         </div>
         <p class="reveal" style="margin-top:var(--space-6)"><a class="btn btn--ghost" href="/projects/">See all 15 projects</a></p>
       </div>
@@ -112,7 +113,7 @@
 
   <footer class="footer">
     <div class="wrap footer__inner">
-      <span class="footer__note">Terrance Luangrath — Charlottesville, VA</span>
+      <span class="footer__note">Terrance Luangrath — Washington, DC Metro Area</span>
       <div class="footer__links">
         <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
         <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
