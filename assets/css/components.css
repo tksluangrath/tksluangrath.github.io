@@ -239,6 +239,19 @@ p { margin: 0; }
 .skills__icon { width: 18px; height: 18px; flex: 0 0 auto; fill: var(--color-text-secondary); }
 .skills__label { font-weight: var(--weight-label); }
 
+/* --- Skills group (categorized rows under the technical-stack section) ---- */
+.skills-group { margin-bottom: var(--space-4); }
+.skills-group:last-child { margin-bottom: 0; }
+.skills-group__label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
 /* --- Tag (plain typographic label, not a badge) ---------------------------- */
 .tag {
   display: inline-block;
