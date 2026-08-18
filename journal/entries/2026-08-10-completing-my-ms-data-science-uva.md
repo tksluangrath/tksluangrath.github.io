@@ -4,8 +4,6 @@ date: "2026-08-10"
 description: "I've completed my Master's in Data Science at the University of Virginia's School of Data Science, the foundation for what I want to build next."
 tags:
   - Career
-  - AI/ML
-  - Notes
 ---
 
 I've completed my Master's in Data Science at the University of Virginia School of Data Science. I'm proud of this one.
