@@ -167,6 +167,5 @@ repository root and open `http://localhost:8765/`.
 
 ## Contact form
 
-The About page carries a Formspree form whose `action` is a placeholder,
-`https://formspree.io/f/YOUR_ENDPOINT`. Create a form at formspree.io and replace that endpoint
-to start receiving submissions; until then the form posts nowhere.
+The About page carries a Formspree form. Submissions post to `https://formspree.io/f/xyegbbwl`
+and arrive by email through Formspree.
