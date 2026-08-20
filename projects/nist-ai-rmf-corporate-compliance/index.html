@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corporate Compliance with the NIST AI RMF — Terrance Luangrath</title>
+  <meta name="description" content="Anthropic and Google both check every box on NIST's AI Risk Management Framework, and both still decide for themselves what gets measured, disclosed, and redacted. Why voluntary compliance needs mandatory standards and outside auditors behind it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-grid2" width="30" height="30" patternUnits="userSpaceOnUse">
+              <path d="M30 0H0V30" fill="none" stroke="currentColor" stroke-width="0.6" opacity="0.5"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-grid2)"/>
+            <rect x="70" y="70" width="150" height="18" rx="2" fill="currentColor" style="color:var(--color-accent)" opacity="0.85"/>
+            <rect x="70" y="110" width="340" height="18" rx="2" fill="currentColor" style="color:var(--color-accent)" opacity="0.6"/>
+            <rect x="70" y="150" width="230" height="18" rx="2" fill="currentColor" style="color:var(--color-accent)" opacity="0.85"/>
+          </svg>
+          <span class="project-hero__label">AI policy &amp; ethics · July 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Corporate Compliance with the NIST AI RMF</h1>
+          <p class="article__hook reveal">NIST's AI Risk Management Framework is voluntary, so a company gets to decide whether to adopt it, how much of it to apply, and what to say about the results. We picked the two labs with the least excuse to cut corners on this, Anthropic and Google, and checked their public safety reporting against the RMF's four functions line by line.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Two labs, four functions</h2>
+            <p>Anthropic's Responsible Scaling Policy and Google's Responsible AI Progress Report both line up with GOVERN, MAP, MEASURE, and MANAGE. Anthropic has a named Responsible Scaling Officer and board oversight; Google runs Launch Review forums and an AGI Futures Council. Both lean hard on red-teaming and outside evaluators for MEASURE, which turned out to be the best-documented function on either side. The full function-by-function tables are in the paper.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Where it falls apart</h2>
+            <p>Here's the catch: in both cases, the company still decides what gets measured, disclosed, and redacted, and nobody outside gets to check its work. Anthropic edits its own redactions. Google's report reads more like a highlight reel of good launches than a consistent record. And this isn't just an Anthropic-and-Google problem. Earlier work applying the RMF to facial recognition and to AI supply chains ran into the same wall: the framework assumes one company builds and ships a system start to finish, so it has almost nothing to say about data retention, deletion, or what happens once a system passes through several hands.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">A framework that never asks a question can't catch a company for answering it wrong.<small>Not bad faith on either company's part. Just a framework that never asked for more.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">What we'd change</h2>
+            <p>Our recommendation: make the standards mandatory, with real penalties for skipping them, closer to how GDPR works. And move the auditing outside the company, to independent regulatory agencies instead of reviewers the company hand-picks and pays. Right now compliance runs entirely on the honor system, and that's a strange place to leave it for the industry building the most consequential technology of the decade.</p>
+          </section>
+
+          <p class="reveal" style="color:var(--color-text-muted);font-size:var(--text-sm)">Written with Alyssa Samuel, David Hernandez, Srivatsa Balasubramanyam, and Amanda Betag for DS 6002: Ethics in Big Data, UVA M.S. in Data Science.</p>
+
+          <div class="tag-list reveal">
+            <span class="tag">AI Governance</span><span class="tag">NIST AI RMF</span><span class="tag">Policy Analysis</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/assets/docs/NIST_AI_RMF_Corporate_Compliance_Analysis.pdf" target="_blank" rel="noopener">Download paper (PDF) ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
