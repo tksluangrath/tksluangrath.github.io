@@ -126,7 +126,8 @@ function markdownToArticleHtml(md) {
       paraLines.push(lines[i]);
       i++;
     }
-    html += `<p>${inline(paraLines.join(" "))}</p>\n`;
+    const cls = inSection ? "" : ' class="article__hook"';
+    html += `<p${cls}>${inline(paraLines.join(" "))}</p>\n`;
   }
   closeSection();
   return html;

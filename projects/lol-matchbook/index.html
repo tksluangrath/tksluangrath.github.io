@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LoL Matchbook — Terrance Luangrath</title>
+  <meta name="description" content="A local, rank-aware League of Legends matchup assistant that auto-detects your champ-select pick and answers from a precomputed lookup table in under 200ms — no live generation during the 30-second pick timer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-grid" width="48" height="48" patternUnits="userSpaceOnUse">
+              <path d="M0 24 48 24M24 0 24 48" stroke="currentColor" stroke-width="1" opacity="0.5"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-grid)"/>
+            <circle cx="180" cy="130" r="34" fill="none" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2"/>
+            <circle cx="290" cy="130" r="34" fill="none" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2" opacity="0.6"/>
+            <path d="M214 130 256 130" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2"/>
+          </svg>
+          <span class="project-hero__label">Desktop app · Local inference · 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">LoL Matchbook</h1>
+          <p class="article__hook reveal">Champ select gives you about 30 seconds to lock in a pick. A model generating advice on the spot can't beat that clock, and it has no business fighting the game for GPU while you're trying to play it. So I built a desktop app that watches the League client's local API, detects your matchup the moment it's locked, and answers out of a precomputed lookup table instead of generating anything live.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Precompute, don't generate live</h2>
+            <p>That's the whole architecture in one sentence. A background job pulls ranked match data, aggregates it per champion pair, rank, and game phase, and writes early/mid/late-game blurbs to Postgres ahead of time. During an actual game, <code>/advice</code> is just a DB read: under 200ms, no GPU touched, nothing fighting the game for VRAM.</p>
+          </section>
+
+          <blockquote class="pull-quote reveal">Precomputing every same-lane pair at measured throughput would take 104 to 158 days.<small>The fix wasn't a faster model. It was giving up on precomputing everything.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">6,512 pairs and a tiered fallback</h2>
+            <p>Ranked-only, deduplicated match data puts the same-lane matchup space at 6,512 pairs across rank brackets and game phases. At measured generation throughput, precomputing all of it isn't an overnight job, it's a multi-month one. So instead of chasing more throughput, I split precompute into two tiers: an eager tier covering the top pairs by play volume, sized to whatever refresh window is actually tolerable, and a lazy tier that falls back to a wider rank bracket or an archetype-level blurb on a miss. Misses get logged to a background backfill queue rather than blocking the request. Champ select never waits on generation either way; the tier only changes how fresh the answer is, not how fast it shows up.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">A fine-tuned model for the part that has to be live</h2>
+            <p>Follow-up questions in the chat panel (<code>/ask</code>) can't be precomputed, since there's no way to know what someone will type. That path runs a LoRA-adapted small model through <code>llama-cpp-python</code>'s GGUF serving, quantized and kept on CPU on purpose so it stays safe to run alongside the game instead of reaching for the same GPU the precompute batch job needs. Getting this working on Windows turned into its own side quest: <code>llama-cpp-python</code> has no prebuilt Windows wheel, so the full backend has to run under WSL2 with a real Ubuntu userspace (Docker Desktop's built-in WSL VM doesn't count). Even that wasn't straightforward &mdash; a fresh Ubuntu install shipped a Python too new for <code>vllm</code> and <code>torch</code> to install against.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">From dev server pair to a packaged app</h2>
+            <p>The FastAPI backend and React/Vite frontend started as two dev servers you'd run by hand. The last build phase wraps the backend as a Tauri sidecar with the frontend as its webview, so it's one packaged app with launch-on-login now, and you don't have to remember to start two terminals before queueing up.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">PostgreSQL</span><span class="tag">llama.cpp</span><span class="tag">LoRA</span><span class="tag">Tauri</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/lol-matchbook" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath — Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
