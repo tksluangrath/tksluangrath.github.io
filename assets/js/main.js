@@ -13,15 +13,19 @@
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* --- Navigation: transparent -> surface on scroll --------------------- */
+  /* Driven by an IntersectionObserver on a 1px sentinel at the top of the
+     page, not a scroll listener - avoids a handler firing on every frame. */
   function initNav() {
     var nav = document.querySelector(".nav");
     if (!nav) return;
-    function onScroll() {
-      if (window.scrollY > 8) nav.classList.add("nav--scrolled");
-      else nav.classList.remove("nav--scrolled");
-    }
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
+    var sentinel = document.createElement("div");
+    sentinel.setAttribute("aria-hidden", "true");
+    sentinel.style.cssText = "position:absolute;top:8px;width:1px;height:1px;pointer-events:none;";
+    document.body.prepend(sentinel);
+    if (!("IntersectionObserver" in window)) return;
+    new IntersectionObserver(function (entries) {
+      nav.classList.toggle("nav--scrolled", !entries[0].isIntersecting);
+    }).observe(sentinel);
   }
 
   /* --- Page-load reveal sequence ---------------------------------------- */

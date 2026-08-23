@@ -4,7 +4,7 @@
   <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tool Concierge — Terrance Luangrath</title>
+  <title>Tool Concierge - Terrance Luangrath</title>
   <meta name="description" content="A LoRA fine-tune of Qwen3-8B-Base that generates a single MCP tool call, or abstains, instead of hallucinating tool names and malformed arguments.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,7 +43,7 @@
 
         <article class="article">
           <h1 class="article__title reveal">Tool Concierge</h1>
-          <p class="article__hook reveal">MCP became a cross-vendor standard almost overnight, and a model that hallucinates a tool name or malforms an argument turns that integration into a silent failure. I fine-tuned Qwen3-8B-Base with LoRA to generate one correct MCP tool call — or explicitly abstain — instead.</p>
+          <p class="article__hook reveal">MCP became a cross-vendor standard almost overnight, and a model that hallucinates a tool name or malforms an argument turns that integration into a silent failure. I fine-tuned Qwen3-8B-Base with LoRA to generate one correct MCP tool call - or explicitly abstain - instead.</p>
 
           <section class="article__section reveal">
             <h2 class="article__heading">Narrowing the scope on purpose</h2>
@@ -64,7 +64,7 @@
 
           <section class="article__section reveal">
             <h2 class="article__heading">What the benchmarks actually showed</h2>
-            <p>Across BFCL, Nexus, and my own held-out MCP test split, fine-tuning produced a large abstention gain and a real call-accuracy gain — but MMLU accuracy dropped slightly (24.2% → 21.4%), both numbers close enough to chance that the signal is weak, though directionally consistent with LoRA's known catastrophic-forgetting risk. BFCL's false-call rate also rose even as abstention accuracy improved, which on inspection was mostly an output-format fix (pretrain often couldn't produce a parseable answer at all on irrelevance examples) rather than genuinely better judgment. I wrote those caveats into the model card rather than let a clean headline number hide them.</p>
+            <p>Across BFCL, Nexus, and my own held-out MCP test split, fine-tuning produced a large abstention gain and a real call-accuracy gain - but MMLU accuracy dropped slightly (24.2% → 21.4%), both numbers close enough to chance that the signal is weak, though directionally consistent with LoRA's known catastrophic-forgetting risk. BFCL's false-call rate also rose even as abstention accuracy improved, which on inspection was mostly an output-format fix (pretrain often couldn't produce a parseable answer at all on irrelevance examples) rather than genuinely better judgment. I wrote those caveats into the model card rather than let a clean headline number hide them.</p>
           </section>
 
           <div class="tag-list reveal">
@@ -82,7 +82,7 @@
 
   <footer class="footer">
     <div class="wrap footer__inner">
-      <span class="footer__note">Terrance Luangrath — Washington, DC Metro Area</span>
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
       <div class="footer__links">
         <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
         <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>

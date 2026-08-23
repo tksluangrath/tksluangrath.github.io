@@ -66,9 +66,11 @@
   --radius-sm: 4px;
   --radius-md: 8px;
   --radius-lg: 16px;
-  --shadow-card: 0 4px 24px rgba(51, 51, 31, 0.12);
+  --radius-pill: 9999px;
+  --shadow-card: 0 2px 12px rgba(51, 51, 31, 0.05);
   --transition-fast: 150ms ease;
   --transition-base: 300ms ease-out;
+  --transition-reveal: 600ms cubic-bezier(0.16, 1, 0.3, 1);
 
   /* --- Layout ----------------------------------------------------------- */
   --max-width: 1120px;

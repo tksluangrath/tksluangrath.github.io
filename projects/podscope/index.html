@@ -4,7 +4,7 @@
   <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Podscope — Terrance Luangrath</title>
+  <title>Podscope - Terrance Luangrath</title>
   <meta name="description" content="A local, zero-cost multi-video NLP pipeline: transcribe YouTube videos, segment by topic, summarize two ways, extract entities, and graph what recurs across videos.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,14 +44,14 @@
 
         <article class="article">
           <h1 class="article__title reveal">Podscope</h1>
-          <p class="article__hook reveal">Point it at YouTube videos and it transcribes them, segments the transcript into topics, summarizes each topic two different ways, pulls out named entities, and tracks which entities keep recurring across videos — all running locally, at zero API cost.</p>
+          <p class="article__hook reveal">Point it at YouTube videos and it transcribes them, segments the transcript into topics, summarizes each topic two different ways, pulls out named entities, and tracks which entities keep recurring across videos - all running locally, at zero API cost.</p>
 
           <section class="article__section reveal">
             <h2 class="article__heading">An adaptive threshold instead of a fixed one</h2>
-            <p>Topic segmentation runs first, grouping contiguous transcript segments by embedding similarity. Instead of one fixed similarity cutoff, each video gets its own threshold — <code>mean + std_multiplier × stdev</code> of that video's own adjacent-segment distances — because a short conversational clip and a long-form narration have genuinely different similarity distributions, and a single fixed cutoff either over-splits one or under-splits the other. Abstractive summarization then runs once per topic group rather than once per raw ASR segment, so the local Ollama model sees a full topic's worth of dialogue instead of a disconnected fragment.</p>
+            <p>Topic segmentation runs first, grouping contiguous transcript segments by embedding similarity. Instead of one fixed similarity cutoff, each video gets its own threshold - <code>mean + std_multiplier × stdev</code> of that video's own adjacent-segment distances - because a short conversational clip and a long-form narration have genuinely different similarity distributions, and a single fixed cutoff either over-splits one or under-splits the other. Abstractive summarization then runs once per topic group rather than once per raw ASR segment, so the local Ollama model sees a full topic's worth of dialogue instead of a disconnected fragment.</p>
           </section>
 
-          <blockquote class="pull-quote reveal">Transcription, topic segmentation, dual summarization, NER — no paid APIs.<small>faster-whisper and a local Ollama model do the work a hosted API usually would.</small></blockquote>
+          <blockquote class="pull-quote reveal">Transcription, topic segmentation, dual summarization, NER - no paid APIs.<small>faster-whisper and a local Ollama model do the work a hosted API usually would.</small></blockquote>
 
           <figure class="reveal" style="margin:var(--space-6) 0">
             <img src="/assets/img/podscope_tui.gif" alt="Terminal running the Podscope TUI, pointing it at a YouTube video and walking through the transcription and summarization pipeline" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)">
@@ -60,12 +60,12 @@
 
           <section class="article__section reveal">
             <h2 class="article__heading">Scoring the summaries, not just producing them</h2>
-            <p>Each abstractive summary is scored against the exact transcript text it was generated from by word-count compression ratio — how much shorter the summary is than its source. A lower ratio means more aggressive compression. It's computed only for the abstractive summary, since the extractive one is a sentence lifted verbatim from the transcript rather than a generated compression, so the same comparison wouldn't mean anything there.</p>
+            <p>Each abstractive summary is scored against the exact transcript text it was generated from by word-count compression ratio - how much shorter the summary is than its source. A lower ratio means more aggressive compression. It's computed only for the abstractive summary, since the extractive one is a sentence lifted verbatim from the transcript rather than a generated compression, so the same comparison wouldn't mean anything there.</p>
           </section>
 
           <section class="article__section reveal">
             <h2 class="article__heading">Built for cross-video patterns, not one video</h2>
-            <p>Everything — transcripts, entities, topic groups, summary metrics — lands in an Apache Iceberg lakehouse via PySpark, which is what makes cross-video entity co-occurrence analysis possible: which people, places, and things keep showing up together across an entire channel, not just within a single episode. That graph is browsable directly in Neo4j.</p>
+            <p>Everything - transcripts, entities, topic groups, summary metrics - lands in an Apache Iceberg lakehouse via PySpark, which is what makes cross-video entity co-occurrence analysis possible: which people, places, and things keep showing up together across an entire channel, not just within a single episode. That graph is browsable directly in Neo4j.</p>
           </section>
 
           <div class="tag-list reveal">
@@ -83,7 +83,7 @@
 
   <footer class="footer">
     <div class="wrap footer__inner">
-      <span class="footer__note">Terrance Luangrath — Washington, DC Metro Area</span>
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
       <div class="footer__links">
         <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
         <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
