@@ -372,7 +372,10 @@ p { margin: 0; }
   background-color: var(--color-accent);
   border-color: var(--color-accent);
 }
-.project-card.is-hidden { display: none; }
+.project-card.is-hidden { display: none; opacity: 0; scale: 0.96; }
+@starting-style {
+  .project-card:not(.is-hidden) { opacity: 0; scale: 0.96; }
+}
 
 /* --- Project detail hero (SVG pattern header) ----------------------------- */
 .project-hero {
@@ -611,7 +614,8 @@ p { margin: 0; }
   .js .reveal {
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity var(--transition-reveal), transform var(--transition-reveal);
+    transition: opacity var(--transition-reveal), transform var(--transition-reveal),
+                scale 200ms ease-out, display 200ms allow-discrete;
   }
   .js .reveal.is-visible { opacity: 1; transform: translateY(0); }
 
@@ -620,7 +624,7 @@ p { margin: 0; }
   .js .anim-item {
     opacity: 0;
     transform: translateX(-16px);
-    transition: opacity 500ms ease-out, transform 500ms ease-out;
+    transition: opacity 220ms ease-out, transform 220ms ease-out;
   }
   .js .anim-item--up { transform: translateY(16px); }
   .js .anim-item--down { transform: translateY(-12px); }
