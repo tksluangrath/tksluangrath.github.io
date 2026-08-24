@@ -109,6 +109,13 @@ function markdownToArticleHtml(md) {
       continue;
     }
 
+    const labelLine = line.match(/^\*\*([^*]+):\*\*$/);
+    if (labelLine) {
+      html += `<span style="display:block;font-weight:var(--weight-display);color:var(--color-accent);margin-bottom:var(--space-2)">${inline(labelLine[1])}</span>\n`;
+      i++;
+      continue;
+    }
+
     const imageLine = line.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
     if (imageLine) {
       const [, alt, src] = imageLine;
@@ -167,7 +174,7 @@ function nav(active) {
 
 const FOOTER = `  <footer class="footer">
     <div class="wrap footer__inner">
-      <span class="footer__note">Terrance Luangrath — Washington, DC Metro Area</span>
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
       <div class="footer__links">
         <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
         <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
@@ -196,7 +203,7 @@ function entryPageHtml(entry) {
 ${LOAD_SCRIPT}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${data.title} — Journal — Terrance Luangrath</title>
+  <title>${data.title} - Journal - Terrance Luangrath</title>
   <meta name="description" content="${data.description}">
   <link rel="canonical" href="${canonical}">${robots}
   <meta property="og:type" content="article">
@@ -263,8 +270,8 @@ function journalIndexHtml(entries) {
 ${LOAD_SCRIPT}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Journal — Terrance Luangrath</title>
-  <meta name="description" content="A collection of things I've learned, built, and explored — fine-tuning notes, engineering lessons, and the thinking behind the projects.">
+  <title>Journal - Terrance Luangrath</title>
+  <meta name="description" content="A collection of things I've learned, built, and explored - fine-tuning notes, engineering lessons, and the thinking behind the projects.">
   <link rel="canonical" href="${SITE_URL}/journal/">
 ${HEAD_FONTS}
 </head>

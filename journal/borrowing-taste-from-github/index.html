@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Borrowing Taste: Using GitHub Design Skills to Cut the AI Slop - Journal - Terrance Luangrath</title>
+  <meta name="description" content="I don't have a frontend or UX background, so I tried using three open-source Claude design skills to sharpen my portfolio's motion and cards, then ran the same skills on a League of Legends matchup chatbot.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/borrowing-taste-from-github/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Borrowing Taste: Using GitHub Design Skills to Cut the AI Slop">
+  <meta property="og:description" content="I don't have a frontend or UX background, so I tried using three open-source Claude design skills to sharpen my portfolio's motion and cards, then ran the same skills on a League of Legends matchup chatbot.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/borrowing-taste-from-github/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Borrowing Taste: Using GitHub Design Skills to Cut the AI Slop">
+  <meta name="twitter:description" content="I don't have a frontend or UX background, so I tried using three open-source Claude design skills to sharpen my portfolio's motion and cards, then ran the same skills on a League of Legends matchup chatbot.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Borrowing Taste: Using GitHub Design Skills to Cut the AI Slop</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">AUGUST 24, 2026 · Design</p>
+
+          <p class="article__hook">I've noticed people online sharing GitHub repos aimed at stripping "AI slop" out of design work, so I decided to try a few on my own frontend. I don't have a strong design or UX background, and it shows in the kind of interfaces I tend to ship by default: generic spacing, motion that's either absent or overdone, cards that all look the same. Three repos stood out enough to actually use: <a href="https://github.com/kylezantos/design-motion-principles">design-motion-principles</a>, <a href="https://github.com/VoltAgent/awesome-claude-design">awesome-claude-design</a>, and <a href="https://github.com/Leonxlnx/taste-skill">taste-skill</a>.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">What changed on the portfolio</h2>
+<p>I ran these against this site first. The clearest wins were in the cards and the motion: tags became rounded pill badges instead of plain text, card shadows got lighter and less heavy-handed, and the rounded corners on project headers finally matched the rounded corners on the cards below them instead of quietly clashing. Content now fades into view a little more gently as you scroll, instead of snapping in fast enough to feel rushed. The palette and typography didn't move. Same site, just sharper.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Running it on the matchup chatbot</h2>
+<p>I then pointed the same skills at the frontend for Matchup Copilot, the chat interface for my League of Legends matchup app. The best catch was a glow effect that kept pulsing the whole time the AI's answer was streaming in, even after the words themselves were already visible. I replaced it with a simple typing indicator that only shows for the brief moment before the AI starts responding, then disappears the instant real text shows up. Messages now pop into the chat noticeably faster, and the send button finally gives a little visual press when you click it, something it never did before.</p>
+<span style="display:block;font-weight:var(--weight-display);color:var(--color-accent);margin-bottom:var(--space-2)">Before</span>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/matchup-copilot-before-motion.gif" alt="Matchup Copilot before the motion pass" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+<span style="display:block;font-weight:var(--weight-display);color:var(--color-accent);margin-bottom:var(--space-2)">After</span>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/matchup-copilot-after-motion.gif" alt="Matchup Copilot after the motion pass" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">What I'd change next time</h2>
+<p>Both times I applied these skills after the interface already existed, once things were already built. Next build, I want to bring them in during planning instead, before I've committed to a layout, and see how much that actually changes things versus fixing it after the fact.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Design</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/projects/lol-matchbook/">LoL Matchbook →</a>
+          </div>
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

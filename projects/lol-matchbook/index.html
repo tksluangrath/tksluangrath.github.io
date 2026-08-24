@@ -45,6 +45,11 @@
           <h1 class="article__title reveal">LoL Matchbook</h1>
           <p class="article__hook reveal">Champ select gives you about 30 seconds to lock in a pick. A model generating advice on the spot can't beat that clock, and it has no business fighting the game for GPU while you're trying to play it. So I built a desktop app that watches the League client's local API, detects your matchup the moment it's locked, and answers out of a precomputed lookup table instead of generating anything live.</p>
 
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <img src="/assets/img/lol-matchbook-demo.gif" alt="LoL Matchbook chat interface answering a champ-select matchup question" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)">
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">The matchup chat panel, mid champ-select.</figcaption>
+          </figure>
+
           <section class="article__section reveal">
             <h2 class="article__heading">Precompute, don't generate live</h2>
             <p>That's the whole architecture in one sentence. A background job pulls ranked match data, aggregates it per champion pair, rank, and game phase, and writes early/mid/late-game blurbs to Postgres ahead of time. During an actual game, <code>/advice</code> is just a DB read: under 200ms, no GPU touched, nothing fighting the game for VRAM.</p>
