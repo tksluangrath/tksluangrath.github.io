@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Is Your Model's Confidence Worth $2 a Mailer? - Journal - Terrance Luangrath</title>
+  <meta name="description" content="I refreshed my supervised learning fundamentals after my master's by adding a method the program never covered: calibration. Here's what I learned about why some models lie about their own confidence and others don't.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/is-your-model-worth-mailing/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Is Your Model's Confidence Worth $2 a Mailer?">
+  <meta property="og:description" content="I refreshed my supervised learning fundamentals after my master's by adding a method the program never covered: calibration. Here's what I learned about why some models lie about their own confidence and others don't.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/is-your-model-worth-mailing/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Is Your Model's Confidence Worth $2 a Mailer?">
+  <meta name="twitter:description" content="I refreshed my supervised learning fundamentals after my master's by adding a method the program never covered: calibration. Here's what I learned about why some models lie about their own confidence and others don't.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Is Your Model's Confidence Worth $2 a Mailer?</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">AUGUST 25, 2026 · Machine Learning · Engineering</p>
+
+          <p class="article__hook">This project started as a refresh. It had been a while since I'd built a supervised learning model start to finish, and I wanted my hands back on the basics from my master's, training, tuning, evaluating, plus one thing the program never touched. I landed on model calibration, using a charity mailing dataset as the excuse to actually need it: a charity sends 82,000 mailers at $2 each, a model scores every household with a probability, and you mail whoever clears a threshold. That only works if a score of 0.8 means an 80% chance of donating, and it usually doesn't. What I got out of this wasn't really the calibration numbers, it was finally understanding why some models lie about their own confidence and others don't.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">Why the tree models were the ones lying</h2>
+<p>Logistic regression came out well-calibrated without me doing anything to it, and once I sat with why, it made sense: it's directly optimizing log loss, which is a proper scoring rule, so the training process itself is already pushing the output toward honest probabilities. Random forest and XGBoost are optimizing something else. A forest is voting, averaging a few hundred trees that each split on a slightly different bootstrap sample, and averaging votes squeezes predictions toward the extremes because the trees mostly agree on the easy cases and cancel each other out on the hard ones. XGBoost is optimizing to rank the positive class above the negative class as cleanly as possible, and a model can get better and better at that ordering without ever getting closer to correct probabilities. I hadn't really sat with that in school: ranking and calibration are separate skills a model can have or lack independently, and most training objectives only ever grade the first one.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Why isotonic kept winning over Platt scaling</h2>
+<p>I expected Platt scaling and isotonic regression to land close to each other, since both are just fitting a curve to correct the model's output. They didn't, and the reason comes down to what shape of curve each one is allowed to fit. Platt scaling fits a single sigmoid, which assumes the miscalibration itself is shaped like a smooth S-curve. Isotonic regression doesn't assume a shape at all, it fits any monotonic staircase that fits the data. Random forest and XGBoost don't miscalibrate in a clean sigmoid pattern, they clump toward 0 and 1 in a lumpier way than that, so isotonic could bend around it and Platt scaling couldn't. On XGBoost, Platt actually made things worse. That's when the distinction stopped being abstract to me, forcing an S-curve onto a pattern that isn't S-shaped doesn't just fail to help, it actively pushes the output further off.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">The mistake that taught me the most</h2>
+<p>Temperature scaling flattened every model's calibration error instead of improving it, and my first instinct was that the method was overrated. It wasn't. Temperature scaling is built to rescale raw logits, the pre-sigmoid numbers a neural network produces, and my pipeline was only ever handing it probabilities that had already been squashed through a sigmoid. I'd read about the logit-versus-probability distinction in school, filed away as a footnote about numerical stability. Feeding a method the wrong stage of my own pipeline and watching it fail for reasons that had nothing to do with the model made it stick in a way the footnote never did.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Results, briefly</h2>
+<p>The numbers ended up mattering less to me than the reasons behind them, but for the record: isotonic regression took the random forest's calibration error from 0.0334 down to 0.0046, and at a simulated 10,000-piece mailing run, that translated to roughly $85 saved for the same donation revenue. I also logged the energy cost of every training and calibration run with CodeCarbon, mostly to check that "better calibrated" wasn't secretly expensive to produce. On this dataset it wasn't, but I wanted the habit of checking instead of assuming.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">What's next</h2>
+<p>The refresh worked the way I wanted. Training three model families side by side and then asking why they disagreed taught me more than any single accuracy score would have. Next I want to try a list skewed the other way, most charity datasets are dominated by non-donors, and see whether the same reasoning about sigmoid-shaped versus lumpy miscalibration still holds when there's a lot less data to see the shape in.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Machine Learning</span><span class="tag">Engineering</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/projects/mail-or-pass/">Worth Mailing →</a>
+          </div>
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
