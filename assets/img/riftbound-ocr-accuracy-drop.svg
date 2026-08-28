@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 220" role="img" aria-labelledby="t d">
+  <title id="t">Adding OCR to the image match dropped real-photo accuracy from 93% to 51%</title>
+  <desc id="d">Two horizontal bars. Image match alone scores 93%. Image match plus reading the card's name scores 51%.</desc>
+  <rect width="640" height="220" fill="#faedcd" rx="12"/>
+  <text x="32" y="44" font-family="ui-monospace, 'IBM Plex Mono', monospace" font-size="13" fill="#33331f">Image match alone</text>
+  <rect x="32" y="56" width="576" height="28" rx="6" fill="#e9edc9"/>
+  <rect x="32" y="56" width="536" height="28" rx="6" fill="#8a5a3a"/>
+  <text x="580" y="76" font-family="ui-monospace, 'IBM Plex Mono', monospace" font-size="14" font-weight="700" fill="#fefae0" text-anchor="end">93%</text>
+
+  <text x="32" y="130" font-family="ui-monospace, 'IBM Plex Mono', monospace" font-size="13" fill="#33331f">Image match + reading the card's name</text>
+  <rect x="32" y="142" width="576" height="28" rx="6" fill="#e9edc9"/>
+  <rect x="32" y="142" width="294" height="28" rx="6" fill="#5f5f45"/>
+  <text x="302" y="162" font-family="ui-monospace, 'IBM Plex Mono', monospace" font-size="14" font-weight="700" fill="#fefae0" text-anchor="end">51%</text>
+
+  <text x="32" y="200" font-family="ui-monospace, 'IBM Plex Mono', monospace" font-size="11" fill="#6f7658">real-photo accuracy, top-5 guesses</text>
+</svg>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riftbound Classifier - Terrance Luangrath</title>
+  <meta name="description" content="Identify a Riftbound TCG card from a phone photo. Matching photos to reference images with zero training beat a version trained specifically for the job and a version that also reads the card's name, tested with statistics built for a dataset too small for the usual formulas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-dots" width="28" height="28" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1.4" fill="currentColor" opacity="0.5"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-dots)"/>
+            <rect x="150" y="60" width="120" height="160" rx="10" fill="none" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2"/>
+            <circle cx="330" cy="90" r="26" fill="none" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2" opacity="0.7"/>
+            <circle cx="330" cy="150" r="26" fill="none" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2" opacity="0.45"/>
+            <circle cx="330" cy="210" r="26" fill="none" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2" opacity="0.9"/>
+          </svg>
+          <span class="project-hero__label">Computer vision · Local inference · 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">Riftbound Classifier</h1>
+          <p class="article__hook reveal">Give it a photo of a physical Riftbound card and it hands back its five best guesses, ranked. The default method needs no training: it turns every reference image into a list of numbers describing what it looks like, does the same to your photo, and returns the closest matches. Two "smarter" versions on top of that, one trained specifically on these cards, one that also reads the card's printed name, both made things worse on real photos. And too few physical cards to build a proper test set meant learning statistics built for small samples instead of my usual defaults.</p>
+
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <img src="/assets/img/riftbound-classifier-demo.gif" alt="Streamlit demo identifying a Riftbound card from an uploaded photo" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)">
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">The demo app, showing its top five guesses ranked by how closely each one matches the photo.</figcaption>
+          </figure>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Three ways to guess, and the simple one won</h2>
+            <p>Method one runs every reference image through ResNet18, an image model already trained on millions of unrelated photos, turning each card into a list of numbers and returning whichever reference cards are numerically closest to your photo. No training on Riftbound cards at all. Method two retrains that model's last layer specifically on these 75 cards. Method three keeps method one's guess but blends in a second opinion: OCR reading the printed card name. On real photos, method one got the right card in its top five about 93% of the time. Method two, the one I actually trained, barely beat a coin flip at 6-11% accuracy, two passes over a handful of photos per card isn't enough to learn anything real. Method three, the one I expected to help, dropped to about 51%.</p>
+          </section>
+
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <svg viewBox="0 0 720 300" role="img" aria-labelledby="method-diagram-title" style="width:100%;height:auto;background:var(--color-surface);border:1px solid var(--color-surface-raised);border-radius:var(--radius-md)">
+              <title id="method-diagram-title">Diagram of the three card-matching methods and their real-photo accuracy: image matching alone at 93%, a fine-tuned model at 6 to 11%, and image matching plus OCR at 51%.</title>
+              <rect x="24" y="128" width="150" height="52" rx="10" fill="var(--color-surface-raised)"/>
+              <text x="99" y="149" text-anchor="middle" font-family="var(--font-mono)" font-size="12" fill="var(--color-text-primary)">Card photo</text>
+              <text x="99" y="165" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--color-text-muted)">input</text>
+
+              <path d="M174 154 C 220 154, 220 60, 266 60" fill="none" stroke="var(--color-accent)" stroke-width="2"/>
+              <path d="M174 154 L 266 154" fill="none" stroke="var(--color-surface-raised)" stroke-width="2"/>
+              <path d="M174 154 C 220 154, 220 248, 266 248" fill="none" stroke="var(--color-surface-raised)" stroke-width="2"/>
+
+              <rect x="266" y="32" width="200" height="56" rx="10" fill="none" stroke="var(--color-accent)" stroke-width="2"/>
+              <text x="366" y="55" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-primary)">1. Image match</text>
+              <text x="366" y="70" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--color-text-muted)">no training</text>
+
+              <rect x="266" y="126" width="200" height="56" rx="10" fill="none" stroke="var(--color-surface-raised)" stroke-width="2"/>
+              <text x="366" y="149" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-primary)">2. Fine-tuned model</text>
+              <text x="366" y="164" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--color-text-muted)">trained on 75 cards</text>
+
+              <rect x="266" y="220" width="200" height="56" rx="10" fill="none" stroke="var(--color-surface-raised)" stroke-width="2"/>
+              <text x="366" y="243" text-anchor="middle" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-primary)">3. Image match + OCR</text>
+              <text x="366" y="258" text-anchor="middle" font-family="var(--font-mono)" font-size="10" fill="var(--color-text-muted)">reads the card's name</text>
+
+              <path d="M466 60 L 560 60" fill="none" stroke="var(--color-accent)" stroke-width="2"/>
+              <path d="M466 154 L 560 154" fill="none" stroke="var(--color-surface-raised)" stroke-width="2"/>
+              <path d="M466 248 L 560 248" fill="none" stroke="var(--color-surface-raised)" stroke-width="2"/>
+
+              <text x="566" y="56" font-family="var(--font-mono)" font-size="18" font-weight="600" fill="var(--color-accent)">93%</text>
+              <text x="566" y="72" font-family="var(--font-mono)" font-size="10" fill="var(--color-text-muted)">winner</text>
+              <text x="566" y="150" font-family="var(--font-mono)" font-size="18" font-weight="600" fill="var(--color-text-secondary)">6-11%</text>
+              <text x="566" y="166" font-family="var(--font-mono)" font-size="10" fill="var(--color-text-muted)">undertrained</text>
+              <text x="566" y="244" font-family="var(--font-mono)" font-size="18" font-weight="600" fill="var(--color-text-secondary)">51%</text>
+              <text x="566" y="260" font-family="var(--font-mono)" font-size="10" fill="var(--color-text-muted)">regressed</text>
+            </svg>
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">Same input photo, three ways to guess the card, and how each one actually did on real photos.</figcaption>
+          </figure>
+
+          <blockquote class="pull-quote reveal">Adding a second opinion dropped real-photo accuracy from ~93% to ~51%.<small>Left in the code anyway, turned off by default, so the failure stays visible instead of disappearing.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Why reading the card's name made things worse</h2>
+            <p>The OCR step wasn't obviously broken on its own, I'd tuned it to catch a few more names without losing the ones it already read fine. The trouble showed up once combined: it would sometimes land on a plausible-looking name, confident enough for my code to trust it, and still wrong enough to outweigh a correct image match, a mistake a person glancing at that crop would never make. Left in the code, off by default, since real phone photos might behave differently than the listing photos I tested on. Better to keep a failed idea visible than bury it.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Not enough cards, so eBay filled the gap</h2>
+            <p>Clean product photos are easy to find at <a href="https://tcgodds.com/riftbound/origins/cards/" target="_blank" rel="noopener">tcgodds.com</a>, but I don't own enough physical cards to build a real-world test set myself. Messy real-life photos came from marketplace and Reddit listings instead, leaving about five to eight per card, too few for the confidence-interval math most people default to. So <code>evaluate.py</code> uses versions built for small samples: one for per-card accuracy, a resampling trick for the overall estimate, and a paired comparison for testing two models on the same photos. <code>test_pipeline.py</code> also checks that no photo used for testing ever leaks into the training set, since that would make every accuracy number meaningless.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">PyTorch</span><span class="tag">timm</span><span class="tag">EasyOCR</span><span class="tag">Albumentations</span><span class="tag">Streamlit</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/riftbound-classifier" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/journal/teaching-myself-ocr-on-riftbound-tcg-cards/">Journal entry →</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

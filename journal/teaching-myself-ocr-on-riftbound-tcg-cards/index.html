@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teaching Myself OCR on Riftbound TCG Cards - Journal - Terrance Luangrath</title>
+  <meta name="description" content="OCR, software that reads text out of a photo, was everywhere at my last job, but I'd never built one myself. I picked Riftbound, League of Legends' trading card game, to learn it from scratch, and ran into a second problem I didn't expect: not enough physical cards to test on.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/teaching-myself-ocr-on-riftbound-tcg-cards/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Teaching Myself OCR on Riftbound TCG Cards">
+  <meta property="og:description" content="OCR, software that reads text out of a photo, was everywhere at my last job, but I'd never built one myself. I picked Riftbound, League of Legends' trading card game, to learn it from scratch, and ran into a second problem I didn't expect: not enough physical cards to test on.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/teaching-myself-ocr-on-riftbound-tcg-cards/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Teaching Myself OCR on Riftbound TCG Cards">
+  <meta name="twitter:description" content="OCR, software that reads text out of a photo, was everywhere at my last job, but I'd never built one myself. I picked Riftbound, League of Legends' trading card game, to learn it from scratch, and ran into a second problem I didn't expect: not enough physical cards to test on.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Teaching Myself OCR on Riftbound TCG Cards</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">AUGUST 28, 2026 · Machine Learning · Computer Vision</p>
+
+          <p class="article__hook">OCR, optical character recognition, is software that reads printed words out of a photo, the same trick behind scanning a receipt into searchable text or a phone reading a license plate. It was everywhere at my last job. I used its output constantly and worked around its mistakes, but never built one myself. So for a side project I'd actually enjoy debugging at 11pm, I taught a program to recognize a Riftbound card, the League of Legends trading card game, from a photo, partly by having it read the card's printed name.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">Learning OCR by building one</h2>
+<p>The first decision wasn't the program's brain, it was where to point its eyes. Instead of guessing where the card's name sits, I cropped a bunch of cards and checked: always the same strip, roughly the middle third. Small decision, but it was mine this time, not something already decided before the work reached me.</p>
+<p>Then I tuned the OCR tool's own settings, how hard it squints at blurry text, until it read a few more cards correctly without losing the ones it already got. Nothing dramatic. Still the first time I was the one turning the dials instead of filing a ticket.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Then it made everything worse</h2>
+<p>I combined the OCR text with the program's other method, matching the photo against reference images, expecting two signals to beat one. Instead accuracy on real photos fell from about 93% to about 51%, basically a coin flip.</p>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/riftbound-ocr-accuracy-drop.svg" alt="Two bars showing real-photo accuracy dropping from 93% for image match alone to 51% once OCR is added" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+<p>The OCR reads looked fine individually. What was actually happening: a name that looks plausible, confident enough that my code trusts it, still wrong enough to override a correct image match, a mistake a person double-checking the same text would never make. I'd heard this failure described before. Watching it wreck my own numbers is what made it click.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">I don't own enough cards</h2>
+<p>Clean product photos are easy to find online. Real, messy phone photos are not, so I pulled real ones from eBay listings. That fixed coverage but left five to eight real photos per card, too few for the confidence-interval math most people default to, which assumes a decent pile of data. I ended up using the versions built for small samples instead: one for per-card accuracy, one for the overall estimate by resampling what little data I had, one for fairly comparing two model versions on the same photos. Without that, any accuracy number I reported would've been closer to a guess than a measurement.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">What's next</h2>
+<p>More real photos than eBay can give me, ideally cards in my own hand under my own phone camera. The OCR failure still bugs me too. I want to find out if it just needs a stricter trust threshold, or if fusing the two methods was the wrong idea from the start.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Machine Learning</span><span class="tag">Computer Vision</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/projects/riftbound-classifier/">Riftbound Classifier →</a>
+          </div>
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
