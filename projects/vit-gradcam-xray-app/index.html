@@ -4,6 +4,7 @@
   <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <title>Chest X-Ray Classifier - Terrance Luangrath</title>
   <meta name="description" content="A Vision Transformer for chest X-ray pneumonia detection with Grad-CAM explainability, served through a FastAPI backend and a React/TypeScript front end.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,6 +14,7 @@
   <script src="/assets/js/main.js" defer></script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <nav class="nav">
     <div class="nav__inner">
       <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
@@ -25,7 +27,7 @@
     </div>
   </nav>
 
-  <main>
+  <main id="main">
     <section class="section">
       <div class="wrap">
         <div class="project-hero reveal">

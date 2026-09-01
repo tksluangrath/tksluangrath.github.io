@@ -1,25 +1,29 @@
 /* ============================================================================
-   tokens.css — Golden Summer Fields design system, single source of truth.
+   tokens.css — Jade Tones by the Water design system, single source of truth.
    Every hex value the site uses lives here. No implementation file below this
    one is permitted to hardcode a color. Typography, spacing, motion, and the
    background texture all resolve from the custom properties defined on :root.
    ============================================================================ */
 
 :root {
-  /* --- Golden Summer Fields palette (fixed contract) --------------------
-     Surfaces are the four swatches straight from the reference palette
-     (coolors.co/palette/ccd5ae-e9edc9-fefae0-faedcd-d4a373). Text and accent
-     are ink shades derived from Terracotta (#d4a373) and darkened until they
-     clear WCAG AA (4.5:1) against every surface below — the raw swatch reads
-     ~2:1 on cream and isn't safe as text or button color. --------------- */
-  --color-bg:             #fefae0;  /* Cream — page background                 */
-  --color-surface:        #faedcd;  /* Pale Gold — card / panel surface        */
-  --color-surface-raised: #e9edc9;  /* Sage — hover states, borders            */
-  --color-accent:         #8a5a3a;  /* Toasted Terracotta — CTAs, links        */
-  --color-accent-soft:    #9c6a40;  /* Warm Terracotta — accent hover          */
-  --color-text-primary:   #33331f;  /* Deep Olive Ink — body copy              */
-  --color-text-secondary: #5f5f45;  /* Muted Olive — captions, metadata        */
-  --color-text-muted:     #6f7658;  /* Sage Gray — placeholders, disabled      */
+  /* --- Jade Tones by the Water palette (fixed contract) ------------------
+     Backgrounds and the border swatch are raw from the reference palette
+     (Deep Pine #3b584b, Mist Green #52796c, Sage Green #819b85, Sand
+     Olive #c3c0aa, Oat Milk #efeada). Text and accent are ink shades
+     darkened from Deep Pine and Mist Green until they clear WCAG AA
+     (4.5:1) against Oat Milk AND Sand Olive, the two backgrounds body
+     copy actually sits on — text-secondary/muted needed a second darkening
+     pass past the first cut, which only cleared Oat Milk. Sage Green
+     (surface-raised) is a mid-tone and is used for borders/dividers only;
+     no text or fill ever sits directly on it as a background. ---------- */
+  --color-bg:             #efeada;  /* Oat Milk — page background              */
+  --color-surface:        #c3c0aa;  /* Sand Olive — card / panel surface       */
+  --color-surface-raised: #819b85;  /* Sage Green — border/divider color only  */
+  --color-accent:         #426156;  /* Deep Mist — CTAs, links                 */
+  --color-accent-soft:    #52796c;  /* Mist Green — accent hover               */
+  --color-text-primary:   #324b40;  /* Deep Pine Ink — body copy               */
+  --color-text-secondary: #39534b;  /* Deep Mist Ink — captions, metadata      */
+  --color-text-muted:     #445246;  /* Muted Pine — placeholders, disabled     */
 
   /* --- Type families ---------------------------------------------------- */
   /* Display: Fraunces, a variable serif carrying optical "tics" that read
@@ -81,21 +85,4 @@
   --bp-md: 768px;
   --bp-lg: 1024px;
   --bp-xl: 1280px;
-
-  /* --- Background texture (scattered grain, two layers) ----------------- */
-  /* Two dot lattices at non-matching scales (24px terracotta, 68px sage) so
-     the overlap never repeats on a clean beat — reads as scattered pollen
-     or chaff instead of a single coordinate grid. */
-  --texture-bg:
-    radial-gradient(
-      circle at 1px 1px,
-      rgba(212, 163, 115, 0.24) 1px,
-      transparent 0
-    ),
-    radial-gradient(
-      circle at 1px 1px,
-      rgba(204, 213, 174, 0.5) 1.5px,
-      transparent 0
-    );
-  --texture-size: 24px 24px, 68px 68px;
 }

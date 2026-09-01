@@ -203,6 +203,7 @@ function entryPageHtml(entry) {
 ${LOAD_SCRIPT}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <title>${data.title} - Journal - Terrance Luangrath</title>
   <meta name="description" content="${data.description}">
   <link rel="canonical" href="${canonical}">${robots}
@@ -216,9 +217,10 @@ ${LOAD_SCRIPT}
 ${HEAD_FONTS}
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 ${nav("journal")}
 
-  <main>
+  <main id="main">
     <section class="section">
       <div class="wrap">
         <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
@@ -270,15 +272,17 @@ function journalIndexHtml(entries) {
 ${LOAD_SCRIPT}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
   <title>Journal - Terrance Luangrath</title>
   <meta name="description" content="A collection of things I've learned, built, and explored - fine-tuning notes, engineering lessons, and the thinking behind the projects.">
   <link rel="canonical" href="${SITE_URL}/journal/">
 ${HEAD_FONTS}
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 ${nav("journal")}
 
-  <main>
+  <main id="main">
     <header class="section" style="padding-bottom:var(--space-6)">
       <div class="wrap">
         <span class="eyebrow rail anim-item" data-anim="name">Journal</span>
