@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NoVA Data Center Water Forecasting - Terrance Luangrath</title>
+  <meta name="description" content="Annual water demand and cost forecast for the Northern Virginia data-center corridor, 2000-2030. Point forecasts clear a 5-6% error bar; the 90% prediction intervals don't, and the project says so instead of hiding it.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <ul class="nav__links">
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <div class="project-hero reveal">
+          <svg class="project-hero__svg" viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="color:var(--color-surface-raised)">
+            <defs><pattern id="p-lines" width="26" height="26" patternUnits="userSpaceOnUse">
+              <path d="M0 26L26 0" stroke="currentColor" stroke-width="1" opacity="0.45"/>
+            </pattern></defs>
+            <rect width="480" height="260" fill="url(#p-lines)"/>
+            <polyline points="60,190 130,150 200,165 270,110 340,120 410,70" fill="none" stroke="currentColor" style="color:var(--color-accent)" stroke-width="2.5"/>
+            <polygon points="60,190 130,150 200,165 270,110 340,120 410,70 410,220 60,220" fill="currentColor" style="color:var(--color-accent)" opacity="0.12"/>
+            <circle cx="410" cy="70" r="5" fill="currentColor" style="color:var(--color-accent)"/>
+          </svg>
+          <span class="project-hero__label">Time series · Data engineering · 2026</span>
+        </div>
+
+        <article class="article">
+          <h1 class="article__title reveal">NoVA Data Center Water Forecasting</h1>
+          <p class="article__hook reveal">A companion piece to my paper on the Digital Gateway data center fight: instead of arguing that water use is a governance blind spot, this forecasts it. Annual water demand and cost for Loudoun and Prince William counties, 2000-2030, from three models validated by walk-forward backtesting. The point forecast clears its accuracy bar. The 90% prediction interval doesn't, and every number in the output says so.</p>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">The target metric was wrong before any model ran</h2>
+            <p>The obvious data source, USGS public-supply withdrawal, gave only 4 real years per county and, for Prince William, folded in Fairfax Water's regional Occoquan withdrawal at roughly 2.5x actual county deliveries. I replaced it with water actually delivered, hand-transcribed from Loudoun Water and Prince William Water's Annual Comprehensive Financial Reports, which took real annual coverage from 4 of 25 rows to 34 of 50. <code>fetch_data.py --verify-acfr</code> downloads each source PDF and asserts every transcribed figure appears in it verbatim, so a typo in the manifest fails loudly instead of silently.</p>
+          </section>
+
+          <figure class="reveal" style="margin:var(--space-6) 0">
+            <svg viewBox="0 0 720 260" role="img" aria-labelledby="coverage-diagram-title" style="width:100%;height:auto;background:var(--color-surface);border:1px solid var(--color-surface-raised);border-radius:var(--radius-md)">
+              <title id="coverage-diagram-title">Bar chart comparing walk-forward point-forecast accuracy against prediction-interval coverage for three models, against their respective targets.</title>
+              <text x="24" y="30" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-muted)">Walk-forward MAPE (lower is better, target &lt;20%)</text>
+              <rect x="24" y="44" width="200" height="18" fill="var(--color-surface-raised)"/>
+              <rect x="24" y="44" width="63" height="18" fill="var(--color-accent)"/>
+              <text x="232" y="58" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-primary)">Linear panel · 6.3%</text>
+              <rect x="24" y="70" width="200" height="18" fill="var(--color-surface-raised)"/>
+              <rect x="24" y="70" width="64" height="18" fill="var(--color-accent)"/>
+              <text x="232" y="84" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-primary)">Quantile (Q50) · 6.4%</text>
+              <rect x="24" y="96" width="200" height="18" fill="var(--color-surface-raised)"/>
+              <rect x="24" y="96" width="52" height="18" fill="var(--color-accent)"/>
+              <text x="232" y="110" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-primary)">SARIMAX per county · 5.2%</text>
+
+              <text x="24" y="150" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-muted)">90% interval coverage (higher is better, target 88-92%)</text>
+              <rect x="24" y="164" width="200" height="18" fill="var(--color-surface-raised)"/>
+              <rect x="24" y="164" width="184" height="18" fill="var(--color-text-secondary)" opacity="0.3"/>
+              <rect x="24" y="164" width="82" height="18" fill="var(--color-text-secondary)"/>
+              <text x="232" y="178" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-primary)">Quantile [Q05,Q95] · ~41%</text>
+              <rect x="24" y="190" width="200" height="18" fill="var(--color-surface-raised)"/>
+              <rect x="24" y="190" width="184" height="18" fill="var(--color-text-secondary)" opacity="0.3"/>
+              <rect x="24" y="190" width="60" height="18" fill="var(--color-text-secondary)"/>
+              <text x="232" y="204" font-family="var(--font-mono)" font-size="11" fill="var(--color-text-primary)">SARIMAX + bootstrap · ~30%</text>
+              <text x="24" y="234" font-family="var(--font-mono)" font-size="10" fill="var(--color-text-muted)">Faded band marks the 88-92% target zone neither method reaches.</text>
+            </svg>
+            <figcaption style="font-family:var(--font-mono);font-size:var(--text-sm);color:var(--color-text-muted);margin-top:var(--space-2)">Every model clears the point-forecast bar. No interval method clears the coverage bar.</figcaption>
+          </figure>
+
+          <blockquote class="pull-quote reveal">Switching from quantile regression to SARIMAX made interval coverage worse, not better.<small>14-20 real annual points per county isn't enough to calibrate a 90% interval, and no model choice fixes a sample-size problem.</small></blockquote>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">Converged doesn't mean identified</h2>
+            <p>SARIMAX reported clean convergence on every county, no warning, no error. The exogenous coefficients, capacity, temperature, rate, told a different story: standard errors at or near zero and <code>nan</code>, meaning the likelihood had no real curvature in that block. The same small-sample signature shows up in the quantile models, where the coefficient on capacity flips sign between the 5th and 95th percentile fits, and the interval itself crosses its own bounds (Q05 &gt; Q95) on 11 of 22 folds. Because the exogenous terms don't identify, the 2024-2030 forecast runs as an exog-free ARIMA with no drift. It comes out near-flat, likely an underestimate against 2-4%/yr historical growth, but a flat number I can stand behind beats a confident one I can't.</p>
+          </section>
+
+          <section class="article__section reveal">
+            <h2 class="article__heading">A risk flag that only half-works</h2>
+            <p>A county-year is flagged high-risk at or above the 75th percentile of that county's real history. Across 22 backtest folds that scores 0.78 precision and 0.78 recall, which reads fine until you split it: Loudoun trips the flag in every scenario and every forecast year, so it never actually discriminates there. The flag only does useful work for Prince William's efficiency scenario. The report says that directly instead of letting an aggregate 0.78 stand in for a metric that's silently useless for half its counties.</p>
+          </section>
+
+          <div class="tag-list reveal">
+            <span class="tag">pandas</span><span class="tag">statsmodels</span><span class="tag">scikit-learn</span><span class="tag">Jupyter</span>
+          </div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="https://github.com/tksluangrath/novadc-water-forecasting" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="links-row__item" href="/journal/what-a-real-forecasting-problem-taught-me/">Journal entry →</a>
+            <a class="links-row__item" href="/projects/responsible-ai-data-centers/">Companion paper →</a>
+            <a class="links-row__item" href="/projects/">← Back to Projects</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
