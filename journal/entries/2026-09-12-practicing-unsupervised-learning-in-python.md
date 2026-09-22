@@ -3,7 +3,6 @@ title: "Practicing Unsupervised Learning in Python"
 date: "2026-09-12"
 description: "Second stop on the way to DataCamp's Associate AI Engineer track: clustering, hierarchical clustering, PCA, and NMF, with no labels to check my work against."
 tags:
-  - Machine Learning
   - Career
 ---
 

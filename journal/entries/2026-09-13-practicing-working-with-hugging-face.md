@@ -3,7 +3,6 @@ title: "Practicing Working with Hugging Face"
 date: "2026-09-13"
 description: "Third course on the way to DataCamp's Associate AI Engineer track. I'd already used Hugging Face in grad school, this filled in the gaps around how I was using it."
 tags:
-  - Machine Learning
   - Career
 ---
 

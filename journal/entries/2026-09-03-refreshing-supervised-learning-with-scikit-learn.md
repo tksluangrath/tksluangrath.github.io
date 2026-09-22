@@ -3,7 +3,6 @@ title: "Practicing Supervised Learning with scikit-learn"
 date: "2026-09-03"
 description: "I finished DataCamp's Supervised Learning with scikit-learn course. The exercises were new, but the concepts underneath them came from my Master's program."
 tags:
-  - Machine Learning
   - Career
 ---
 
