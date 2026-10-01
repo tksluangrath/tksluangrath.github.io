@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <title>Developing Multi-Input Models for OCR - Journal - Terrance Luangrath</title>
+  <meta name="description" content="I finished DataCamp's Developing Multi-Input Models for OCR project, building a PyTorch model that classifies scanned insurance IDs as primary or secondary.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/developing-multi-input-models-for-ocr/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Developing Multi-Input Models for OCR">
+  <meta property="og:description" content="I finished DataCamp's Developing Multi-Input Models for OCR project, building a PyTorch model that classifies scanned insurance IDs as primary or secondary.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/developing-multi-input-models-for-ocr/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Developing Multi-Input Models for OCR">
+  <meta name="twitter:description" content="I finished DataCamp's Developing Multi-Input Models for OCR project, building a PyTorch model that classifies scanned insurance IDs as primary or secondary.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Developing Multi-Input Models for OCR</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">SEPTEMBER 29, 2026 · Career</p>
+
+          <p class="article__hook">I finished DataCamp's <a href="https://www.datacamp.com/">Developing Multi-Input Models for OCR</a> project, the hands-on follow-up to <a href="/journal/intermediate-deep-learning-with-pytorch/">Intermediate Deep Learning with PyTorch</a>.</p>
+<p class="article__hook">The premise: a fictional insurance company digitizing old claim documents needs its scanned IDs sorted into primary or secondary. The model gets two inputs at once, the scanned image and the insurance type (home, life, auto, health, other), runs each through its own small network, then combines them to make the call. I wrote the model class, picked the optimizer and loss function, and trained the whole thing.</p>
+<p class="article__hook">The exercises in the course felt separate from each other while I was doing them. Putting it all into one working model made them click as a sequence instead of a pile of disconnected steps.</p>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Career</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

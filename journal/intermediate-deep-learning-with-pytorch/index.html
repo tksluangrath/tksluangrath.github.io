@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <title>Intermediate Deep Learning with PyTorch - Journal - Terrance Luangrath</title>
+  <meta name="description" content="I finished DataCamp's Intermediate Deep Learning with PyTorch course, moving past the fundamentals into CNNs, RNNs, and multi-input models.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/intermediate-deep-learning-with-pytorch/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Intermediate Deep Learning with PyTorch">
+  <meta property="og:description" content="I finished DataCamp's Intermediate Deep Learning with PyTorch course, moving past the fundamentals into CNNs, RNNs, and multi-input models.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/intermediate-deep-learning-with-pytorch/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Intermediate Deep Learning with PyTorch">
+  <meta name="twitter:description" content="I finished DataCamp's Intermediate Deep Learning with PyTorch course, moving past the fundamentals into CNNs, RNNs, and multi-input models.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Intermediate Deep Learning with PyTorch</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">SEPTEMBER 28, 2026 · Career</p>
+
+          <p class="article__hook">I finished DataCamp's <a href="https://www.datacamp.com/">Intermediate Deep Learning with PyTorch</a> course, the follow-up to <a href="/journal/introduction-to-deep-learning-with-pytorch/">Introduction to Deep Learning with PyTorch</a>.</p>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/datacamp_intermediate_pytorch_badge.png" alt="Intermediate Deep Learning with PyTorch course completion badge" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+<p class="article__hook">The intro course was tensors, layers, a training loop, the basics. This one adds convolutional networks for images, recurrent networks for sequences like time series or text, and models that take more than one input or spit out more than one output.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">Training stability, the part I used to gloss over</h2>
+<p>What stuck with me most was how much training stability depends on choices I used to skip past. Getting a model to run is easy. Getting it to train well, without the gradients blowing up or fading out on you, is not. I didn't expect something as small as which activation function you pick, or how you initialize the weights, to swing the outcome this much.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">A good CNN refresher</h2>
+<p>The convolutional network section was mostly review for me, but a useful one. Walking back through how a conv layer slides over an image, what pooling actually throws away, and why that structure beats a plain fully connected layer on image data, it was worth going through again.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">RNNs, LSTMs, and GRUs: when to use which</h2>
+<p>The recurrent section was newer territory. A plain RNN keeps a hidden state that carries information from one step in a sequence to the next, but that state degrades over longer sequences, it tends to forget what happened many steps back. LSTMs fix that with a separate cell state and a set of gates that decide what to keep, what to drop, and what to update, at the cost of more parameters and slower training. GRUs land in between: fewer gates than an LSTM, cheaper to train, close enough in accuracy for a lot of problems. The practical takeaway was less about the math and more about the tradeoff: reach for a GRU first if you want something lighter, reach for an LSTM when the sequence is long and the dependencies are harder to capture.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Multiple inputs, multiple outputs</h2>
+<p>The last stretch covered models that don't fit the one-input-one-output shape I was used to. A multi-input model, like running an image through one branch and a category label through another before combining them, lets you fuse signals from different sources into a single prediction. A multi-output model does the reverse: one model, several predictions at once, which raises the question of how to weigh each output's loss against the others so the model doesn't neglect one in favor of the rest. I'll end up using multi-input models the most, since so many real-world problems come with more than one kind of input sitting right there.</p>
+<p>Still a few courses left on the <a href="/journal/practicing-unsupervised-learning-in-python/">Associate AI Engineer for Data Scientists</a> track. More on those soon.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Career</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

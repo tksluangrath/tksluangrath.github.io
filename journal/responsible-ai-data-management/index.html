@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <title>Responsible AI Data Management - Journal - Terrance Luangrath</title>
+  <meta name="description" content="I finished DataCamp's Responsible AI Data Management course, covering the six dimensions of responsible AI, data management plans, data source selection, and bias auditing.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/responsible-ai-data-management/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Responsible AI Data Management">
+  <meta property="og:description" content="I finished DataCamp's Responsible AI Data Management course, covering the six dimensions of responsible AI, data management plans, data source selection, and bias auditing.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/responsible-ai-data-management/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Responsible AI Data Management">
+  <meta name="twitter:description" content="I finished DataCamp's Responsible AI Data Management course, covering the six dimensions of responsible AI, data management plans, data source selection, and bias auditing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Responsible AI Data Management</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">SEPTEMBER 30, 2026 · Career</p>
+
+          <p class="article__hook">I finished DataCamp's <a href="https://www.datacamp.com/">Responsible AI Data Management</a> course, a short, no-code stop on the <a href="/journal/practicing-unsupervised-learning-in-python/">Associate AI Engineer for Data Scientists</a> track.</p>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/datacamp_responsible_ai_data_management_badge.png" alt="Responsible AI Data Management course completion badge" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+<p class="article__hook">Every other course on this track has been about building something: a model, a pipeline, a training loop. This one is about the data going in before any of that starts: where it's allowed to come from, what regulations like HIPAA and GDPR require, which licenses apply, and how to audit a dataset for bias before it ever touches a model.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">Six dimensions, and the trade-offs between them</h2>
+<p>The course frames responsible AI around six dimensions: lawfulness, fairness, transparency, diversity and inclusion, accountability, and privacy and security. None of them stand alone, and they don't always pull in the same direction. More transparency can mean exposing more about how a model works, which can work against privacy. Stricter privacy protections can limit the diversity of data you're allowed to collect, which can work against fairness. The course kept coming back to the same point: these trade-offs get negotiated against business factors (cost, timeline, what the product actually needs) and technical metrics (accuracy, latency, what the model can realistically hit), and there's rarely an answer that maxes out all six at once.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Data management plans don't have a standard format</h2>
+<p>A data management plan, or DMP, is the document that's supposed to keep a project accountable to its own data decisions. There's no standardized format for one. No single guideline or template that works across industries or projects. But most DMPs I saw in the course converged on the same handful of sections anyway: data collection and consent, how the data is actually used, and data security and storage, so the format is loose even though what goes in it isn't.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Picking a data source, broken into six checks</h2>
+<p>The part I'll actually reuse is the data source selection breakdown. Before using a dataset, the course walks through six checks, roughly in this order: whether the source is even relevant to the project, whether the source itself has integrity (is it what it claims to be, from who it claims to be from), whether it's legally compliant to use, whether it meets a technical quality bar, whether it's biased or unrepresentative of the population the model will actually see, and only after all of that, selection. It's a checklist I can see myself actually running instead of just eyeballing a dataset and moving on.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Subgroup analysis, the simple version</h2>
+<p>One of the more concrete techniques was subgroup analysis: split the data into groups, usually by some protected or sensitive attribute, and check the model's performance on each group separately instead of just looking at the overall number. If the groups perform about the same, move on. If one group's performance is noticeably worse, that's a signal to investigate, not a coincidence to explain away.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Bias, in more detail</h2>
+<p>The course spent real time on bias specifically, breaking it down into identifiable sources instead of treating it as one vague warning: bias baked into how the data was originally collected, bias from who was included or left out, bias introduced during labeling, bias that creeps in from how the data gets pre-processed before it ever reaches the model. Mitigating it isn't a single step either. It shows up at every stage of a project's lifecycle, from the initial data audit through deployment, and the course was blunt that fixing it earlier is cheaper than fixing it after a model is already in production and someone's already been affected by its output.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Career</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
