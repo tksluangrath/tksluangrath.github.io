@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <title>Making a Ghost Mascot with the ip-as-logo Skill - Journal - Terrance Luangrath</title>
+  <meta name="description" content="I used a GitHub skill that makes simple, cute character icons to generate a ghost, then put it in the nav and the browser tab where the [T] used to be.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/making-a-ghost-mascot-with-ip-as-logo/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Making a Ghost Mascot with the ip-as-logo Skill">
+  <meta property="og:description" content="I used a GitHub skill that makes simple, cute character icons to generate a ghost, then put it in the nav and the browser tab where the [T] used to be.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/making-a-ghost-mascot-with-ip-as-logo/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Making a Ghost Mascot with the ip-as-logo Skill">
+  <meta name="twitter:description" content="I used a GitHub skill that makes simple, cute character icons to generate a ghost, then put it in the nav and the browser tab where the [T] used to be.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/" aria-label="Terrance Luangrath, home"><img src="/assets/img/ghost-256.png" alt="" width="32" height="32" class="nav__logo"></a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Making a Ghost Mascot with the ip-as-logo Skill</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">OCTOBER 5, 2026 · Design</p>
+
+          <p class="article__hook">My site's logo was a [T] in brackets. I wanted something friendlier that still reads at 32 pixels, so I tried <a href="https://github.com/s1dashu/ip-as-logo-skill">ip-as-logo-skill</a> from GitHub. It makes rounded, baby-faced characters from a few big shapes, two character colors and one flat background. Nothing it makes is complicated, which is why it's now my go-to for logo images.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">How it went</h2>
+<p>I asked for a very simple, cute ghost on deep jade. The skill doesn't generate right away. It proposes three directions and wants approval on a batch of six first. It also requires a strong image model and refuses to fall back to SVG, so I ran it through the Figma connector's image tool with <code>gpt-image-2.5-sunburst</code>.</p>
+<p>I generated four of the six: two round ghosts, one with raised arms, one sleepy. I liked the round one (A1) and the raised-arms one (B1).</p>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/ghost-a1.png" alt="Round ghost, A1" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/ghost-b1.png" alt="Raised-arms ghost, B1" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+<p>B1 stayed readable when shrunk, so it went on the site.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Making it fit</h2>
+<p>My first try was a large ghost in the home hero and another on the About page. I didn't like either. The image's green was close to my accent color but not the same, so it looked like a square pasted onto the page. I recolored the background to the site's <code>#426156</code>, cropped it to a circle, and used it for the nav logo and the tab icon.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Next time</h2>
+<p>I gave the generator a jade hex I'd picked by eye instead of my site's real accent color, and I had to fix the mismatch afterward. Next time the real hex goes in the prompt. The model also put white highlights in A1's eyes, which broke the two-colors-plus-background rule. The skill says to keep whatever comes back, so I did.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Design</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
