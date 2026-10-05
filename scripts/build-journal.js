@@ -161,7 +161,7 @@ function nav(active) {
     `<li><a class="nav__link${active === key ? " nav__link--active" : ""} anim-item anim-item--down" href="${href}">${label}</a></li>`;
   return `  <nav class="nav">
     <div class="nav__inner">
-      <a class="nav__brand anim-item anim-item--down" href="/">[T]</a>
+      <a class="nav__brand anim-item anim-item--down" href="/" aria-label="Terrance Luangrath, home"><img src="/assets/img/ghost-256.png" alt="" width="32" height="32" class="nav__logo"></a>
       <ul class="nav__links">
         ${link("/projects/", "Work", "work")}
         ${link("/journal/", "Journal", "journal")}
@@ -203,7 +203,7 @@ function entryPageHtml(entry) {
 ${LOAD_SCRIPT}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
   <title>${data.title} - Journal - Terrance Luangrath</title>
   <meta name="description" content="${data.description}">
   <link rel="canonical" href="${canonical}">${robots}
@@ -272,7 +272,7 @@ function journalIndexHtml(entries) {
 ${LOAD_SCRIPT}
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
   <title>Journal - Terrance Luangrath</title>
   <meta name="description" content="A collection of things I've learned, built, and explored - fine-tuning notes, engineering lessons, and the thinking behind the projects.">
   <link rel="canonical" href="${SITE_URL}/journal/">
