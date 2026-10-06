@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <title>Introduction to LLMs in Python - Journal - Terrance Luangrath</title>
+  <meta name="description" content="I finished DataCamp's Introduction to LLMs in Python course. LLMs come with real challenges, and evaluation matters because model performance can make or break production.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/introduction-to-llms-in-python/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Introduction to LLMs in Python">
+  <meta property="og:description" content="I finished DataCamp's Introduction to LLMs in Python course. LLMs come with real challenges, and evaluation matters because model performance can make or break production.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/introduction-to-llms-in-python/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Introduction to LLMs in Python">
+  <meta name="twitter:description" content="I finished DataCamp's Introduction to LLMs in Python course. LLMs come with real challenges, and evaluation matters because model performance can make or break production.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/" aria-label="Terrance Luangrath, home"><img src="/assets/img/ghost-256.png" alt="" width="32" height="32" class="nav__logo"></a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Introduction to LLMs in Python</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">OCTOBER 6, 2026 · Career · LLM</p>
+
+          <p class="article__hook">I finished DataCamp's <a href="https://www.datacamp.com/">Introduction to LLMs in Python</a> course, next after <a href="/journal/responsible-ai-data-management/">Responsible AI Data Management</a> on the <a href="/journal/practicing-unsupervised-learning-in-python/">Associate AI Engineer for Data Scientists</a> track.</p>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/datacamp_intro_llms_python_badge.png" alt="Introduction to LLMs in Python course completion badge" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+<p class="article__hook">What I'm taking away is how many challenges come with using an LLM. Evaluation is how you find them before production does, and in production model performance can play a big part in whether the thing works at all.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">The lifecycle and the fine-tuning plan</h2>
+<p>An LLM starts with pre-training, which produces a foundation model. Fine-tune that foundation model and you get the fine-tuned model. The fine-tuning itself followed one plan every time: set the training plan, build the trainer, train, check the loss, predict, save.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Two ways to fine-tune</h2>
+<p>Full fine-tuning updates every weight in the model. Partial fine-tuning updates only some of them. The course also covered transfer learning, which reuses what a model already learned for a new task, and n-shot learning, where you show the model a few examples (or one, or none) instead of retraining it.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Evaluation</h2>
+<p>This was the chapter I got the most out of. The Hugging Face <code>evaluate</code> library had a metric for each kind of task: perplexity for how well a model predicts text, BLEU and METEOR for translation, ROUGE for summaries, and exact match (EM) for questions with one right answer. A different metric tells you something different about the same model, so picking one is part of the evaluation.</p>
+<p>The course also covered safeguarding. Toxicity checks whether a model produces harmful text, and regard checks whether it talks about different groups with different sentiment. Both tie back to the bias work in <a href="/journal/responsible-ai-data-management/">Responsible AI Data Management</a>. A model can score fine on BLEU or ROUGE and still say things you wouldn't want to ship.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Career</span><span class="tag">LLM</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
