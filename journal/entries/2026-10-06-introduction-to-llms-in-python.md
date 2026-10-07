@@ -26,3 +26,7 @@ Full fine-tuning updates every weight in the model. Partial fine-tuning updates 
 This was the chapter I got the most out of. The Hugging Face `evaluate` library had a metric for each kind of task: perplexity for how well a model predicts text, BLEU and METEOR for translation, ROUGE for summaries, and exact match (EM) for questions with one right answer. A different metric tells you something different about the same model, so picking one is part of the evaluation.
 
 The course also covered safeguarding. Toxicity checks whether a model produces harmful text, and regard checks whether it talks about different groups with different sentiment. Both tie back to the bias work in [Responsible AI Data Management](/journal/responsible-ai-data-management/). A model can score fine on BLEU or ROUGE and still say things you wouldn't want to ship.
+
+## What's next
+
+[Working with Llama 3](/journal/working-with-llama-3/).

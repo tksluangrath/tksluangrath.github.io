@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <title>Car-ing is Sharing LLM Chatbot Prototype - Journal - Terrance Luangrath</title>
+  <meta name="description" content="A DataCamp project I did after Introduction to LLMs in Python: prototyping a car dealership chatbot that runs five tasks with pre-trained Hugging Face models.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/car-ing-is-sharing-llm-chatbot-prototype/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Car-ing is Sharing LLM Chatbot Prototype">
+  <meta property="og:description" content="A DataCamp project I did after Introduction to LLMs in Python: prototyping a car dealership chatbot that runs five tasks with pre-trained Hugging Face models.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/car-ing-is-sharing-llm-chatbot-prototype/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Car-ing is Sharing LLM Chatbot Prototype">
+  <meta name="twitter:description" content="A DataCamp project I did after Introduction to LLMs in Python: prototyping a car dealership chatbot that runs five tasks with pre-trained Hugging Face models.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/" aria-label="Terrance Luangrath, home"><img src="/assets/img/ghost-256.png" alt="" width="32" height="32" class="nav__logo"></a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Car-ing is Sharing LLM Chatbot Prototype</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">OCTOBER 6, 2026 · Career · LLM</p>
+
+          <p class="article__hook">After <a href="/journal/introduction-to-llms-in-python/">Introduction to LLMs in Python</a> I did a DataCamp project called Car-ing is Sharing, where I played the AI developer for a car sales and rental company that wanted a chatbot prototype. It had to take text and handle a few tasks using pre-trained Hugging Face models.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">What I built</h2>
+<p>All five tasks ran on a small set of car reviews, one Hugging Face <code>pipeline</code> each:</p>
+<ul class="article__list"><li>Sentiment classification with DistilBERT</li><li>Translation of the first two sentences of a review into Spanish with a Helsinki-NLP model</li><li>Question answering with MiniLM ("What did he like about the brand?")</li><li>Summarization of the last review with BART</li></ul>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">How it did</h2>
+<p>I used the evaluation metrics from the course to score it. Sentiment classification got 80% accuracy and an F1 of 0.86 on five reviews, which is a tiny sample. The translation scored a BLEU of 0.78 against a reference. The question answering pulled "ride quality, reliability" out of the review. The summary read fine, though it was cut off mid-sentence because I capped it at 55 tokens.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">What I took from it</h2>
+<p>Each task was only a few lines once I picked the right model, so most of the work was choosing one and checking its output instead of trusting it. It was also the first time I used the metrics from the course on something I built myself.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Career</span><span class="tag">LLM</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -30,4 +30,6 @@ The recurrent section was newer territory. A plain RNN keeps a hidden state that
 
 The last stretch covered models that don't fit the one-input-one-output shape I was used to. A multi-input model, like running an image through one branch and a category label through another before combining them, lets you fuse signals from different sources into a single prediction. A multi-output model does the reverse: one model, several predictions at once, which raises the question of how to weigh each output's loss against the others so the model doesn't neglect one in favor of the rest. I'll end up using multi-input models the most, since so many real-world problems come with more than one kind of input sitting right there.
 
-Still a few courses left on the [Associate AI Engineer for Data Scientists](/journal/practicing-unsupervised-learning-in-python/) track. More on those soon.
+## What's next
+
+The [Developing Multi-Input Models for OCR](/journal/developing-multi-input-models-for-ocr/) project, then more of the track.

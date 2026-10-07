@@ -33,3 +33,7 @@ One of the more concrete techniques was subgroup analysis: split the data into g
 ## Bias, in more detail
 
 The course spent real time on bias specifically, breaking it down into identifiable sources instead of treating it as one vague warning: bias baked into how the data was originally collected, bias from who was included or left out, bias introduced during labeling, bias that creeps in from how the data gets pre-processed before it ever reaches the model. Mitigating it isn't a single step either. It shows up at every stage of a project's lifecycle, from the initial data audit through deployment, and the course was blunt that fixing it earlier is cheaper than fixing it after a model is already in production and someone's already been affected by its output.
+
+## What's next
+
+More of the track.
