@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <title>MLOps Concepts - Journal - Terrance Luangrath</title>
+  <meta name="description" content="I finished DataCamp's MLOps Concepts course. Not every ML system needs full automation, and the maturity levels help you pick how much.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/mlops-concepts/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="MLOps Concepts">
+  <meta property="og:description" content="I finished DataCamp's MLOps Concepts course. Not every ML system needs full automation, and the maturity levels help you pick how much.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/mlops-concepts/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MLOps Concepts">
+  <meta name="twitter:description" content="I finished DataCamp's MLOps Concepts course. Not every ML system needs full automation, and the maturity levels help you pick how much.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/" aria-label="Terrance Luangrath, home"><img src="/assets/img/ghost-256.png" alt="" width="32" height="32" class="nav__logo"></a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">MLOps Concepts</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">OCTOBER 9, 2026 · Career · Machine Learning</p>
+
+          <p class="article__hook">I finished DataCamp's <a href="https://www.datacamp.com/">MLOps Concepts</a> course, next after <a href="/journal/working-with-llama-3/">Working with Llama 3</a> on the <a href="/journal/practicing-unsupervised-learning-in-python/">Associate AI Engineer for Data Scientists</a> track.</p>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/datacamp_mlops_concepts_badge.png" alt="MLOps Concepts course completion badge" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+<p class="article__hook">My biggest takeaway is that not everything needs automation. With so much talk about AI and automating everything, I assumed every MLOps setup should aim for level 3. Level 1 or level 2 can be the right call, depending on how complex the task is and what you want out of it.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">The lifecycle</h2>
+<p>The course split an ML project into design, development, deployment, and monitoring, and covered which roles own each phase. In design and development, the work starts with the business requirement and a key metric. Data quality gets checked next, and experiments get tracked so results can be reproduced.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Deployment</h2>
+<p>This chapter covered runtime environments and containerization, then serving a model as a microservice behind an API. It finished with CI/CD pipelines and the different ways to roll a model out.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Monitoring and maturity</h2>
+<p>Models degrade after they ship, so monitoring catches drift and retraining is the response. The maturity levels describe how much of that is automated. A higher level means more to build and more to maintain, so you want the level that fits the project.</p>
+<p>My own <a href="/projects/lol-matchbook/">LoL Matchbook</a> is a good example. It's a desktop app for one person, and its advice comes from a precomputed table that a background job refreshes. A full automated retraining and CI/CD pipeline would be a lot of machinery for that, and the lower levels are enough.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">What's next</h2>
+<p>More of the track.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Career</span><span class="tag">Machine Learning</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
