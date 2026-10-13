@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <title>Introduction to Git - Journal - Terrance Luangrath</title>
+  <meta name="description" content="I finished DataCamp's Introduction to Git course: creating repos, staging and committing, reading a project's history, and undoing mistakes.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/introduction-to-git/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Introduction to Git">
+  <meta property="og:description" content="I finished DataCamp's Introduction to Git course: creating repos, staging and committing, reading a project's history, and undoing mistakes.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/introduction-to-git/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Introduction to Git">
+  <meta name="twitter:description" content="I finished DataCamp's Introduction to Git course: creating repos, staging and committing, reading a project's history, and undoing mistakes.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/" aria-label="Terrance Luangrath, home"><img src="/assets/img/ghost-256.png" alt="" width="32" height="32" class="nav__logo"></a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Introduction to Git</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">OCTOBER 13, 2026 · Career · Engineering</p>
+
+          <p class="article__hook">I finished DataCamp's <a href="https://www.datacamp.com/">Introduction to Git</a> course, next after <a href="/journal/software-engineering-principles-in-python/">Software Engineering Principles in Python</a> on the <a href="/journal/practicing-unsupervised-learning-in-python/">Associate AI Engineer for Data Scientists</a> track.</p>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/datacamp_intro_git_badge.png" alt="Introduction to Git course completion badge" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+<p class="article__hook">I already use Git for this site and my other projects. The course gave me the underlying model. Mistakes also stop being scary once you know how to undo them.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">Repos and commits</h2>
+<p>The course started in the shell with a check of the Git version, then created repos, both from scratch and by converting an existing project. Saving work takes two steps: add a file to the staging area, then commit it.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">How Git stores things</h2>
+<p>Git stores a project as blobs (file contents), trees (folders), and commits. That's why you can compare the project at two points in time and see what changed, who changed it, and when.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Reading the history</h2>
+<p>I learned to look back through a repo's history. That includes the full log, the history of one file, and commits filtered by date, plus a way to limit the view when the log gets long. <code>git diff</code> compares versions, including staged files and the second most recent commit.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Undoing changes</h2>
+<p>The last part covered unstaging a file and reverting a commit. If I can go back to an earlier state, I can try things in a project without worrying about breaking it.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">What's next</h2>
+<p>One more course left on the Associate AI Engineer for Data Scientists track.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Career</span><span class="tag">Engineering</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
