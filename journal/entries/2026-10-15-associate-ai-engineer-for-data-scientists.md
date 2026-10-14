@@ -1,6 +1,6 @@
 ---
 title: "Associate AI Engineer for Data Scientists"
-date: "2026-10-14"
+date: "2026-10-15"
 description: "I finished DataCamp's Associate AI Engineer for Data Scientists track. Much of it reviewed my master's program, plus the software engineering foundation I didn't have. The associate certification is next."
 tags:
   - Career
