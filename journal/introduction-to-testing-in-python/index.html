@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script>document.documentElement.classList.add('js');addEventListener('load',function(){setTimeout(function(){if(!document.body.classList.contains('is-loaded')){document.body.classList.add('is-loaded');document.querySelectorAll('.reveal').forEach(function(e){e.classList.add('is-visible')});}},1500);});</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+  <title>Introduction to Testing in Python - Journal - Terrance Luangrath</title>
+  <meta name="description" content="I finished DataCamp's Introduction to Testing in Python course, the last one on the Associate AI Engineer for Data Scientists track. It covered pytest, fixtures, four types of tests, and unittest.">
+  <link rel="canonical" href="https://tksluangrath.github.io/journal/introduction-to-testing-in-python/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Introduction to Testing in Python">
+  <meta property="og:description" content="I finished DataCamp's Introduction to Testing in Python course, the last one on the Associate AI Engineer for Data Scientists track. It covered pytest, fixtures, four types of tests, and unittest.">
+  <meta property="og:url" content="https://tksluangrath.github.io/journal/introduction-to-testing-in-python/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Introduction to Testing in Python">
+  <meta name="twitter:description" content="I finished DataCamp's Introduction to Testing in Python course, the last one on the Associate AI Engineer for Data Scientists track. It covered pytest, fixtures, four types of tests, and unittest.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="/assets/css/site.min.css">
+  <script src="/assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav class="nav">
+    <div class="nav__inner">
+      <a class="nav__brand anim-item anim-item--down" href="/" aria-label="Terrance Luangrath, home"><img src="/assets/img/ghost-256.png" alt="" width="32" height="32" class="nav__logo"></a>
+      <ul class="nav__links">
+        <li><a class="nav__link anim-item anim-item--down" href="/projects/">Work</a></li>
+        <li><a class="nav__link nav__link--active anim-item anim-item--down" href="/journal/">Journal</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/">About</a></li>
+        <li><a class="nav__link anim-item anim-item--down" href="/about/#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="section">
+      <div class="wrap">
+        <p class="reveal"><a class="links-row__item" href="/journal/">← Back to Journal</a></p>
+
+        <article class="article" style="margin-top:var(--space-5)">
+          <h1 class="article__title reveal">Introduction to Testing in Python</h1>
+          <p class="eyebrow rail reveal" style="margin-bottom:var(--space-6)">OCTOBER 14, 2026 · Career · Engineering</p>
+
+          <p class="article__hook">I finished DataCamp's <a href="https://www.datacamp.com/">Introduction to Testing in Python</a> course, next after <a href="/journal/introduction-to-git/">Introduction to Git</a> and the last one on the <a href="/journal/practicing-unsupervised-learning-in-python/">Associate AI Engineer for Data Scientists</a> track.</p>
+<figure class="reveal" style="margin:var(--space-6) 0"><img src="/assets/img/datacamp_intro_testing_python_badge.png" alt="Introduction to Testing in Python course completion badge" style="border-radius:var(--radius-md);border:1px solid var(--color-surface-raised)"></figure>
+<p class="article__hook">It follows <a href="/journal/software-engineering-principles-in-python/">Software Engineering Principles in Python</a>, which introduced <code>pytest</code> and <code>doctest</code> at the end of its maintainability chapter. This course goes much deeper. It also connects to <a href="/journal/mlops-concepts/">MLOps Concepts</a>, since tests are how you check that a program or data pipeline works before it goes to production.</p>
+<section class="article__section reveal">
+<h2 class="article__heading">Writing tests with pytest</h2>
+<p>I wrote my first test suite and used <code>pytest.raises</code> to check that code fails the right way. I ran tests from the command line, including by keyword. Markers handled the awkward cases: <code>xfail</code> for a test that is expected to fail, and conditional skips for tests that shouldn't run everywhere.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Fixtures</h2>
+<p>A fixture holds the setup a test needs, like prepared data, so each test doesn't repeat it. I used <code>@pytest.fixture</code>, chained fixtures so one builds on another, and set some to run automatically with <code>autouse</code>. Teardowns clean up after a test finishes.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">Four types of tests</h2>
+<p>The course separated unit, feature, integration, and performance tests. A unit test covers one small piece, like a factorial function. A feature test covers a whole feature, like an aggregation with <code>sum</code>. Integration tests check that parts work together, as in reading a file, and performance tests time things like finding an element or looping over a list.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">unittest</h2>
+<p>The last chapter covered the same ideas in <code>unittest</code>: assertion methods, the command-line interface, and fixtures. It ended with practical examples, including testing an energy data pipeline.</p>
+</section>
+<section class="article__section reveal">
+<h2 class="article__heading">What's next</h2>
+<p>That was the last course on the track.</p>
+</section>
+
+
+          <div class="tag-list reveal" style="margin-top:var(--space-6)"><span class="tag">Career</span><span class="tag">Engineering</span></div>
+
+          <div class="links-row reveal">
+            <a class="links-row__item" href="/journal/">← Back to Journal</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <span class="footer__note">Terrance Luangrath - Washington, DC Metro Area</span>
+      <div class="footer__links">
+        <a class="footer__link" href="https://github.com/tksluangrath" target="_blank" rel="noopener">GitHub</a>
+        <a class="footer__link" href="https://huggingface.co/tksluangrath" target="_blank" rel="noopener">Hugging Face</a>
+        <a class="footer__link" href="https://www.linkedin.com/in/terranceluangrath/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="footer__link" href="mailto:tksluangrath@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
